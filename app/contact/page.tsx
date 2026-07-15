@@ -1,8 +1,20 @@
+import type { Metadata } from 'next';
 import { Section, SectionHeader } from '@/components/design-system/Section';
 import { ContactForm } from './ContactForm';
 import { Calendar, Mail } from 'lucide-react';
 
-export const metadata = { title: 'Contact' };
+export const metadata: Metadata = {
+  title: 'Contact NJ’s Accounting — Book a Free 15-Min Discovery Call',
+  description:
+    'Two easy ways to reach us: book a 15-minute discovery call with Njock (no pitch), or send a message and we’ll reply within 4 business hours. Small-business bookkeeping and tax.',
+  alternates: { canonical: '/contact' },
+  openGraph: {
+    title: 'Contact us — book a 15-min discovery call',
+    description:
+      'Book a time or send a message. Reply within 4 business hours, guaranteed.',
+    url: 'https://booksbynj.com/contact',
+  },
+};
 
 const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK || 'njock/discovery';
 

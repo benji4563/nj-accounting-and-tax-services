@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
+
+Sitemap: https://booksbynj.com/sitemap.xml
+Host: https://booksbynj.com

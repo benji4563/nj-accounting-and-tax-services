@@ -1,13 +1,28 @@
+import type { Metadata } from 'next';
 import { Section, SectionHeader } from '@/components/design-system/Section';
 import { ServicesGrid } from '@/components/home/ServicesGrid';
 import { CtaDrop } from '@/components/home/CtaDrop';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { servicesJsonLd } from '@/lib/structured-data';
 
-export const metadata = { title: 'Services' };
+export const metadata: Metadata = {
+  title: 'Bookkeeping, Tax Prep & Planning for Small Businesses',
+  description:
+    'Monthly bookkeeping, tax preparation, quarterly tax planning, and audit support for small businesses. Flat monthly pricing, plain-English deliverables, a real accountant on email.',
+  alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'What we do — Bookkeeping, Tax & Planning',
+    description:
+      'Four services. Zero jargon. Monthly bookkeeping, tax prep, quarterly planning, audit support.',
+    url: 'https://booksbynj.com/services',
+  },
+};
 
 export default function ServicesPage() {
   console.log('[page] /services rendered');
   return (
     <>
+      <StructuredData data={servicesJsonLd} />
       <Section background="cream">
         <SectionHeader
           eyebrow="What we actually do"

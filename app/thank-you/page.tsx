@@ -1,9 +1,16 @@
+import type { Metadata } from 'next';
 import { Section, SectionHeader } from '@/components/design-system/Section';
 import { Card } from '@/components/design-system/Card';
 import { Button } from '@/components/design-system/Button';
 import { CheckCircle2, Download } from 'lucide-react';
 
-export const metadata = { title: 'Thank you' };
+export const metadata: Metadata = {
+  title: 'Thanks — we’ll be in touch',
+  description:
+    'Your message is in. Njock will email you within 4 business hours. While you wait, grab the free 5-Receipts guide.',
+  robots: { index: false, follow: true },
+  alternates: { canonical: '/thank-you' },
+};
 
 export default function ThankYouPage() {
   console.log('[page] /thank-you rendered');

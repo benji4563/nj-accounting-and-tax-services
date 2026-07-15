@@ -1,8 +1,20 @@
+import type { Metadata } from 'next';
 import { Section, SectionHeader } from '@/components/design-system/Section';
 import { PersonalBio } from '@/components/proof/PersonalBio';
 import { CtaDrop } from '@/components/home/CtaDrop';
 
-export const metadata = { title: 'About' };
+export const metadata: Metadata = {
+  title: 'About Njock — The Real Person Doing Your Books',
+  description:
+    'Njock founded NJ’s Accounting because small businesses deserve an accountant who answers the email. QuickBooks-certified, working on CFO certification. You email us, Njock replies.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'Meet Njock — the person doing your books',
+    description:
+      'Not a receptionist, not a bot, not a junior. When you email us, Njock is the one who answers.',
+    url: 'https://booksbynj.com/about',
+  },
+};
 
 export default function AboutPage() {
   console.log('[page] /about rendered');

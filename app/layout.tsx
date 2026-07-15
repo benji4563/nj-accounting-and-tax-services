@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Fraunces, Inter, Caveat } from 'next/font/google';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { organizationJsonLd } from '@/lib/structured-data';
 import './globals.css';
 
 const fraunces = Fraunces({
@@ -27,20 +29,29 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'NJ’s Accounting and Tax Services — Focus on growth. We handle the finances.',
-    template: '%s — NJ’s Accounting and Tax Services',
+    default: 'Small-Business Bookkeeping & Tax Services | NJ’s Accounting',
+    template: '%s | NJ’s Accounting and Tax Services',
   },
   description:
-    'Bookkeeping and tax services for small businesses. Flat monthly pricing. A real person you can email. Books current within 30 days — or your next month is free.',
+    'Small-business bookkeeping and tax services. Flat monthly pricing from $299. A real accountant on email. Books current in 30 days — or your next month is free.',
   metadataBase: new URL('https://booksbynj.com'),
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'NJ’s Accounting and Tax Services',
-    description: 'Focus on growth. We handle the finances.',
+    title: 'Small-Business Bookkeeping & Tax | NJ’s Accounting',
+    description:
+      'Flat monthly pricing. A real accountant on email. Books current in 30 days — or your next month is free.',
     url: 'https://booksbynj.com',
     siteName: 'NJ’s Accounting and Tax Services',
     locale: 'en_US',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Small-Business Bookkeeping & Tax | NJ’s Accounting',
+    description:
+      'Flat monthly pricing. A real accountant on email. 30-day guarantee.',
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -54,6 +65,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${inter.variable} ${caveat.variable}`}
     >
       <body>
+        <StructuredData data={organizationJsonLd} />
         <Nav />
         <main>{children}</main>
         <Footer />

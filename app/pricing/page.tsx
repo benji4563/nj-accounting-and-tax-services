@@ -1,14 +1,29 @@
+import type { Metadata } from 'next';
 import { Section, SectionHeader } from '@/components/design-system/Section';
 import { PricingPreview } from '@/components/home/PricingPreview';
 import { HonestyStrip } from '@/components/proof/HonestyStrip';
 import { CtaDrop } from '@/components/home/CtaDrop';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { pricingFaqJsonLd } from '@/lib/structured-data';
 
-export const metadata = { title: 'Pricing' };
+export const metadata: Metadata = {
+  title: 'Small-Business Accountant Pricing — Flat Monthly, In Writing',
+  description:
+    'Real prices, in writing. Three plans from $299/mo. Monthly bookkeeping, annual tax prep, quarterly planning — flat monthly pricing, no “call for a quote.”',
+  alternates: { canonical: '/pricing' },
+  openGraph: {
+    title: 'Real prices. No “call for a quote.” | NJ’s Accounting',
+    description:
+      'Three tiers from $299/mo. Flat monthly pricing for bookkeeping, tax prep, and planning.',
+    url: 'https://booksbynj.com/pricing',
+  },
+};
 
 export default function PricingPage() {
   console.log('[page] /pricing rendered');
   return (
     <>
+      <StructuredData data={pricingFaqJsonLd} />
       <Section background="cream">
         <SectionHeader
           eyebrow="Real prices. In writing."

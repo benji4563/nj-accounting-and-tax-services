@@ -1,9 +1,21 @@
+import type { Metadata } from 'next';
 import { Section, SectionHeader } from '@/components/design-system/Section';
 import { FirstThirtyDays } from '@/components/home/FirstThirtyDays';
 import { GuaranteeChip, ALL_GUARANTEES } from '@/components/proof/GuaranteeChip';
 import { CtaDrop } from '@/components/home/CtaDrop';
 
-export const metadata = { title: 'How we work' };
+export const metadata: Metadata = {
+  title: 'How We Work — 30-Day Onboarding & Guaranteed Response Times',
+  description:
+    'Your first 30 days with NJ: discovery call, then we build your books from scratch. Reply within 4 business hours, one clean report every month — or your month is free.',
+  alternates: { canonical: '/how-we-work' },
+  openGraph: {
+    title: 'How we work — four guarantees, written into your invoice',
+    description:
+      '4-hour reply time. Books current in 30 days. One report on the 5th. Every promise measurable.',
+    url: 'https://booksbynj.com/how-we-work',
+  },
+};
 
 export default function HowWeWorkPage() {
   console.log('[page] /how-we-work rendered');
