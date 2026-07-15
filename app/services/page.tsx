@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Section, SectionHeader } from '@/components/design-system/Section';
 import { ServicesGrid } from '@/components/home/ServicesGrid';
 import { CtaDrop } from '@/components/home/CtaDrop';
@@ -33,6 +34,23 @@ export default function ServicesPage() {
           service &mdash; with the deliverables, what&rsquo;s included, and
           what isn&rsquo;t &mdash; are coming shortly.
         </p>
+
+        <figure className="mx-auto mt-14 max-w-5xl">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-card">
+            <Image
+              src="/scenes/coffee-shop-owner-stressed.webp"
+              alt="A packed coffee shop with the owner sitting at a back table, tense over a laptop and paperwork while the cafe hums behind her"
+              fill
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+          <figcaption className="mx-auto mt-4 max-w-prose text-center text-body-sm text-graphite/70">
+            The cafe is packed. The books aren&rsquo;t. Every service below
+            solves one specific version of this moment.
+          </figcaption>
+        </figure>
       </Section>
       <ServicesGrid />
       <CtaDrop />
