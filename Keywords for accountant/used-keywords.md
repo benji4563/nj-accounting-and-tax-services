@@ -15,3 +15,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | Date | Primary keyword | Post URL | Cluster |
 |---|---|---|---|
 | 2026-07-15 | do i need an accountant for my small business | /blog/do-i-need-an-accountant-for-your-small-business | A. Hire a small-business accountant |
+| 2026-07-15 | small business accountant cincinnati | /locations/cincinnati | A. Hire a small-business accountant (localised) |

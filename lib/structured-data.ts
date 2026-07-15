@@ -134,6 +134,40 @@ export const pricingFaqJsonLd = {
   ],
 };
 
+export function localBusinessJsonLd(city: {
+  name: string;
+  region: string;
+  regionCode: string;
+  country?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${SITE_URL}/locations/${city.name.toLowerCase()}#localbusiness`,
+    name: `${BUSINESS_NAME} — ${city.name}`,
+    url: `${SITE_URL}/locations/${city.name.toLowerCase()}`,
+    image: `${SITE_URL}/og-default.png`,
+    email: BUSINESS_EMAIL,
+    priceRange: '$$',
+    description: `Small-business bookkeeping, tax preparation, and quarterly tax planning serving ${city.name}, ${city.region} — remote delivery, flat monthly pricing.`,
+    areaServed: {
+      '@type': 'City',
+      name: city.name,
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: city.region,
+      },
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: city.name,
+      addressRegion: city.regionCode,
+      addressCountry: city.country ?? 'US',
+    },
+    founder: { '@type': 'Person', name: FOUNDER, jobTitle: 'CEO & Founding Accountant' },
+  };
+}
+
 export function blogPostingJsonLd(post: {
   slug: string;
   title: string;
