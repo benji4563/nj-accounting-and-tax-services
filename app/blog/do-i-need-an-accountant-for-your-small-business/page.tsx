@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { Section } from '@/components/design-system/Section';
 import { Button } from '@/components/design-system/Button';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { TableOfContents } from '@/components/blog/TableOfContents';
+import { AuthorBio } from '@/components/blog/AuthorBio';
+import { RelatedPosts } from '@/components/blog/RelatedPosts';
 import {
   blogPostingJsonLd,
   faqPageJsonLd,
@@ -15,7 +18,19 @@ const TITLE = 'Do You Actually Need an Accountant for Your Small Business?';
 const DESCRIPTION =
   'Six honest signs it’s time to hire a small-business accountant, three signs it isn’t, the real cost math, and the questions to ask before you say yes.';
 const PUBLISHED = '2026-07-15';
+const MODIFIED = '2026-07-15';
 const HERO = `/blog/${SLUG}/hero-kitchen-table-shoebox.webp`;
+
+const TOC = [
+  { id: 'signs-you-need-one', label: 'Six honest signs it’s time to hire an accountant' },
+  { id: 'when-you-dont', label: 'When you probably don’t (yet)' },
+  { id: 'what-accountant-does', label: 'What an accountant actually does that software can’t' },
+  { id: 'bookkeeper-vs-accountant', label: 'Bookkeeper vs accountant — the difference' },
+  { id: 'how-much-does-it-cost', label: 'How much does a small-business accountant actually cost?' },
+  { id: 'questions-to-ask', label: 'Five questions to ask before you say yes' },
+  { id: 'hidden-cost', label: 'The hidden cost of “I’ll do it myself”' },
+  { id: 'faq', label: 'Frequently asked questions' },
+];
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -84,6 +99,7 @@ export default function Post() {
           description: DESCRIPTION,
           image: IMAGE_URL,
           datePublished: PUBLISHED,
+          dateModified: MODIFIED,
         })}
       />
       <StructuredData data={faqPageJsonLd(FAQ)} />
@@ -134,9 +150,11 @@ export default function Post() {
           </figure>
         </Section>
 
-        {/* FEATURED-SNIPPET ANSWER + INTRO */}
+        {/* FEATURED-SNIPPET ANSWER + INTRO + TOC */}
         <Section background="cream" className="!pt-4">
           <div className="container-prose">
+            <TableOfContents items={TOC} />
+
             <div className="mb-10 rounded-card border-l-4 border-persimmon bg-ivory p-6 md:p-8">
               <p className="text-body-lg text-aubergine">
                 <strong>Short answer:</strong> probably, if any of these are
@@ -179,7 +197,7 @@ export default function Post() {
         </Section>
 
         {/* SIGNS YOU NEED ONE */}
-        <Section background="ivory">
+        <Section background="ivory" id="signs-you-need-one">
           <div className="container-prose">
             <h2 className="font-display text-h2 text-aubergine">
               Six honest signs it’s time to hire an accountant
@@ -254,7 +272,7 @@ export default function Post() {
         </Section>
 
         {/* WHEN YOU PROBABLY DON'T */}
-        <Section background="cream">
+        <Section background="cream" id="when-you-dont">
           <div className="container-prose">
             <h2 className="font-display text-h2 text-aubergine">
               When you probably don’t (yet)
@@ -313,7 +331,7 @@ export default function Post() {
         </Section>
 
         {/* WHAT AN ACCOUNTANT ACTUALLY DOES */}
-        <Section background="ivory">
+        <Section background="ivory" id="what-accountant-does">
           <div className="container-prose">
             <h2 className="font-display text-h2 text-aubergine">
               What an accountant actually does (that software can’t)
@@ -364,7 +382,7 @@ export default function Post() {
         </Section>
 
         {/* BOOKKEEPER VS ACCOUNTANT */}
-        <Section background="cream">
+        <Section background="cream" id="bookkeeper-vs-accountant">
           <div className="container-prose">
             <h2 className="font-display text-h2 text-aubergine">
               What is the difference between a bookkeeper and an accountant?
@@ -419,7 +437,7 @@ export default function Post() {
         </Section>
 
         {/* HOW MUCH DOES IT COST */}
-        <Section background="ivory">
+        <Section background="ivory" id="how-much-does-it-cost">
           <div className="container-prose">
             <h2 className="font-display text-h2 text-aubergine">
               How much does a small-business accountant actually cost?
@@ -486,7 +504,7 @@ export default function Post() {
         </Section>
 
         {/* QUESTIONS TO ASK */}
-        <Section background="cream">
+        <Section background="cream" id="questions-to-ask">
           <div className="container-prose">
             <h2 className="font-display text-h2 text-aubergine">
               Five questions to ask before you say yes
@@ -539,7 +557,7 @@ export default function Post() {
         </Section>
 
         {/* HIDDEN COST */}
-        <Section background="aubergine">
+        <Section background="aubergine" id="hidden-cost">
           <div className="container-prose">
             <h2 className="font-display text-h2 text-ivory">
               The hidden cost of “I’ll do it myself”
@@ -566,7 +584,7 @@ export default function Post() {
         </Section>
 
         {/* FAQ */}
-        <Section background="cream">
+        <Section background="cream" id="faq">
           <div className="container-prose">
             <h2 className="font-display text-h2 text-aubergine">
               Frequently asked questions
@@ -581,8 +599,37 @@ export default function Post() {
                 </div>
               ))}
             </dl>
+
+            <AuthorBio />
           </div>
         </Section>
+
+        {/* RELATED */}
+        <RelatedPosts
+          items={[
+            {
+              href: '/locations/cincinnati',
+              eyebrow: 'Cincinnati',
+              title: 'Small-business accountant in Cincinnati',
+              blurb:
+                'If you run a small business in Hamilton County, here’s how we handle Ohio, Cincinnati municipal tax, and the local sales-tax rate for you.',
+            },
+            {
+              href: '/pricing',
+              eyebrow: 'Pricing',
+              title: 'Real prices. No “call for a quote.”',
+              blurb:
+                'Three plans, all-in. Every fee is on the page. See exactly what you’d pay before you ever email us.',
+            },
+            {
+              href: '/how-we-work',
+              eyebrow: 'Process',
+              title: 'What your first 30 days look like',
+              blurb:
+                'Discovery call, onboarding, first monthly report — the whole path from “yes” to “books current,” written out with dates.',
+            },
+          ]}
+        />
 
         {/* CTA */}
         <Section background="blush">

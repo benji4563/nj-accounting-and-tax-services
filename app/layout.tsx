@@ -52,6 +52,12 @@ export const metadata: Metadata = {
       'Flat monthly pricing. A real accountant on email. 30-day guarantee.',
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    other: process.env.BING_SITE_VERIFICATION
+      ? { 'msvalidate.01': process.env.BING_SITE_VERIFICATION }
+      : undefined,
+  },
 };
 
 export default function RootLayout({
