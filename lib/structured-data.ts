@@ -134,6 +134,64 @@ export const pricingFaqJsonLd = {
   ],
 };
 
+export function blogPostingJsonLd(post: {
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+}) {
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${url}#article`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    headline: post.title,
+    description: post.description,
+    image: post.image.startsWith('http') ? post.image : `${SITE_URL}${post.image}`,
+    datePublished: post.datePublished,
+    dateModified: post.dateModified ?? post.datePublished,
+    author: {
+      '@type': 'Person',
+      name: post.author ?? FOUNDER,
+      url: `${SITE_URL}/about`,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: BUSINESS_NAME,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.png` },
+    },
+  };
+}
+
+export function faqPageJsonLd(items: Array<{ q: string; a: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((it) => ({
+      '@type': 'Question',
+      name: it.q,
+      acceptedAnswer: { '@type': 'Answer', text: it.a },
+    })),
+  };
+}
+
+export function breadcrumbJsonLd(trail: Array<{ name: string; path: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((t, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: t.name,
+      item: `${SITE_URL}${t.path}`,
+    })),
+  };
+}
+
 export const servicesJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
