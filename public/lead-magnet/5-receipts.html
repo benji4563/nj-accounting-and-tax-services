@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 5 Receipts Most Small Businesses Forget to Save — NJ's Accounting and Tax Services</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #F4EAD5; font-family: 'Inter', -apple-system, sans-serif; color: #221E2E; }
+
+  .page {
+    width: 8.5in; height: 11in; padding: 0.5in 0.55in;
+    background: #F4EAD5; position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+
+  /* Ambient Lilac Mist glow, top right */
+  .page::before {
+    content: ''; position: absolute; top: -3in; right: -3in;
+    width: 6in; height: 6in;
+    background: radial-gradient(circle, #C4B0DC 0%, transparent 60%);
+    opacity: 0.35; pointer-events: none;
+  }
+  .page::after {
+    content: ''; position: absolute; bottom: -2in; left: -2in;
+    width: 4in; height: 4in;
+    background: radial-gradient(circle, #EA5A3D 0%, transparent 60%);
+    opacity: 0.08; pointer-events: none;
+  }
+
+  header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 12pt; border-bottom: 1px solid rgba(44,30,63,0.12);
+    position: relative; z-index: 2;
+  }
+  .logo {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+    font-size: 15pt; color: #2C1E3F; letter-spacing: -0.02em;
+    display: flex; align-items: baseline; gap: 4pt;
+  }
+  .logo-dot { width: 4pt; height: 4pt; background: #EA5A3D; border-radius: 50%; }
+  .meta {
+    font-size: 8pt; color: #221E2E; opacity: 0.55;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  .hero { margin: 22pt 0 16pt; position: relative; z-index: 2; }
+  .eyebrow {
+    display: inline-block; padding: 4pt 10pt;
+    background: #EFD9C9; color: #2C1E3F; border-radius: 999pt;
+    font-size: 8pt; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+    font-size: 28pt; line-height: 1.1; letter-spacing: -0.02em;
+    color: #2C1E3F; margin: 10pt 0 8pt;
+  }
+  h1 .accent { color: #EA5A3D; font-style: italic; }
+  .lead {
+    font-size: 10pt; line-height: 1.5; color: #221E2E; max-width: 6in;
+  }
+
+  .receipts { margin-top: 16pt; position: relative; z-index: 2; flex: 1; }
+
+  .receipt {
+    display: grid; grid-template-columns: 26pt 1fr 76pt;
+    gap: 10pt; padding: 10pt 0;
+    border-bottom: 1px solid rgba(44,30,63,0.08);
+  }
+  .receipt:last-child { border-bottom: none; }
+
+  .num {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+    font-size: 22pt; color: #2C1E3F; line-height: 1; letter-spacing: -0.03em;
+  }
+  .num-dot { display: inline-block; width: 4pt; height: 4pt; background: #EA5A3D; border-radius: 50%; margin-left: 2pt; vertical-align: middle; }
+  .r-title {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+    font-size: 11pt; color: #2C1E3F; margin-bottom: 3pt;
+  }
+  .r-desc { font-size: 9pt; line-height: 1.45; color: #221E2E; opacity: 0.85; }
+  .r-value {
+    text-align: right;
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+    font-size: 12pt; color: #2C1E3F;
+  }
+  .r-value-label {
+    display: block; font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 7pt; color: #221E2E; opacity: 0.55;
+    text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2pt;
+  }
+
+  .footer-block {
+    margin-top: 14pt; padding: 14pt 16pt;
+    background: #2C1E3F; color: #F4EAD5; border-radius: 12pt;
+    position: relative; z-index: 2;
+  }
+  .footer-block .fb-title {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+    font-size: 13pt; margin-bottom: 4pt;
+  }
+  .footer-block .fb-body {
+    font-size: 9pt; line-height: 1.45; opacity: 0.85; max-width: 5in;
+  }
+  .footer-block .fb-cta {
+    display: inline-block; margin-top: 8pt;
+    padding: 7pt 14pt; background: #EA5A3D; color: #FDFAF2;
+    font-weight: 500; font-size: 9pt; border-radius: 6pt;
+    text-decoration: none;
+  }
+
+  footer {
+    margin-top: 10pt; display: flex; justify-content: space-between;
+    align-items: center; font-size: 7.5pt; color: #221E2E; opacity: 0.55;
+    position: relative; z-index: 2;
+  }
+  footer .four-hour {
+    display: inline-flex; align-items: center; gap: 4pt; color: #758F73;
+    font-weight: 500;
+  }
+  footer .four-hour::before {
+    content: ''; width: 5pt; height: 5pt; background: #758F73; border-radius: 50%;
+    box-shadow: 0 0 0 2pt rgba(117,143,115,0.25);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header>
+    <div class="logo">NJ<span class="logo-dot"></span></div>
+    <div class="meta">Free guide — booksbynj.com</div>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow">For small-business owners</span>
+    <h1>The 5 receipts most small businesses <span class="accent">forget</span> to save — and what they cost you.</h1>
+    <p class="lead">Every year, small-business owners overpay their taxes because of receipts they didn't save. These five are the most commonly forgotten — and, based on the returns we've prepared, the most expensive.</p>
+  </section>
+
+  <div class="receipts">
+
+    <div class="receipt">
+      <div class="num">1<span class="num-dot"></span></div>
+      <div>
+        <div class="r-title">Home-office utilities</div>
+        <div class="r-desc">If you run your business from a dedicated space at home, a portion of your electric, gas, internet, and even water bills is deductible. Save every monthly statement — even the PDF from your provider counts.</div>
+      </div>
+      <div class="r-value">$600 – $1,800<span class="r-value-label">Typical annual deduction</span></div>
+    </div>
+
+    <div class="receipt">
+      <div class="num">2<span class="num-dot"></span></div>
+      <div>
+        <div class="r-title">Business mileage</div>
+        <div class="r-desc">Every drive to a client, supplier, the bank, or a work meeting counts — at 67¢ per mile in 2025. Most owners lose thousands here because they never track it. A free app like MileIQ takes 30 seconds to install.</div>
+      </div>
+      <div class="r-value">$2,000 – $5,000<span class="r-value-label">Typical annual deduction</span></div>
+    </div>
+
+    <div class="receipt">
+      <div class="num">3<span class="num-dot"></span></div>
+      <div>
+        <div class="r-title">Client &amp; prospect meals</div>
+        <div class="r-desc">Coffee with a lead. Lunch with a supplier. Dinner with a potential client. 50% deductible if the meal is directly business-related. Note the person's name and the topic on the back of the receipt — that's what the IRS wants to see.</div>
+      </div>
+      <div class="r-value">$500 – $2,400<span class="r-value-label">Typical annual deduction</span></div>
+    </div>
+
+    <div class="receipt">
+      <div class="num">4<span class="num-dot"></span></div>
+      <div>
+        <div class="r-title">Software &amp; subscriptions</div>
+        <div class="r-desc">QuickBooks, Adobe, Canva, LinkedIn Premium, industry magazines, your website hosting, your domain. Individually small — collectively big. If you use it to run your business, save the receipt.</div>
+      </div>
+      <div class="r-value">$300 – $1,500<span class="r-value-label">Typical annual deduction</span></div>
+    </div>
+
+    <div class="receipt">
+      <div class="num">5<span class="num-dot"></span></div>
+      <div>
+        <div class="r-title">Continuing education</div>
+        <div class="r-desc">Courses, workshops, industry conferences, business books — anything that maintains or improves the skills you need to run your business. Even the flight and hotel to the conference are deductible.</div>
+      </div>
+      <div class="r-value">$200 – $1,500<span class="r-value-label">Typical annual deduction</span></div>
+    </div>
+
+  </div>
+
+  <div class="footer-block">
+    <div class="fb-title">This is a starting point — not the full picture.</div>
+    <div class="fb-body">These are just the five most common. There are dozens more that depend on your industry, structure, and how you get paid. If you'd like us to actually track this for you every month — so you never forget a single receipt again — book a free 15-minute call. No pitch. Just a look at your situation.</div>
+    <a class="fb-cta" href="https://booksbynj.com">Book a free 15-min call →</a>
+  </div>
+
+  <footer>
+    <div>© NJ's Accounting and Tax Services · booksbynj.com</div>
+    <div class="four-hour">4-hour reply promise · in writing</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

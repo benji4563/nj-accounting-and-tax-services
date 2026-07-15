@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream text-graphite font-sans text-body;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-aubergine;
+    font-weight: 500;
+  }
+
+  ::selection {
+    background: theme('colors.persimmon');
+    color: theme('colors.ivory');
+  }
+
+  /* Focus rings — always visible, always Persimmon */
+  *:focus-visible {
+    outline: 2px solid theme('colors.persimmon');
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 md:px-10;
+  }
+  .container-wide {
+    @apply mx-auto w-full max-w-wide px-6 md:px-10;
+  }
+  .container-prose {
+    @apply mx-auto w-full max-w-prose px-6;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-eyebrow {
+    @apply text-persimmon text-[12px] font-medium tracking-[0.08em] uppercase;
+  }
+}

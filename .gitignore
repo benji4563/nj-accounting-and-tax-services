@@ -27,6 +27,9 @@ yarn-debug.log*
 # Vercel
 .vercel
 
+# Next.js typegen
+next-env.d.ts
+
 # Obsidian workspace state (keep the vault content, ignore Obsidian's own UI state)
 .obsidian/workspace*
 .obsidian/appearance.json
