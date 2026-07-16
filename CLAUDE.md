@@ -12,6 +12,14 @@ For **improving this website (or any website) by cloning a reference**, use the 
 - Git-tracked reference copy: `NJ's Accounting and Tax Services/Skills/clone-website/SKILL.md`
 - Trigger: any request to clone, replicate, rebuild, reverse-engineer, or copy a site — pass the target URL(s) as arguments.
 
+For **building a new AI-SEO website from scratch end-to-end** (brand → specs → keyword clustering → Next.js scaffold → blog pipeline → city pages → Vercel deploy → custom domain), use the **ai-seo-website-builder** skill.
+
+- Auto-loaded from: `.claude/skills/ai-seo-website-builder/SKILL.md`
+- Obsidian mirror: `Afrishield cyber security.md/Skills/ai-seo-website-builder/SKILL.md`
+- Git-tracked reference copy: `NJ's Accounting and Tax Services/Skills/ai-seo-website-builder/SKILL.md`
+- Trigger: any request to build a website, launch a marketing site, or create an SEO-optimised site from scratch — pass the business name and one-line brief as arguments.
+- Reference case: `njaccountstax.com` — the site codified in this skill was built in a single working day from `git init` to live custom-domain HTTPS.
+
 Before doing anything, read:
 1. `brand-guidelines.md` — the brand system (voice, colours, type, do's/don'ts)
 2. `project_specs.md` — what we're building and what "done" looks like
