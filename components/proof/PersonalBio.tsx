@@ -3,7 +3,7 @@ import { Card } from '@/components/design-system/Card';
 
 /**
  * "Meet Njock" — the personal bio component.
- * Uses a placeholder headshot if /public/njock.jpg doesn't exist yet.
+ * Uses a placeholder headshot if /public/njock-portrait.webp doesn't exist yet.
  */
 export function PersonalBio({ photoSrc }: { photoSrc?: string }) {
   return (

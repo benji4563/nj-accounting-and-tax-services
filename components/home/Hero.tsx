@@ -32,7 +32,7 @@ export function Hero() {
         </div>
 
         <div className="relative">
-          <BlobImage src="/njock.jpg" alt="Njock Simon Ndum, Co-founder and CEO" />
+          <BlobImage src="/njock-portrait.webp" alt="Njock Simon Ndum, Co-founder and CEO" />
 
           {/* Floating proof card */}
           <div className="absolute bottom-10 left-0 z-20 flex max-w-[240px] items-center gap-3 rounded-card bg-ivory px-5 py-4 shadow-elevated">

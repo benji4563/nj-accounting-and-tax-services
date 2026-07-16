@@ -26,7 +26,7 @@ export default function AboutPage() {
           title={<>You want to know the person doing your books. Fair.</>}
         />
         <div className="mx-auto max-w-content">
-          <PersonalBio photoSrc="/njock.jpg" />
+          <PersonalBio photoSrc="/njock-portrait.webp" />
         </div>
       </Section>
       <Section background="ivory">
