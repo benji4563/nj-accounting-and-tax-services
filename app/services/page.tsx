@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'What we do — Bookkeeping, Tax & Planning',
     description:
       'Four services. Zero jargon. Monthly bookkeeping, tax prep, quarterly planning, audit support.',
-    url: 'https://booksbynj.com/services',
+    url: 'https://njaccountstax.com/services',
   },
 };
 

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: 'https://booksbynj.com/locations/cincinnati',
+    url: 'https://njaccountstax.com/locations/cincinnati',
     type: 'website',
   },
   twitter: {

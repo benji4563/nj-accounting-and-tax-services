@@ -1,6 +1,6 @@
-const SITE_URL = 'https://booksbynj.com';
+const SITE_URL = 'https://njaccountstax.com';
 const BUSINESS_NAME = 'NJ’s Accounting and Tax Services';
-const BUSINESS_EMAIL = 'hello@booksbynj.com';
+const BUSINESS_EMAIL = 'hello@njaccountstax.com';
 const FOUNDER = 'Njock';
 
 export const organizationJsonLd = {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Real prices. No “call for a quote.” | NJ’s Accounting',
     description:
       'Three tiers from $299/mo. Flat monthly pricing for bookkeeping, tax prep, and planning.',
-    url: 'https://booksbynj.com/pricing',
+    url: 'https://njaccountstax.com/pricing',
   },
 };
 

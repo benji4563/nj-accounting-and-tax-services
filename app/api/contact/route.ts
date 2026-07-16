@@ -54,7 +54,7 @@ export async function POST(req: Request) {
     const resend = new Resend(resendKey);
     try {
       await resend.emails.send({
-        from: 'NJ Website <no-reply@booksbynj.com>',
+        from: 'NJ Website <no-reply@njaccountstax.com>',
         to: notifyTo,
         replyTo: email,
         subject: `New lead: ${name}${payload.business_name ? ` (${payload.business_name})` : ''}`,

@@ -1,4 +1,4 @@
-const SITE_URL = 'https://booksbynj.com';
+const SITE_URL = 'https://njaccountstax.com';
 
 const ROUTES: Array<{ path: string; priority: string; changefreq: string }> = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Meet Njock — the person doing your books',
     description:
       'Not a receptionist, not a bot, not a junior. When you email us, Njock is the one who answers.',
-    url: 'https://booksbynj.com/about',
+    url: 'https://njaccountstax.com/about',
   },
 };
 

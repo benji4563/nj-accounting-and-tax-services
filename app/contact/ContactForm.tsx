@@ -33,7 +33,7 @@ export function ContactForm() {
       router.push('/thank-you');
     } catch (err) {
       setError(
-        'We could not send your message. Please try again, or email njock@booksbynj.com directly.'
+        'We could not send your message. Please try again, or email njock@njaccountstax.com directly.'
       );
       setSubmitting(false);
     }

@@ -39,13 +39,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: `https://booksbynj.com/blog/${SLUG}`,
+    url: `https://njaccountstax.com/blog/${SLUG}`,
     type: 'article',
     publishedTime: PUBLISHED,
     authors: ['Njock'],
     images: [
       {
-        url: `https://booksbynj.com${HERO}`,
+        url: `https://njaccountstax.com${HERO}`,
         width: 2560,
         height: 1440,
         alt: 'Small-business owner at her kitchen table with a shoebox of receipts',
@@ -86,8 +86,8 @@ const FAQ = [
   },
 ];
 
-const CANONICAL_URL = `https://booksbynj.com/blog/${SLUG}`;
-const IMAGE_URL = `https://booksbynj.com${HERO}`;
+const CANONICAL_URL = `https://njaccountstax.com/blog/${SLUG}`;
+const IMAGE_URL = `https://njaccountstax.com${HERO}`;
 
 export default function Post() {
   return (

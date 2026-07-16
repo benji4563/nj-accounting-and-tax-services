@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   },
   description:
     'Small-business bookkeeping and tax services. Flat monthly pricing from $299. A real accountant on email. Books current in 30 days — or your next month is free.',
-  metadataBase: new URL('https://booksbynj.com'),
+  metadataBase: new URL('https://njaccountstax.com'),
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Small-Business Bookkeeping & Tax | NJ’s Accounting',
     description:
       'Flat monthly pricing. A real accountant on email. Books current in 30 days — or your next month is free.',
-    url: 'https://booksbynj.com',
+    url: 'https://njaccountstax.com',
     siteName: 'NJ’s Accounting and Tax Services',
     locale: 'en_US',
     type: 'website',

@@ -19,8 +19,8 @@ export function Footer() {
             </p>
             <div className="mt-6 space-y-2 text-body-sm text-lilac/80">
               <div>
-                <a href="mailto:njock@booksbynj.com" className="hover:text-ivory">
-                  njock@booksbynj.com
+                <a href="mailto:njock@njaccountstax.com" className="hover:text-ivory">
+                  njock@njaccountstax.com
                 </a>
               </div>
               <div>Mon&ndash;Fri, 9am&ndash;6pm PT</div>

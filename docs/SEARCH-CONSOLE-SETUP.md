@@ -4,8 +4,8 @@ This site is wired to verify with both Google Search Console and Bing Webmaster 
 
 ## Google Search Console (do this first — most important)
 
-1. **Sign in** at https://search.google.com/search-console with the Google account that owns booksbynj.com.
-2. **Add property → URL prefix** → enter `https://booksbynj.com` (with the `s` in `https`).
+1. **Sign in** at https://search.google.com/search-console with the Google account that owns njaccountstax.com.
+2. **Add property → URL prefix** → enter `https://njaccountstax.com` (with the `s` in `https`).
 3. Google offers several verification methods. Choose **"HTML tag"**.
 4. Google shows a snippet like:
 
@@ -44,7 +44,7 @@ If left unset, the meta tags simply don't render — that's fine.
 
 ## Confirm it's working
 
-After a redeploy, visit https://booksbynj.com and view page source. You should see:
+After a redeploy, visit https://njaccountstax.com and view page source. You should see:
 
 ```html
 <meta name="google-site-verification" content="…" />
@@ -62,4 +62,4 @@ If Search Console still can't verify:
 2. Enter `sitemap.xml` (relative — Google resolves against your property)
 3. Submit. Google reads it, discovers all your URLs, and starts indexing.
 
-The sitemap is auto-generated at [https://booksbynj.com/sitemap.xml](https://booksbynj.com/sitemap.xml) — you don't have to maintain it. Every new page/post added to `app/sitemap.xml/route.ts` shows up automatically.
+The sitemap is auto-generated at [https://njaccountstax.com/sitemap.xml](https://njaccountstax.com/sitemap.xml) — you don't have to maintain it. Every new page/post added to `app/sitemap.xml/route.ts` shows up automatically.

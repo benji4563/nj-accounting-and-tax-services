@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Contact us — book a 15-min discovery call',
     description:
       'Book a time or send a message. Reply within 4 business hours, guaranteed.',
-    url: 'https://booksbynj.com/contact',
+    url: 'https://njaccountstax.com/contact',
   },
 };
 

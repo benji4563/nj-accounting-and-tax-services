@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'NJ’s Accounting — Blog',
     description:
       'Plain-English answers for small-business owners. Bookkeeping, taxes, and the money side of running a business.',
-    url: 'https://booksbynj.com/blog',
+    url: 'https://njaccountstax.com/blog',
     type: 'website',
   },
 };

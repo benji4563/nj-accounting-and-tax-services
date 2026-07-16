@@ -1,7 +1,7 @@
 # NJ's Accounting and Tax Services — Project Specs
 
 **Version:** v3 — 2026-07-15 (locked, building begins)
-**Domain:** `booksbynj.com` (Ben to purchase)
+**Domain:** `njaccountstax.com` (Ben to purchase)
 **Status:** ✅ All decisions locked. Next.js build in progress.
 
 ---
@@ -54,7 +54,7 @@ A marketing website that:
 - Zero "call for a quote" copy anywhere
 - First real inbound lead within **7 days of launch**
 - Lighthouse ≥ 95 (Perf, A11y, BP, SEO)
-- Deployed to Vercel with `booksbynj.com` domain
+- Deployed to Vercel with `njaccountstax.com` domain
 
 ---
 
@@ -256,7 +256,7 @@ All keys go in `.env.local` (never committed).
 - [ ] Lead magnet PDF built + gated behind form
 - [ ] Lighthouse ≥ 95 (Perf, A11y, BP, SEO)
 - [ ] `npm run build` passes clean
-- [ ] Deployed to Vercel with `booksbynj.com` + HTTPS
+- [ ] Deployed to Vercel with `njaccountstax.com` + HTTPS
 - [ ] Njock has received first test lead end-to-end
 - [ ] Njock has been walked through updating `proof_metrics` weekly
 
@@ -270,6 +270,6 @@ Portal, uploads, blog, payments, chatbot, live chat widget (breaks the 4-hour hu
 
 ## 16. Change Log
 
-- **v3 — 2026-07-15** — All open questions answered. Locked: `booksbynj.com` domain, $299/$549/$949 pricing, 4 named guarantees, Njock as CEO/only person, Cal.com booking, launch metrics as starter figures, no testimonials in v1, lead-magnet PDF approved. Next.js build begins.
+- **v3 — 2026-07-15** — All open questions answered. Locked: `njaccountstax.com` domain, $299/$549/$949 pricing, 4 named guarantees, Njock as CEO/only person, Cal.com booking, launch metrics as starter figures, no testimonials in v1, lead-magnet PDF approved. Next.js build begins.
 - **v2 — 2026-07-15** — Problem-first structure, "show-don't-tell" content law, proof-component toolkit, Maya persona. Superseded.
 - **v1 — 2026-07-15** — Initial draft with service-first structure. Superseded.

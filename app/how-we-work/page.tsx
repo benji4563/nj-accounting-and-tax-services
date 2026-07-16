@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'How we work — four guarantees, written into your invoice',
     description:
       '4-hour reply time. Books current in 30 days. One report on the 5th. Every promise measurable.',
-    url: 'https://booksbynj.com/how-we-work',
+    url: 'https://njaccountstax.com/how-we-work',
   },
 };
 

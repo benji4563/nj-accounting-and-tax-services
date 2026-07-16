@@ -1,4 +1,4 @@
-# NJ's Accounting and Tax Services — booksbynj.com
+# NJ's Accounting and Tax Services — njaccountstax.com
 
 Marketing website for **NJ's Accounting and Tax Services** — accounting + tax for US small businesses.
 Built with Next.js, Tailwind, Supabase, Resend, and Cal.com.
@@ -84,7 +84,7 @@ That's it. The `proof_metrics` table gets seeded with the launch defaults (42 cl
 2. Go to [vercel.com/new](https://vercel.com/new) → import the GitHub repo
 3. Paste the same `.env.local` values into Vercel's env-vars UI
 4. Deploy. Vercel gives you a `something.vercel.app` URL immediately
-5. In Vercel → Settings → Domains, add `booksbynj.com` and follow the DNS instructions
+5. In Vercel → Settings → Domains, add `njaccountstax.com` and follow the DNS instructions
 
 ---
 

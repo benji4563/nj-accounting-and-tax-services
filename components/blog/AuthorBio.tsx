@@ -23,10 +23,10 @@ export function AuthorBio() {
           More about Njock
         </Link>
         <a
-          href="mailto:njock@booksbynj.com"
+          href="mailto:njock@njaccountstax.com"
           className="border-b-[1.5px] border-aubergine pb-0.5 font-medium text-aubergine hover:border-persimmon hover:text-persimmon"
         >
-          njock@booksbynj.com
+          njock@njaccountstax.com
         </a>
       </div>
     </aside>
