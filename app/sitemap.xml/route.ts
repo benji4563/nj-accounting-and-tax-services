@@ -10,6 +10,12 @@ const ROUTES: Array<{ path: string; priority: string; changefreq: string }> = [
   { path: '/blog', priority: '0.8', changefreq: 'weekly' },
   { path: '/blog/do-i-need-an-accountant-for-your-small-business', priority: '0.7', changefreq: 'monthly' },
   { path: '/locations/cincinnati', priority: '0.8', changefreq: 'monthly' },
+  { path: '/locations/san-diego', priority: '0.8', changefreq: 'monthly' },
+  { path: '/locations/chicago', priority: '0.8', changefreq: 'monthly' },
+  { path: '/locations/cleveland', priority: '0.8', changefreq: 'monthly' },
+  { path: '/locations/raleigh', priority: '0.8', changefreq: 'monthly' },
+  { path: '/locations/charlotte', priority: '0.8', changefreq: 'monthly' },
+  { path: '/locations/dallas', priority: '0.8', changefreq: 'monthly' },
 ];
 
 export function GET() {

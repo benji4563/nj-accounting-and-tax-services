@@ -1,0 +1,17 @@
+<svg viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>NJ's Accounting and Tax Services</title>
+  <defs>
+    <style>
+      .monogram { font-family: 'Fraunces', serif; font-weight: 500; }
+      .wordmark { font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.02em; }
+    </style>
+  </defs>
+  <!-- NJ Monogram -->
+  <g transform="translate(0, 5)">
+    <path d="M0,80 L0,0 L8,0 L48,60 L48,0 L56,0 L56,80 L48,80 L8,20 L8,80 Z" fill="#2C1E3F"/>
+    <path d="M68,0 L76,0 L76,62 Q76,88 52,88 L40,88 L40,80 L52,80 Q68,80 68,62 Z" fill="#2C1E3F"/>
+    <circle cx="84" cy="6" r="5" fill="#EA5A3D"/>
+  </g>
+  <!-- Wordmark -->
+  <text class="wordmark" x="105" y="62" fill="#2C1E3F" font-size="28">NJ's Accounting &amp; Tax Services</text>
+</svg>

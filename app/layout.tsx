@@ -28,34 +28,38 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/logo-monogram.svg",
+  },
   title: {
-    default: 'Small-Business Bookkeeping & Tax Services | NJ’s Accounting',
-    template: '%s | NJ’s Accounting and Tax Services',
+    default: "Small-Business Bookkeeping & Tax Services | NJ's Accounting",
+    template: "%s | NJ's Accounting and Tax Services",
   },
   description:
-    'Small-business bookkeeping and tax services. Flat monthly pricing from $299. A real accountant on email. Books current in 30 days — or your next month is free.',
-  metadataBase: new URL('https://njaccountstax.com'),
-  alternates: { canonical: '/' },
+    "Small-business bookkeeping and tax services. Flat monthly pricing from $299. A real accountant on email. Books current in 30 days — or your next month is free.",
+  metadataBase: new URL("https://njaccountstax.com"),
+  alternates: { canonical: "/" },
   openGraph: {
-    title: 'Small-Business Bookkeeping & Tax | NJ’s Accounting',
+    title: "Small-Business Bookkeeping & Tax | NJ's Accounting",
     description:
-      'Flat monthly pricing. A real accountant on email. Books current in 30 days — or your next month is free.',
-    url: 'https://njaccountstax.com',
-    siteName: 'NJ’s Accounting and Tax Services',
-    locale: 'en_US',
-    type: 'website',
+      "Flat monthly pricing. A real accountant on email. Books current in 30 days — or your next month is free.",
+    url: "https://njaccountstax.com",
+    siteName: "NJ's Accounting and Tax Services",
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Small-Business Bookkeeping & Tax | NJ’s Accounting',
+    card: "summary_large_image",
+    title: "Small-Business Bookkeeping & Tax | NJ's Accounting",
     description:
-      'Flat monthly pricing. A real accountant on email. 30-day guarantee.',
+      "Flat monthly pricing. A real accountant on email. 30-day guarantee.",
   },
   robots: { index: true, follow: true },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
     other: process.env.BING_SITE_VERIFICATION
-      ? { 'msvalidate.01': process.env.BING_SITE_VERIFICATION }
+      ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
       : undefined,
   },
 };
@@ -70,10 +74,27 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${inter.variable} ${caveat.variable}`}
     >
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/_next/image?url=%2Fnjock-portrait.webp&w=384&q=75"
+          fetchPriority="high"
+          imageSizes="380px"
+        />
+      </head>
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-aubergine focus:px-4 focus:py-2 focus:text-ivory focus:shadow-lg"
+        >
+          Skip to content
+        </a>
         <StructuredData data={organizationJsonLd} />
         <Nav />
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

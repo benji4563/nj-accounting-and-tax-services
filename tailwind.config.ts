@@ -10,6 +10,7 @@ const config: Config = {
       colors: {
         aubergine: '#2C1E3F',
         persimmon: '#EA5A3D',
+        'persimmon-deep': '#A83A16',
         'persimmon-hover': '#D64A2E',
         lilac: '#C4B0DC',
         cream: '#F4EAD5',

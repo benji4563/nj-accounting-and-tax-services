@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LogoMonogram } from '@/components/brand/LogoMonogram';
 import { GuaranteeChip, ALL_GUARANTEES } from '@/components/proof/GuaranteeChip';
 
 export function Footer() {
@@ -9,9 +10,10 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-baseline gap-1.5 font-display text-[24px] font-medium tracking-[-0.02em] text-ivory"
+              className="inline-flex items-center transition-opacity hover:opacity-80"
+              aria-label="NJ's Accounting — Home"
             >
-              NJ<span className="mt-1.5 inline-block h-1.5 w-1.5 rounded-full bg-persimmon" />
+              <LogoMonogram variant="reversed" size={36} />
             </Link>
             <p className="mt-4 max-w-xs text-body-sm text-lilac/90">
               Bookkeeping and tax services for small businesses.

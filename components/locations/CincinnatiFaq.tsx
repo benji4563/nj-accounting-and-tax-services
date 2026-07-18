@@ -27,6 +27,12 @@ export const CINCINNATI_FAQ = [
   },
 ];
 
+const SOURCES = [
+  { label: 'Ohio Department of Taxation', url: 'https://tax.ohio.gov/' },
+  { label: 'IRS Small Business Resources', url: 'https://www.irs.gov/businesses/small-businesses-self-employed' },
+  { label: 'South Dakota v. Wayfair (Nexus)', url: 'https://www.supremecourt.gov/opinions/17pdf/17-494_j4el.pdf' },
+];
+
 export function CincinnatiFaq() {
   return (
     <Section background="cream">
@@ -43,6 +49,24 @@ export function CincinnatiFaq() {
             </div>
           ))}
         </dl>
+
+        <div className="mt-8 rounded-card border border-aubergine/10 bg-ivory/50 px-6 py-5">
+          <div className="text-body-sm font-medium text-aubergine">Helpful resources</div>
+          <ul className="mt-3 space-y-1.5 text-body-sm text-graphite">
+            {SOURCES.map((s) => (
+              <li key={s.url}>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-b border-aubergine/30 pb-0.5 hover:border-persimmon hover:text-persimmon"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </Section>
   );

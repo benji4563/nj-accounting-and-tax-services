@@ -7,6 +7,7 @@ import { StructuredData } from '@/components/seo/StructuredData';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { AuthorBio } from '@/components/blog/AuthorBio';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
+import { BackToTop } from '@/components/blog/BackToTop';
 import {
   blogPostingJsonLd,
   faqPageJsonLd,
@@ -18,7 +19,7 @@ const TITLE = 'Do You Actually Need an Accountant for Your Small Business?';
 const DESCRIPTION =
   'Six honest signs it’s time to hire a small-business accountant, three signs it isn’t, the real cost math, and the questions to ask before you say yes.';
 const PUBLISHED = '2026-07-15';
-const MODIFIED = '2026-07-15';
+const MODIFIED = '2026-07-17';
 const HERO = `/blog/${SLUG}/hero-kitchen-table-shoebox.webp`;
 
 const TOC = [
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
         url: `https://njaccountstax.com${HERO}`,
         width: 2560,
         height: 1440,
-        alt: 'Small-business owner at her kitchen table with a shoebox of receipts',
+        alt: 'Kitchen table with a laptop, a shoebox overflowing with receipts, and scattered invoices',
       },
     ],
   },
@@ -89,6 +90,25 @@ const FAQ = [
 const CANONICAL_URL = `https://njaccountstax.com/blog/${SLUG}`;
 const IMAGE_URL = `https://njaccountstax.com${HERO}`;
 
+const linkClass =
+  'border-b-[1.5px] border-aubergine pb-0.5 font-medium text-aubergine hover:border-persimmon hover:text-persimmon';
+
+// Inline citation to an authoritative external source. Opens in a new tab and
+// drops the referrer/opener for safety — the checklist wants rel="noopener".
+function SourceLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+      {children}
+    </a>
+  );
+}
+
 export default function Post() {
   return (
     <>
@@ -114,7 +134,7 @@ export default function Post() {
       <article>
         {/* HERO */}
         <Section background="cream" className="!pb-10">
-          <nav aria-label="Breadcrumb" className="mb-6 text-body-sm text-graphite/60">
+          <nav aria-label="Breadcrumb" className="mb-6 text-body-sm text-graphite/75">
             <Link href="/" className="hover:text-persimmon">
               Home
             </Link>
@@ -129,10 +149,14 @@ export default function Post() {
           <header className="mb-10 max-w-3xl">
             <div className="section-eyebrow mb-3">For small-business owners</div>
             <h1 className="font-display text-h1 text-aubergine">{TITLE}</h1>
-            <div className="mt-4 flex items-center gap-3 text-body-sm text-graphite/60">
+            <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-body-sm text-graphite/75">
               <time dateTime={PUBLISHED}>July 15, 2026</time>
               <span aria-hidden>·</span>
-              <span>8 min read</span>
+              <span>
+                Updated <time dateTime={MODIFIED}>July 17, 2026</time>
+              </span>
+              <span aria-hidden>·</span>
+              <span>9 min read</span>
               <span aria-hidden>·</span>
               <span>Written by Njock</span>
             </div>
@@ -141,7 +165,7 @@ export default function Post() {
           <figure className="relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-card">
             <Image
               src={HERO}
-              alt="A small-business owner at her kitchen table with a laptop and a shoebox of paper receipts spilling over"
+              alt="Kitchen table with a laptop showing a spreadsheet, a shoebox overflowing with crumpled receipts, iced coffee, and scattered invoices in warm morning light"
               fill
               sizes="(min-width: 1024px) 1024px, 100vw"
               priority
@@ -157,13 +181,13 @@ export default function Post() {
 
             <div className="mb-10 rounded-card border-l-4 border-persimmon bg-ivory p-6 md:p-8">
               <p className="text-body-lg text-aubergine">
-                <strong>Short answer:</strong> probably, if any of these are
-                true — you spent more than eight hours on your books last
-                month, you missed a filing deadline, you can’t answer basic
-                questions about your money, you’re growing fast, you operate
-                in more than one state, or you dread the week before quarterly
-                taxes. If none of that fits, decent software might be enough
-                for now.
+                <strong>Short answer:</strong> you probably need a
+                small-business accountant if any of these are true — you spent
+                more than eight hours on your books last month, you missed a
+                filing deadline, you can’t answer basic questions about your
+                money, you’re growing fast, you operate in more than one
+                state, or you dread the week before quarterly taxes. If none
+                of that fits, decent software might be enough for now.
               </p>
               <p className="mt-4 text-body text-graphite">
                 Most small businesses don’t need a full-time accountant. They
@@ -222,8 +246,12 @@ export default function Post() {
                 <strong className="text-aubergine">
                   2. You’ve missed a deadline or paid a penalty.
                 </strong>{' '}
-                The IRS charges a failure-to-file penalty of 5% of the unpaid
-                tax per month, up to 25%. State penalties stack on top. If
+                The IRS charges a{' '}
+                <SourceLink href="https://www.irs.gov/payments/failure-to-file-penalty">
+                  failure-to-file penalty
+                </SourceLink>{' '}
+                of 5% of the unpaid tax per month, up to 25%. State penalties
+                stack on top. If
                 you’ve paid one of these — even once — an accountant paid
                 itself back the first time you didn’t pay another.
               </li>
@@ -250,9 +278,13 @@ export default function Post() {
                 <strong className="text-aubergine">
                   5. You operate — or sell — in more than one state.
                 </strong>{' '}
-                Sales-tax nexus rules changed in 2018 and most owners haven’t
-                caught up. If you sell online, on Etsy, or through Shopify,
-                you probably owe tax in states you’ve never visited. An
+                Sales-tax nexus rules changed after a{' '}
+                <SourceLink href="https://www.supremecourt.gov/opinions/17pdf/17-494_j4el.pdf">
+                  2018 Supreme Court decision
+                </SourceLink>{' '}
+                and most owners haven’t caught up. If you sell online, on Etsy,
+                or through Shopify, you probably owe tax in states you’ve never
+                visited. An
                 accountant will tell you which ones actually apply to you and
                 where you’re over-collecting.
               </li>
@@ -368,14 +400,20 @@ export default function Post() {
               </li>
               <li>
                 <strong className="text-aubergine">Anticipates.</strong>{' '}
-                Flags the S-corp election, the retirement plan, the SEP IRA
-                — the choices that only pay off if you make them before the
-                calendar turns.
+                Flags the{' '}
+                <SourceLink href="https://www.irs.gov/businesses/small-businesses-self-employed/s-corporations">
+                  S-corp election
+                </SourceLink>
+                , the retirement plan, the SEP IRA — the choices that only pay
+                off if you make them before the calendar turns.
               </li>
               <li>
                 <strong className="text-aubergine">Answers.</strong> Replies
-                to your email in hours, not days, so the small question
-                doesn’t sit in your head for a week.
+                to your email in hours, not days — you can see{' '}
+                <Link href="/how-we-work" className={linkClass}>
+                  exactly what your first 30 days look like
+                </Link>{' '}
+                — so the small question doesn’t sit in your head for a week.
               </li>
             </ul>
           </div>
@@ -664,6 +702,8 @@ export default function Post() {
           </div>
         </Section>
       </article>
+
+      <BackToTop />
     </>
   );
 }

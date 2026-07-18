@@ -14,7 +14,7 @@ type BaseProps = {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    'bg-persimmon text-ivory shadow-persimmon hover:shadow-persimmon-hover hover:-translate-y-0.5 hover:bg-persimmon-hover',
+    'bg-persimmon-deep text-ivory shadow-persimmon hover:shadow-persimmon-hover hover:-translate-y-0.5 hover:bg-persimmon-hover',
   secondary:
     'bg-transparent text-aubergine border-[1.5px] border-aubergine hover:bg-aubergine hover:text-ivory',
   tertiary:

@@ -36,7 +36,7 @@ export function FirstThirtyDays() {
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-aubergine font-display text-[16px] text-ivory">
               {i + 1}
             </div>
-            <div className="mt-4 text-[12px] font-medium uppercase tracking-[0.08em] text-persimmon">
+            <div className="mt-4 text-[12px] font-medium uppercase tracking-[0.08em] text-persimmon-deep">
               {s.when}
             </div>
             <div className="mt-2 font-display text-[18px] font-medium leading-tight text-aubergine">

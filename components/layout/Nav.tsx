@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@/components/design-system/Button';
+import { LogoMonogram } from '@/components/brand/LogoMonogram';
 
 const NAV_LINKS = [
   { href: '/services', label: 'Services' },
@@ -15,9 +15,13 @@ export function Nav() {
       <div className="container-content flex items-center justify-between py-5">
         <Link
           href="/"
-          className="flex items-baseline gap-1.5 font-display text-[22px] font-medium tracking-[-0.02em] text-aubergine transition-colors hover:text-persimmon"
+          className="flex items-center gap-2.5 transition-opacity hover:opacity-80"
+          aria-label="NJ's Accounting — Home"
         >
-          NJ<span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-persimmon" />
+          <LogoMonogram size={32} />
+          <span className="hidden font-display text-[15px] font-medium tracking-[-0.01em] text-aubergine sm:inline">
+            NJ&#39;s Accounting
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">

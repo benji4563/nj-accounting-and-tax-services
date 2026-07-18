@@ -58,7 +58,7 @@ export function PricingPreview() {
             )}
           >
             {t.featured && (
-              <span className="absolute -top-3 right-5 rounded-full bg-persimmon px-3 py-1 text-[11px] font-medium uppercase tracking-[0.06em] text-ivory">
+              <span className="absolute -top-3 right-5 rounded-full bg-persimmon-deep px-3 py-1 text-[11px] font-medium uppercase tracking-[0.06em] text-ivory">
                 Most chosen
               </span>
             )}
@@ -87,7 +87,7 @@ export function PricingPreview() {
               )}
             >
               ${t.price}
-              <span className="text-[15px] font-normal opacity-60">/mo</span>
+              <span className="text-[15px] font-normal opacity-75">/mo</span>
             </div>
 
             <ul className="my-7 flex-1 space-y-3">
@@ -117,7 +117,7 @@ export function PricingPreview() {
               className={cn(
                 'block rounded py-3 text-center text-body-sm font-medium transition-all duration-200',
                 t.featured
-                  ? 'bg-persimmon text-ivory hover:bg-persimmon-hover'
+                  ? 'bg-persimmon-deep text-ivory hover:bg-persimmon-hover'
                   : 'border-[1.5px] border-aubergine text-aubergine hover:bg-aubergine hover:text-ivory'
               )}
             >

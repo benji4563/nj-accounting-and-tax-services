@@ -80,7 +80,7 @@ export default function BlogIndex() {
                   priority
                 />
               </div>
-              <div className="mb-3 flex items-center gap-3 text-body-sm text-graphite/60">
+              <div className="mb-3 flex items-center gap-3 text-body-sm text-graphite/75">
                 <time dateTime={post.date}>{formatDate(post.date)}</time>
                 <span aria-hidden>·</span>
                 <span>{post.minutes} min read</span>

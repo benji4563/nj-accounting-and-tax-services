@@ -47,6 +47,6 @@
   }
 
   .section-eyebrow {
-    @apply text-persimmon text-[12px] font-medium tracking-[0.08em] uppercase;
+    @apply text-persimmon-deep text-[12px] font-medium tracking-[0.08em] uppercase;
   }
 }

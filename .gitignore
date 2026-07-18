@@ -29,6 +29,7 @@ yarn-debug.log*
 
 # Next.js typegen
 next-env.d.ts
+tsconfig.tsbuildinfo
 
 # Obsidian workspace state (keep the vault content, ignore Obsidian's own UI state)
 .obsidian/workspace*

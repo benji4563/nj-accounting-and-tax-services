@@ -29,7 +29,7 @@ export async function LiveCounter() {
             {item.value}
           </div>
           <div className="mt-2 text-body-sm text-graphite/70">{item.label}</div>
-          <div className="mt-1 text-[11px] uppercase tracking-[0.06em] text-graphite/50">
+          <div className="mt-1 text-[11px] uppercase tracking-[0.06em] text-graphite/75">
             {item.note}
           </div>
         </div>

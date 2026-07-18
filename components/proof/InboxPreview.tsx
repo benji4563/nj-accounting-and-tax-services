@@ -9,7 +9,7 @@ export function InboxPreview() {
         <div className="font-display text-[18px] font-medium text-aubergine">
           March 2026 Report
         </div>
-        <div className="text-[11px] uppercase tracking-[0.06em] text-graphite/60">
+        <div className="text-[11px] uppercase tracking-[0.06em] text-graphite/75">
           Delivered April 5
         </div>
       </div>
@@ -49,7 +49,7 @@ function Stat({
 }) {
   return (
     <div>
-      <div className="text-[11px] uppercase tracking-[0.06em] text-graphite/60">
+      <div className="text-[11px] uppercase tracking-[0.06em] text-graphite/75">
         {label}
       </div>
       <div className="mt-1 font-display text-[20px] text-aubergine">{value}</div>
@@ -57,7 +57,7 @@ function Stat({
         className={
           positive || trend.startsWith('+')
             ? 'text-[11px] text-sage'
-            : 'text-[11px] text-persimmon'
+            : 'text-[11px] text-persimmon-deep'
         }
       >
         {trend} vs last month

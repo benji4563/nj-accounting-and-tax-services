@@ -4,7 +4,15 @@ import { Emphasis } from '@/components/signature/UnderlineSwoosh';
 import { BlobImage } from '@/components/signature/BlobImage';
 import { ResponseTimeBadge } from '@/components/proof/ResponseTimeBadge';
 
-export function CincinnatiHero() {
+type Props = {
+  cityName: string;
+  slug: string;
+  description: string;
+  floatingHeadline: string;
+  floatingSubline: string;
+};
+
+export function CityHero({ cityName, slug, description, floatingHeadline, floatingSubline }: Props) {
   return (
     <section className="relative overflow-hidden bg-cream">
       <div className="container-content grid gap-12 py-20 md:grid-cols-[1.15fr_1fr] md:py-24 lg:gap-16">
@@ -12,7 +20,7 @@ export function CincinnatiHero() {
           <nav aria-label="Breadcrumb" className="mb-6 text-body-sm text-graphite/75">
             <Link href="/" className="hover:text-persimmon">Home</Link>
             <span aria-hidden className="mx-2">/</span>
-            <Link href="/locations/cincinnati" className="hover:text-persimmon">Cincinnati</Link>
+            <Link href={`/locations/${slug}`} className="hover:text-persimmon">{cityName}</Link>
           </nav>
 
           <ResponseTimeBadge />
@@ -21,15 +29,11 @@ export function CincinnatiHero() {
             A small-business{' '}
             <Emphasis>accountant</Emphasis>
             <br />
-            in <Emphasis>Cincinnati</Emphasis>.
+            in <Emphasis>{cityName}</Emphasis>.
           </h1>
 
           <p className="mt-8 max-w-[480px] text-body-lg text-graphite">
-            Monthly bookkeeping and tax preparation for Cincinnati small
-            businesses &mdash; from Over-the-Rhine to Hyde Park to
-            everywhere in between. Flat monthly pricing. A real person you
-            can email. Books current within 30 days &mdash; or your next
-            month is free.
+            {description}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-6">
@@ -52,9 +56,9 @@ export function CincinnatiHero() {
             />
             <div className="text-body-sm">
               <div className="font-display text-[15px] font-medium text-aubergine">
-                Serving Cincinnati &amp; Hamilton County
+                {floatingHeadline}
               </div>
-              <div className="text-graphite/70">Local expertise, remote-friendly delivery.</div>
+              <div className="text-graphite/70">{floatingSubline}</div>
             </div>
           </div>
         </div>
