@@ -127,22 +127,40 @@ def check(src, path, keyword):
         # locate the answer box, which is where the first body copy starts
         idx = text.lower().find("short answer")
         window = text[idx:idx + 900] if idx >= 0 else text[:900]
-        first100 = " ".join(window.split()[:100]).lower()
-        kw = keyword.lower()
-        add("PASS" if kw in first100 else "FAIL",
-            "Primary keyword in first 100 words",
-            "" if kw in first100 else f"'{keyword}' not found in opening")
+        first100 = " ".join(window.split()[:100])
 
-        add("PASS" if kw in title.lower() else "WARN",
+        # Match on content terms, not an exact substring. Search engines
+        # normalise "W-2"/"w2" and tolerate word order, so demanding a literal
+        # match would fail correctly-typeset copy and train people to ignore
+        # this check. Require every meaningful term to be present instead.
+        STOP = {"a", "an", "the", "you", "your", "i", "my", "can", "do", "does",
+                "is", "are", "to", "of", "for", "and", "or", "it", "if", "in",
+                "on", "with", "what", "how", "when", "should", "will", "be"}
+
+        def terms(s):
+            s = re.sub(r"[^a-z0-9\s]", "", s.lower().replace("-", ""))
+            return [t for t in s.split() if t not in STOP]
+
+        def covers(haystack, kw):
+            hay = set(terms(haystack))
+            need = terms(kw)
+            return need and all(t in hay for t in need)
+
+        missing_terms = [t for t in terms(keyword)
+                         if t not in set(terms(first100))]
+        add("PASS" if covers(first100, keyword) else "FAIL",
+            "Primary keyword in first 100 words",
+            "" if covers(first100, keyword)
+            else f"missing term(s): {', '.join(missing_terms)}")
+
+        add("PASS" if covers(title, keyword) else "WARN",
             "Primary keyword in title")
-        add("PASS" if kw in desc.lower() else "WARN",
+        add("PASS" if covers(desc, keyword) else "WARN",
             "Primary keyword in meta description")
 
         slug_m = re.search(r"const SLUG\s*=\s*['\"]([^'\"]+)['\"]", src)
         slug = slug_m.group(1) if slug_m else ""
-        kw_slug = re.sub(r"[^a-z0-9]+", "-", kw).strip("-")
-        head = "-".join(kw_slug.split("-")[:3])
-        add("PASS" if head and head in slug else "WARN",
+        add("PASS" if covers(slug.replace("-", " "), keyword) else "WARN",
             "Primary keyword in slug", f"slug='{slug}'")
 
     # ---------- links ----------

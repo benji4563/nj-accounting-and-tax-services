@@ -29,6 +29,17 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: 'can-you-do-taxes-without-w2',
+    title: 'Can you do taxes without a W-2? Yes — here’s exactly how',
+    excerpt:
+      'The IRS has a form for exactly this. How Form 4852 works, how to pull your wage data free, and why waiting costs ten times more than owing.',
+    date: '2026-07-22',
+    minutes: 9,
+    cover: '/blog/can-you-do-taxes-without-w2/hero-missing-w2-paperwork.webp',
+    coverAlt:
+      'A torn-open IRS envelope, a fan of paper pay stubs, and a laptop showing a blank tax form on a kitchen table',
+  },
+  {
     slug: 'do-i-need-an-accountant-for-your-small-business',
     title: 'Do you actually need an accountant for your small business?',
     excerpt:
