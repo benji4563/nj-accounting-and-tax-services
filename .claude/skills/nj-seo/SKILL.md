@@ -30,13 +30,35 @@ Read these two before writing a single line of copy:
 python .claude/skills/nj-seo/scripts/pick_keyword.py --top 5
 ```
 
-Reads `keyword-clusters.csv` (falling back to
-`Service and Phrase Keywords.csv`), drops every primary already listed in
-`used-keywords.md`, filters noise that will never convert for an accounting
-firm — job seekers, recruiters, competitor and software brand names,
-navigational queries, and `near me` searches that the city pages already own —
-then ranks what's left by volume discounted for difficulty, nudged by
-commercial CPC and question-shaped phrasing.
+Unions the **curated** cluster files (`keyword-clusters.csv` +
+`keyword-clusters-expanded.csv`), then filters:
+
+- primaries already spent, per `used-keywords.md`
+- **near-duplicates of spent primaries** — "can i file my taxes without a w2"
+  is the same intent as the already-published "can you do taxes without w2".
+  Writing a post per variant splits ranking signals across near-identical
+  pages instead of concentrating them. Variants belong in the existing post's
+  H2s and FAQ, not in a new post.
+- categories a prior triage pass deliberately parked in
+  `keyword-clusters-full.csv` (clusters I/J/K/L/M — social and login noise,
+  state sales-tax lookups Google answers itself, banking products, careers,
+  competitor brands)
+- the noise regex — job seekers, recruiters, software and competitor brands,
+  navigational queries, and `near me` searches the city pages already own
+
+Then ranks by volume discounted for difficulty, nudged by commercial CPC and
+question-shaped phrasing.
+
+**`Service and Phrase Keywords.csv` (the raw export) is excluded by default,
+and that is deliberate.** It was seeded on the bare word "accounting", so it
+is dominated by queries an accounting firm's *buyer* would never type —
+bank products ("do checking accounts earn interest", 2,400/mo), quality-
+process and IT audits ("layered process audit", 3,600/mo), academic theory,
+careers, and competitor brand names. Several of those outrank every genuine
+keyword on raw volume, so including them would hand an unattended run a post
+about checking-account interest rates on an accounting firm's blog. Pass
+`--include-raw` only when a human is doing keyword research; never for
+auto-pick.
 
 Take the user's keyword if they named one. Otherwise present the top few and
 let them choose — do not silently pick for them, since keyword choice is a

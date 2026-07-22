@@ -30,9 +30,24 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 PROJECT = os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))
 KW_DIR = os.path.join(PROJECT, "Keywords for accountant")
 
-CLUSTERS_CSV = os.path.join(KW_DIR, "keyword-clusters.csv")
+# Cluster files are the curated, hand-triaged sources — read every one of
+# them and union the result. (This used to read only keyword-clusters.csv and
+# fall back to the raw export only if that file was empty, which silently
+# hid keyword-clusters-expanded.csv entirely.)
+CLUSTER_CSVS = [
+    os.path.join(KW_DIR, "keyword-clusters.csv"),
+    os.path.join(KW_DIR, "keyword-clusters-expanded.csv"),
+]
 FULL_CSV = os.path.join(KW_DIR, "Service and Phrase Keywords.csv")
+CLUSTERS_FULL_CSV = os.path.join(KW_DIR, "keyword-clusters-full.csv")
 USED_MD = os.path.join(KW_DIR, "used-keywords.md")
+
+# keyword-clusters-full.csv is a prior triage pass that explicitly parked
+# whole categories as "skip". Those decisions were deliberate and expensive to
+# re-derive, so honour them rather than letting the raw export resurrect the
+# junk: social/login noise, state sales-tax lookups Google answers itself,
+# banking products, careers, and competitor brand names.
+SKIP_CLUSTER_PREFIXES = ("I.", "J.", "K.", "L.", "M.")
 
 # Intent that will never become a client. An accounting firm does not want
 # to rank for people looking for a job, a competitor, or QuickBooks support.
@@ -75,6 +90,43 @@ def load_used():
     return used
 
 
+# Words that carry no topical weight — two keywords differing only in these
+# are the same search intent wearing different clothes.
+_STOP = {"a", "an", "the", "you", "your", "i", "my", "me", "can", "do", "does",
+         "did", "is", "are", "was", "to", "of", "for", "and", "or", "it", "if",
+         "in", "on", "with", "what", "how", "when", "should", "will", "be",
+         "have", "has", "get", "got", "am"}
+
+
+def terms(s):
+    """Content terms only, hyphen-insensitive: 'W-2' and 'w2' are one term."""
+    s = re.sub(r"[^a-z0-9\s]", "", norm(s).replace("-", ""))
+    return frozenset(t for t in s.split() if t not in _STOP)
+
+
+def is_near_dupe(candidate, used_terms):
+    """True if this keyword would cannibalise a post we already published.
+
+    "can you do taxes without w2", "can i file my taxes without a w2" and
+    "can you do your taxes without a w2" are one query. Writing a post per
+    variant splits ranking signals across near-identical pages instead of
+    concentrating them — the classic cannibalisation own-goal. One post per
+    intent; the variants belong in that post's H2s and FAQ.
+    """
+    c = terms(candidate)
+    if not c:
+        return False
+    for u in used_terms:
+        if not u:
+            continue
+        if c <= u or u <= c:
+            return True
+        overlap = len(c & u) / len(c | u)
+        if overlap >= 0.6:
+            return True
+    return False
+
+
 def to_num(v, default=0.0):
     try:
         return float(str(v).replace(",", "").strip() or default)
@@ -82,35 +134,71 @@ def to_num(v, default=0.0):
         return default
 
 
-def load_rows():
-    """Prefer the clustered CSV; fall back to the raw research export."""
-    rows = []
-    if os.path.exists(CLUSTERS_CSV):
-        with open(CLUSTERS_CSV, encoding="utf-8-sig") as f:
+def load_parked():
+    """Keywords a prior triage pass deliberately parked in a skip cluster."""
+    parked = set()
+    if not os.path.exists(CLUSTERS_FULL_CSV):
+        return parked
+    with open(CLUSTERS_FULL_CSV, encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            cl = (r.get("cluster") or "").strip()
+            if cl.startswith(SKIP_CLUSTER_PREFIXES):
+                parked.add(norm(r.get("keyword")))
+    return parked
+
+
+def load_rows(include_raw=False):
+    """Union every curated cluster file. The raw export is opt-in only.
+
+    The raw research export is seeded on the word "accounting", so it is
+    dominated by things an accounting *firm's buyer* would never search:
+    bank-product questions ("do checking accounts earn interest"), quality-
+    process and IT audits ("layered process audit"), academic theory,
+    careers, and competitor brand names. Several of those outrank every
+    genuine keyword on volume, so including them by default would hand an
+    unattended run a post about checking-account interest rates. Pass
+    --include-raw when doing human keyword research; never for auto-pick.
+    """
+    rows, seen = [], set()
+
+    for path in CLUSTER_CSVS:
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8-sig") as f:
             for r in csv.DictReader(f):
+                kw = (r.get("keyword") or "").strip()
+                if not kw or norm(kw) in seen:
+                    continue
+                seen.add(norm(kw))
                 rows.append({
-                    "keyword": (r.get("keyword") or "").strip(),
+                    "keyword": kw,
                     "cluster": (r.get("cluster") or "").strip(),
                     "intent": (r.get("intent") or "").strip(),
                     "volume": to_num(r.get("volume")),
                     "kd": to_num(r.get("kd")),
                     "cpc": to_num(r.get("cpc_usd")),
                     "serp": (r.get("serp_features") or "").strip(),
-                    "source": "clusters",
+                    "source": os.path.basename(path),
                 })
-    if not rows and os.path.exists(FULL_CSV):
+
+    if include_raw and os.path.exists(FULL_CSV):
         with open(FULL_CSV, encoding="utf-8-sig") as f:
             for r in csv.DictReader(f):
+                kw = (r.get("Keyword") or "").strip()
+                if not kw or norm(kw) in seen:
+                    continue
+                seen.add(norm(kw))
                 rows.append({
-                    "keyword": (r.get("Keyword") or "").strip(),
+                    "keyword": kw,
                     "cluster": (r.get("Topic") or r.get("Seed keyword") or "").strip(),
                     "intent": (r.get("Intent") or "").strip(),
                     "volume": to_num(r.get("Volume")),
                     "kd": to_num(r.get("Keyword Difficulty")),
                     "cpc": to_num(r.get("CPC (USD)")),
                     "serp": (r.get("SERP Features") or "").strip(),
-                    "source": "full",
+                    "source": "raw-export",
                 })
+
     return [r for r in rows if r["keyword"]]
 
 
@@ -166,18 +254,29 @@ def main():
     ap.add_argument("--cluster", default=None, help="only clusters containing this text")
     ap.add_argument("--pick", default=None, help="full brief for this exact keyword")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--include-raw", action="store_true",
+                    help="also pull the raw research export "
+                         "(research only — see load_rows docstring)")
     args = ap.parse_args()
 
-    rows = load_rows()
+    rows = load_rows(include_raw=args.include_raw)
     if not rows:
         print(f"No keyword CSV found in {KW_DIR}", file=sys.stderr)
         return 1
 
     used = load_used()
+    parked = load_parked()
+    used_terms = [terms(u) for u in used]
     pool = []
     for r in rows:
         k = norm(r["keyword"])
         if k in used:
+            continue
+        if is_near_dupe(r["keyword"], used_terms):
+            continue
+        if k in parked:
+            continue
+        if r["cluster"].startswith(SKIP_CLUSTER_PREFIXES):
             continue
         if NOISE_RE.search(r["keyword"]):
             continue
