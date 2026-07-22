@@ -20,6 +20,7 @@ Run from anywhere; paths resolve relative to this file.
 
 import argparse
 import csv
+import glob
 import json
 import os
 import re
@@ -34,10 +35,14 @@ KW_DIR = os.path.join(PROJECT, "Keywords for accountant")
 # them and union the result. (This used to read only keyword-clusters.csv and
 # fall back to the raw export only if that file was empty, which silently
 # hid keyword-clusters-expanded.csv entirely.)
-CLUSTER_CSVS = [
-    os.path.join(KW_DIR, "keyword-clusters.csv"),
-    os.path.join(KW_DIR, "keyword-clusters-expanded.csv"),
-]
+def _cluster_csvs():
+    """Every keyword-clusters*.csv except the triage file, newest name last.
+
+    Globbed rather than hardcoded so a new curated file is picked up the
+    moment it lands, instead of being silently ignored.
+    """
+    found = sorted(glob.glob(os.path.join(KW_DIR, "keyword-clusters*.csv")))
+    return [p for p in found if not p.endswith("keyword-clusters-full.csv")]
 FULL_CSV = os.path.join(KW_DIR, "Service and Phrase Keywords.csv")
 CLUSTERS_FULL_CSV = os.path.join(KW_DIR, "keyword-clusters-full.csv")
 USED_MD = os.path.join(KW_DIR, "used-keywords.md")
@@ -161,7 +166,7 @@ def load_rows(include_raw=False):
     """
     rows, seen = [], set()
 
-    for path in CLUSTER_CSVS:
+    for path in _cluster_csvs():
         if not os.path.exists(path):
             continue
         with open(path, encoding="utf-8-sig") as f:
@@ -178,6 +183,7 @@ def load_rows(include_raw=False):
                     "kd": to_num(r.get("kd")),
                     "cpc": to_num(r.get("cpc_usd")),
                     "serp": (r.get("serp_features") or "").strip(),
+                    "target": (r.get("page_target") or "").strip(),
                     "source": os.path.basename(path),
                 })
 
@@ -196,6 +202,7 @@ def load_rows(include_raw=False):
                     "kd": to_num(r.get("Keyword Difficulty")),
                     "cpc": to_num(r.get("CPC (USD)")),
                     "serp": (r.get("SERP Features") or "").strip(),
+                    "target": "",
                     "source": "raw-export",
                 })
 
@@ -254,6 +261,9 @@ def main():
     ap.add_argument("--cluster", default=None, help="only clusters containing this text")
     ap.add_argument("--pick", default=None, help="full brief for this exact keyword")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--service-pages", action="store_true",
+                    help="list service/niche landing-page targets instead of "
+                         "blog-post targets")
     ap.add_argument("--include-raw", action="store_true",
                     help="also pull the raw research export "
                          "(research only — see load_rows docstring)")
@@ -279,6 +289,13 @@ def main():
         if r["cluster"].startswith(SKIP_CLUSTER_PREFIXES):
             continue
         if NOISE_RE.search(r["keyword"]):
+            continue
+        # Commercial "X accounting services" terms belong on a service or
+        # niche landing page, not a blog post. Ranking a post for them would
+        # also compete with the page that should own them.
+        if not args.service_pages and "service" in r.get("target", "").lower():
+            continue
+        if args.service_pages and "service" not in r.get("target", "").lower():
             continue
         if r["volume"] < 30:          # too thin to justify a full post
             continue
