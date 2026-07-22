@@ -29,11 +29,19 @@ export function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error('Something went wrong');
+      if (!res.ok) {
+        // The API explains exactly what went wrong and how else to reach us.
+        // Prefer its message over a generic one so the visitor is not left
+        // guessing whether we received anything.
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.error || 'Something went wrong');
+      }
       router.push('/thank-you');
     } catch (err) {
       setError(
-        'We could not send your message. Please try again, or email njock@njaccountstax.com directly.'
+        err instanceof Error && err.message !== 'Something went wrong'
+          ? err.message
+          : 'We could not send your message. Please try again, or email njock@njaccountstax.com directly.'
       );
       setSubmitting(false);
     }

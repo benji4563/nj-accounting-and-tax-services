@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Fraunces, Inter, Caveat } from 'next/font/google';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
+import { AskAboutMe } from '@/components/layout/AskAboutMe';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { organizationJsonLd } from '@/lib/structured-data';
 import './globals.css';
@@ -95,6 +96,7 @@ export default function RootLayout({
         <main id="main-content" tabIndex={-1}>
           {children}
         </main>
+        <AskAboutMe />
         <Footer />
       </body>
     </html>
