@@ -34,3 +34,6 @@ tsconfig.tsbuildinfo
 # Obsidian workspace state (keep the vault content, ignore Obsidian's own UI state)
 .obsidian/workspace*
 .obsidian/appearance.json
+
+# Word/Office lock & temp files
+~$*

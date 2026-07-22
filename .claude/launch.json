@@ -6,6 +6,13 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "command-center",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:\\Users\\hp\\Documents\\AFRISHIELD\\command-center\\server.js"],
+      "port": 4780,
+      "autoPort": true
     }
   ]
 }

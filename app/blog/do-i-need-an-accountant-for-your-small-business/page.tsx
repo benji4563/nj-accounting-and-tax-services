@@ -195,28 +195,26 @@ export default function Post() {
               </p>
             </div>
 
-            <div className="prose-post">
-              <p>
-                It’s eleven at night and Priya — I’ll call her Priya — is at
-                her kitchen table with a laptop, a mug of coffee she stopped
-                drinking two hours ago, and a shoebox of receipts she hasn’t
-                looked at since March. She runs a small bakery. She’s
-                brilliant at cardamom rolls. She is, at this exact moment,
-                trying to work out whether the coffee her supplier sent as a
-                thank-you counts as “office supplies,” “gifts received,”
-                or a category the software is asking her to invent.
-              </p>
-              <p>
-                She isn’t bad at business. She’s just doing a second job at
-                night that isn’t her business.
-              </p>
-              <p>
-                That’s the moment most small-business owners start googling
-                the question you just googled. Not because they’re failing —
-                because they’re succeeding faster than their spreadsheets
-                can keep up.
-              </p>
-            </div>
+            <p className="text-body text-graphite">
+              It’s eleven at night and Priya — I’ll call her Priya — is at
+              her kitchen table with a laptop, a mug of coffee she stopped
+              drinking two hours ago, and a shoebox of receipts she hasn’t
+              looked at since March. She runs a small bakery. She’s
+              brilliant at cardamom rolls. She is, at this exact moment,
+              trying to work out whether the coffee her supplier sent as a
+              thank-you counts as “office supplies,” “gifts received,”
+              or a category the software is asking her to invent.
+            </p>
+            <p className="mt-4 text-body text-graphite">
+              She isn’t bad at business. She’s just doing a second job at
+              night that isn’t her business.
+            </p>
+            <p className="mt-4 text-body text-graphite">
+              That’s the moment most small-business owners start googling
+              the question you just googled. Not because they’re failing —
+              because they’re succeeding faster than their spreadsheets
+              can keep up.
+            </p>
           </div>
         </Section>
 
