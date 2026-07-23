@@ -19,6 +19,7 @@ Read these two before writing a single line of copy:
 |---|---|
 | `.claude/skills/nj-seo/references/page-template.md` | The exact JSX skeleton, section order, and the rules that are easy to break |
 | `.claude/skills/nj-seo/references/voice-and-humor.md` | The five voice moves, the humour rule, banned words, honesty constraints |
+| `.claude/skills/nj-seo/references/ask-about-me-block.md` | The sitewide "Ask all about me" AI-provider block (ChatGPT / Claude / Perplexity / Gemini) — part of the standard layout |
 
 ---
 
