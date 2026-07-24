@@ -1,0 +1,14 @@
+{
+  "_comment": "Per-client DataForSEO settings. To stand up a new client, copy this file and change these values — the code in dataforseo_client.py has no client-specific knowledge in it.",
+
+  "client": "NJ's Accounting and Tax Services",
+
+  "keyword_dir": "Keywords for accountant",
+  "cluster_glob": "keyword-clusters*.csv",
+
+  "location_code": 2840,
+  "language_code": "en",
+
+  "budget_floor_usd": 0.10,
+  "max_spend_per_run_usd": 0.25
+}

@@ -139,6 +139,22 @@ def to_num(v, default=0.0):
         return default
 
 
+def to_num_or_none(v):
+    """Like to_num but distinguishes "no data" from zero.
+
+    The dfs_* columns are blank for keywords DataForSEO has never returned,
+    and a blank must not read as a volume of 0 — that would make an unverified
+    keyword look like a dead one.
+    """
+    text = str(v or "").replace(",", "").strip()
+    if not text:
+        return None
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
 def load_parked():
     """Keywords a prior triage pass deliberately parked in a skip cluster."""
     parked = set()
@@ -185,6 +201,11 @@ def load_rows(include_raw=False):
                     "serp": (r.get("serp_features") or "").strip(),
                     "target": (r.get("page_target") or "").strip(),
                     "source": os.path.basename(path),
+                    # Written by refresh_volumes.py, alongside (never over) the
+                    # export's own numbers. Absent until a refresh has run.
+                    "dfs_volume": to_num_or_none(r.get("dfs_volume")),
+                    "dfs_kd": to_num_or_none(r.get("dfs_kd")),
+                    "dfs_updated": (r.get("dfs_updated") or "").strip(),
                 })
 
     if include_raw and os.path.exists(FULL_CSV):
@@ -227,6 +248,28 @@ def score(r):
     if re.match(r"^(what|why|how|when|do|does|is|are|should|can)\b", r["keyword"], re.I):
         s *= 1.20
     return s
+
+
+def dfs_note(r):
+    """One-line reality check on the export's volume, or "" if there's nothing to say.
+
+    Ranking deliberately still runs on the export's numbers — DataForSEO
+    measures volume differently, so swapping the inputs would silently rewrite
+    every past decision. This only surfaces disagreement for a human to judge.
+    """
+    new = r.get("dfs_volume")
+    if new is None:
+        return "not yet checked against DataForSEO - run refresh_volumes.py"
+    old = r.get("volume") or 0
+    stamp = r.get("dfs_updated") or "?"
+    kd = r.get("dfs_kd")
+    kd_text = f", KD {int(kd)}" if kd is not None else ""
+    if not old:
+        return f"DataForSEO says {int(new)}/mo{kd_text} ({stamp})"
+    delta = (new - old) / old
+    verdict = "confirms" if abs(delta) < 0.30 else "DISAGREES with"
+    return (f"DataForSEO {verdict} the export: {int(new)}/mo vs {int(old)} "
+            f"({delta:+.0%}{kd_text}, {stamp})")
 
 
 def build_cluster(rows, primary, limit=14):
@@ -335,6 +378,9 @@ def main():
             print(f"CLUSTER   {p['cluster']}")
             print(f"METRICS   vol {int(p['volume'])} · KD {int(p['kd'])} · "
                   f"CPC ${p['cpc']:.2f} · {p['intent']}")
+            verify = dfs_note(p)
+            if verify:
+                print(f"VERIFY    {verify}")
             print(f"SERP      {p['serp']}")
             print("\nSUPPORTING KEYWORDS (candidate H2s / FAQ questions):")
             for s in brief["supporting"]:
