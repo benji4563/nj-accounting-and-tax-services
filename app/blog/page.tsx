@@ -29,6 +29,17 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: 'fund-accounting',
+    title: 'What is fund accounting? A plain-English guide for nonprofits',
+    excerpt:
+      'Fund accounting tracks donations and grants by purpose instead of one bank total. What it means, when a spreadsheet still works, and when a CPA has to sign off.',
+    date: '2026-07-25',
+    minutes: 9,
+    cover: '/blog/fund-accounting/hero-ledger-and-fund-folders.webp',
+    coverAlt:
+      'A worn ledger book, folders labeled Donations, Expenses and Volunteers, and an old adding machine with curling paper tape on a sunlit wooden desk',
+  },
+  {
     slug: 'can-you-do-taxes-without-w2',
     title: 'Can you do taxes without a W-2? Yes — here’s exactly how',
     excerpt:

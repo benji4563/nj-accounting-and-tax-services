@@ -23,3 +23,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-07-17 | accounting firms charlotte nc | /locations/charlotte | City landing page — Charlotte, NC (210/mo) |
 | 2026-07-17 | top accounting firms in dallas | /locations/dallas | City landing page — Dallas, TX (210/mo) |
 | 2026-07-22 | can you do taxes without w2 | /blog/can-you-do-taxes-without-w2 | E. Behind on taxes / haven't filed (audit-support intent) |
+| 2026-07-25 | fund accounting | /blog/fund-accounting | O. Nonprofit & fund accounting |

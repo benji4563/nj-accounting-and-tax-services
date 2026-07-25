@@ -8,6 +8,7 @@ const ROUTES: Array<{ path: string; priority: string; changefreq: string }> = [
   { path: '/about', priority: '0.7', changefreq: 'monthly' },
   { path: '/contact', priority: '0.9', changefreq: 'yearly' },
   { path: '/blog', priority: '0.8', changefreq: 'weekly' },
+  { path: '/blog/fund-accounting', priority: '0.7', changefreq: 'monthly' },
   { path: '/blog/do-i-need-an-accountant-for-your-small-business', priority: '0.7', changefreq: 'monthly' },
   { path: '/blog/can-you-do-taxes-without-w2', priority: '0.7', changefreq: 'monthly' },
   { path: '/locations/cincinnati', priority: '0.8', changefreq: 'monthly' },
