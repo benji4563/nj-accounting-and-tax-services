@@ -29,6 +29,17 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: 'cash-basis-accounting',
+    title: 'Cash Basis Accounting: What It Is and When It Works',
+    excerpt:
+      'Cash basis accounting counts money when it moves, not when it’s earned. What it means, who has to switch to accrual, and when it’s smart to do it anyway.',
+    date: '2026-07-29',
+    minutes: 9,
+    cover: '/blog/cash-basis-accounting/hero-cash-drawer-and-ledger.webp',
+    coverAlt:
+      'An open cash drawer with neatly stacked bills and coins beside a spiral notebook of hand-ruled daily totals and a fan of paper receipts, on a sunlit wooden counter',
+  },
+  {
     slug: 'fund-accounting',
     title: 'What is fund accounting? A plain-English guide for nonprofits',
     excerpt:
