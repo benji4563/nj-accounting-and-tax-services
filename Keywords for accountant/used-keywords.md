@@ -25,3 +25,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-07-22 | can you do taxes without w2 | /blog/can-you-do-taxes-without-w2 | E. Behind on taxes / haven't filed (audit-support intent) |
 | 2026-07-25 | fund accounting | /blog/fund-accounting | O. Nonprofit & fund accounting |
 | 2026-07-29 | cash basis accounting | /blog/cash-basis-accounting | N. Accounting methods — cash vs accrual |
+| 2026-08-10 | how much does a tax attorney cost | /blog/how-much-does-a-tax-attorney-cost | D. Tax + accountant pricing anxiety (transparency angle) |

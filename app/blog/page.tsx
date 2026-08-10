@@ -29,6 +29,17 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: 'how-much-does-a-tax-attorney-cost',
+    title: 'How Much Does a Tax Attorney Cost? A Straight Answer',
+    excerpt:
+      'Real ranges by the hour and by the case, when you actually need one, and the free tax help most people never hear about.',
+    date: '2026-08-10',
+    minutes: 9,
+    cover: '/blog/how-much-does-a-tax-attorney-cost/hero-desk-folders-and-legal-pad.webp',
+    coverAlt:
+      'An overhead view of a stack of manila folders tied with string, a yellow legal pad covered in handwritten notes, an antique push-button calculator, and wire-rimmed reading glasses on a worn wooden desk',
+  },
+  {
     slug: 'cash-basis-accounting',
     title: 'Cash Basis Accounting: What It Is and When It Works',
     excerpt:

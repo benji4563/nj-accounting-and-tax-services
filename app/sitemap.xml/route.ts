@@ -8,6 +8,7 @@ const ROUTES: Array<{ path: string; priority: string; changefreq: string }> = [
   { path: '/about', priority: '0.7', changefreq: 'monthly' },
   { path: '/contact', priority: '0.9', changefreq: 'yearly' },
   { path: '/blog', priority: '0.8', changefreq: 'weekly' },
+  { path: '/blog/how-much-does-a-tax-attorney-cost', priority: '0.7', changefreq: 'monthly' },
   { path: '/blog/cash-basis-accounting', priority: '0.7', changefreq: 'monthly' },
   { path: '/blog/fund-accounting', priority: '0.7', changefreq: 'monthly' },
   { path: '/blog/do-i-need-an-accountant-for-your-small-business', priority: '0.7', changefreq: 'monthly' },
