@@ -29,6 +29,17 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: 'tax-resolution-services',
+    title: 'Tax Resolution Services: What They Actually Cover',
+    excerpt:
+      'Tax resolution services cover IRS payment plans, Offers in Compromise, and penalty relief. What’s real, what’s a scam, and what you can do yourself for free.',
+    date: '2026-08-24',
+    minutes: 9,
+    cover: '/blog/tax-resolution-services/hero-desk-calculator-notices.webp',
+    coverAlt:
+      'A calculator, phone, pay stub and a notepad with handwritten totals spread across a desk',
+  },
+  {
     slug: 'how-much-does-a-tax-attorney-cost',
     title: 'How Much Does a Tax Attorney Cost? A Straight Answer',
     excerpt:
