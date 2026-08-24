@@ -1,3 +1,65 @@
+# NJ's Accounting and Tax Services — robots.txt
+# We WANT AI answer engines to read and cite this site (GEO), so every major
+# AI crawler is named and explicitly allowed. Two kinds of AI bot exist:
+#  - "training" crawlers (build model datasets)
+#  - "user/search" fetchers (retrieve a page live to answer a question and
+#    cite it — this is the one that sends us referral traffic)
+# We allow both. The only things off-limits are the API and the thank-you page.
+
+# --- Search engines ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# --- AI answer engines / assistants (GEO) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# --- Everyone else ---
 User-agent: *
 Allow: /
 Disallow: /api/

@@ -1,6 +1,6 @@
 ---
 name: nj-seo
-description: Generate a complete, publish-ready blog post for NJ's Accounting and Tax Services end-to-end — pick the next primary keyword from the research CSV, build its keyword cluster, generate hero and inline images with Higgsfield, write the post in NJ's established voice and humour, and ship it on the same fixed page template with full on-page SEO and schema. Use for any request to write a blog post, publish an article, do content for NJ's, target a new keyword, or add to the blog. Argument is an optional keyword or cluster letter.
+description: Generate a complete, publish-ready blog post for NJ's Accounting and Tax Services end-to-end — pick the next primary keyword from the research CSV (biased toward clusters already getting traction), build its keyword cluster, fetch hero and inline photos from Pexels, write the post in NJ's established voice with the seo-blog-humor-style layered on, and ship it on the same fixed page template with full on-page SEO, GEO/AI-answer optimisation, and schema. Use for any request to write a blog post, publish an article, do content for NJ's, target a new keyword, or add to the blog. Argument is an optional keyword or cluster letter.
 ---
 
 # nj-seo — the blog post pipeline
@@ -28,8 +28,18 @@ Read these two before writing a single line of copy:
 ### 1. Pick the primary keyword
 
 ```bash
-python .claude/skills/nj-seo/scripts/pick_keyword.py --top 5
+python .claude/skills/nj-seo/scripts/pick_keyword.py --top 5 --prefer-published
 ```
+
+`--prefer-published` boosts keywords in clusters we already have posts in.
+That is the offline proxy for **"keywords already getting clicks"**: a cluster
+we have several posts in is where Google already sees topical authority
+building, so the next post there is the one most likely to push a page from the
+bottom of page 1 (or top of page 2) onto page 1. The unattended scheduled run
+uses this flag; a human doing fresh research can omit it. If Google Search
+Console or DataForSEO ranked-keyword data is available at run time, prefer the
+real queries sitting in positions 8–20 (one good post often lifts those onto
+page 1) over raw volume.
 
 Unions the **curated** cluster files (`keyword-clusters.csv` +
 `keyword-clusters-expanded.csv`), then filters:
@@ -86,43 +96,76 @@ they all miss (that is your angle), and roughly how long they run (aim within
 Also pull the "People also ask" questions. Those become FAQ entries verbatim,
 because they are literally what people type.
 
-### 3. Generate the images
+### 3. Fetch the images from Pexels
 
 Three images per post: one hero (16:9, above the fold) and two inline breaks.
+**Images come from Pexels now, not Higgsfield** — real photographs sidestep the
+AI-anatomy and invented-logo failures that shipped before. The script handles
+search, download, WebP conversion, and keeping each file under 200 KB.
 
+```bash
+# 1) List candidates for a scene and LOOK at the preview URLs.
+python .claude/skills/nj-seo/scripts/pexels_fetch.py \
+  --query "overhead desk paperwork tax" --orientation landscape --list
+
+# 2) Download the one you chose (or omit --id to auto-pick the top match).
+python .claude/skills/nj-seo/scripts/pexels_fetch.py --id <photo-id> \
+  --out "public/blog/<slug>/hero-<descriptive-name>.webp" \
+  --orientation landscape --width 1600
 ```
-mcp__88f7781e-d461-4a8f-8704-b9849467d4aa__generate_image
-  params: { model: "nano_banana_pro", prompt: "...", aspect_ratio: "16:9" }
-```
 
-The call returns a pending job id; poll it with `job_display`, then fetch the
-`minUrl` (WebP) with WebFetch and copy the downloaded file into
-`public/blog/<slug>/<descriptive-name>.webp`.
+Hero: `--width 1600`. Inline breaks: `--width 1200`. The script reads the API
+key from the `PEXELS_API_KEY` env var / `.env.local`; do not hard-code it.
 
-**Prompt for scenes, not people.** The single worst failure mode on this site
-was an AI-generated hero of a woman whose hand had inhuman anatomy — it
-shipped, and the client spotted it. Prefer overhead desk scenes, storefronts,
-paperwork, tools, empty interiors, hands-free compositions. If a person is
-genuinely needed, keep them small in frame, turned away, or cropped below the
-shoulders, and **look at the generated image yourself** before using it.
+**Choose scenes, not faces.** Even though these are real photos, the same brand
+rules apply: prefer overhead desk scenes, storefronts, paperwork, tools, empty
+interiors, hands-free compositions. Reject any candidate whose preview shows a
+**readable brand logo**, a **person's face front-on**, or a **visible year/
+date** (dates the post; logos are a trademark risk). **Open the preview URL and
+actually look** before downloading — the `alt` text Pexels returns is a useful
+sanity check but is not a substitute for looking.
 
-Style, to stay consistent with the existing post: photorealistic, warm natural
-light (golden morning or late afternoon), lived-in and slightly imperfect,
-editorial rather than stock-photo. Never handshakes, skyscrapers, suits, or
-glossy corporate staging — that violates the brand.
+Style, to stay consistent with the existing posts: warm natural light,
+lived-in and slightly imperfect, editorial rather than glossy stock. Never
+handshakes, skyscrapers, suits, or corporate staging — that violates the brand.
 
 Filenames are descriptive and hyphenated (`hero-kitchen-table-shoebox.webp`),
-never generic. Keep each under ~200 KB; if one is heavier, downscale it — the
-hero is the LCP element and the site currently scores 100 on performance.
+never generic. The script keeps each under ~190 KB; the hero is the LCP element
+and the site scores 100 on performance, so do not defeat that with a wider
+`--width` than needed.
 
-If Higgsfield returns "ran out of credits," stop and tell the user rather
-than shipping a post with missing images.
+Pexels credits the photographer in the script output. No on-page attribution is
+required by Pexels, but keep the returned `alt` suggestion in mind when you
+write real, descriptive alt text (the verifier requires alt on every image).
+
+If Pexels returns a 401 (bad key), 429 (rate limit), or no results, **stop and
+tell the user** rather than shipping a post with missing images.
 
 ### 4. Write the post
 
 Copy the skeleton from `references/page-template.md` into
 `app/blog/<slug>/page.tsx` and fill it. Follow
 `references/voice-and-humor.md` for every line of prose.
+
+**Layer the `anthropic-skills:seo-blog-humor-style` skill on top of the voice
+guide.** Invoke it (`Skill: anthropic-skills:seo-blog-humor-style`) before
+writing and apply its five rules, calibrated for NJ's audience — small-business
+owners who want a calm, plain-spoken firm, not a comedian. In practice that
+means: **sprinkle, don't slather** (roughly one light aside per section, never
+in the answer box), universal everyday analogies over niche references, PG-13
+and never political or divisive, and light self-deprecation about the firm
+rather than jokes at the reader's or a competitor's expense. Where NJ's
+`voice-and-humor.md` and the humor skill overlap, NJ's brand restraint wins —
+the humor skill widens the toolkit, it does not loosen the brand.
+
+**Keep the extractable bits literal (this is the GEO win).** The answer box,
+the FAQ answers, and any Q&A meant to be quoted by an AI engine or a featured
+snippet stay straight and factual — put the personality in the surrounding
+narrative, never inside the sentence an assistant will lift. Direct-answer
+formatting (a one-sentence answer first, then detail) is what gets the page
+cited in ChatGPT / Perplexity / Google AI Overviews, so do not dilute it with a
+joke. The sitewide "Ask all about me" block and JSON-LD already carry the rest
+of the GEO load; your job is clean, quotable answers.
 
 The shape, fixed: hero → answer box + story open + TOC → six body sections
 with two image breaks → dark emphasis section → FAQ + author bio → three

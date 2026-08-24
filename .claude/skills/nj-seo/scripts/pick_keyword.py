@@ -95,6 +95,33 @@ def load_used():
     return used
 
 
+# Cluster prefixes ("A.", "N.", ...) we have already published into, so the
+# candidate ranking can double down on them. This is the offline proxy for
+# "keywords already getting clicks": a cluster we have several posts in is the
+# cluster where Google already sees topical authority building, so the next
+# post there is the one most likely to push a near-page-1 page onto page 1.
+# Filled only when --prefer-published is passed; empty otherwise.
+PUBLISHED_PREFIXES = set()
+
+
+def load_published_prefixes():
+    """Leading 'X.' cluster codes from used-keywords.md (blog clusters only)."""
+    prefixes = set()
+    if not os.path.exists(USED_MD):
+        return prefixes
+    with open(USED_MD, encoding="utf-8") as f:
+        for line in f:
+            if not line.strip().startswith("|"):
+                continue
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if len(cells) >= 4 and cells[0] and cells[0][0].isdigit():
+                cluster = cells[3]
+                m = re.match(r"([A-Z])\.", cluster)
+                if m:
+                    prefixes.add(m.group(1) + ".")
+    return prefixes
+
+
 # Words that carry no topical weight — two keywords differing only in these
 # are the same search intent wearing different clothes.
 _STOP = {"a", "an", "the", "you", "your", "i", "my", "me", "can", "do", "does",
@@ -247,6 +274,9 @@ def score(r):
     # question-shaped keywords make the cleanest featured-snippet targets
     if re.match(r"^(what|why|how|when|do|does|is|are|should|can)\b", r["keyword"], re.I):
         s *= 1.20
+    # double down on clusters we already publish into (see PUBLISHED_PREFIXES)
+    if PUBLISHED_PREFIXES and r["cluster"].startswith(tuple(PUBLISHED_PREFIXES)):
+        s *= 1.6
     return s
 
 
@@ -310,7 +340,14 @@ def main():
     ap.add_argument("--include-raw", action="store_true",
                     help="also pull the raw research export "
                          "(research only — see load_rows docstring)")
+    ap.add_argument("--prefer-published", action="store_true",
+                    help="boost keywords in clusters we already publish into — "
+                         "the offline proxy for 'keywords already getting "
+                         "clicks'. Use for auto-pick aimed at page-1 pushes.")
     args = ap.parse_args()
+
+    if args.prefer_published:
+        PUBLISHED_PREFIXES.update(load_published_prefixes())
 
     rows = load_rows(include_raw=args.include_raw)
     if not rows:
