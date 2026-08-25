@@ -29,6 +29,17 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: 'bookkeeping-vs-accounting',
+    title: 'Bookkeeping vs. Accounting: What’s the Difference?',
+    excerpt:
+      'A bookkeeper records the numbers; an accountant interprets them, files your taxes, and tells you what to do next. Where the line actually falls, and what each one costs.',
+    date: '2026-08-25',
+    minutes: 9,
+    cover: '/blog/bookkeeping-vs-accounting/hero-calculator-notepad-cash.webp',
+    coverAlt:
+      'Overhead view of a scientific calculator and a blank spiral notepad resting on a fan of US dollar bills, with a silver pen laid beside them on a white marble surface',
+  },
+  {
     slug: 'tax-resolution-services',
     title: 'Tax Resolution Services: What They Actually Cover',
     excerpt:
@@ -38,6 +49,17 @@ const POSTS: Post[] = [
     cover: '/blog/tax-resolution-services/hero-desk-calculator-notices.webp',
     coverAlt:
       'A calculator, phone, pay stub and a notepad with handwritten totals spread across a desk',
+  },
+  {
+    slug: 'accrual-basis-accounting',
+    title: 'Accrual Basis Accounting: What It Is and How It Works',
+    excerpt:
+      'Accrual basis accounting counts income when you earn it and expenses when you incur them. Who has to use it, and why it can show a profit while your bank account disagrees.',
+    date: '2026-08-17',
+    minutes: 9,
+    cover: '/blog/accrual-basis-accounting/hero-ledger-and-unpaid-invoices.webp',
+    coverAlt:
+      'An open leather-bound ledger with hand-ruled columns of numbers on a wooden desk, beside a clipped stack of invoices, a rolled landscape blueprint tied with string, stacked stone paver samples, an old adding machine with curling paper tape, and a cooling mug of coffee',
   },
   {
     slug: 'how-much-does-a-tax-attorney-cost',
