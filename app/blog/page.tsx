@@ -29,6 +29,17 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: 'is-fresh-start-tax-relief-legit',
+    title: 'Is Fresh Start Tax Relief Legit? What Is Real, What Is Not',
+    excerpt:
+      'The IRS Fresh Start changes are real, but they are not a program you enroll in. What is genuine, what is a sales pitch, and what you can do yourself for free.',
+    date: '2026-08-27',
+    minutes: 9,
+    cover: '/blog/is-fresh-start-tax-relief-legit/hero-calculator-magnifier-tax-form.webp',
+    coverAlt:
+      'Overhead view of a calculator and a magnifying glass resting on a printed 1040 tax form with W-9 and W-4 forms on a wooden desk',
+  },
+  {
     slug: 'when-to-hire-a-tax-attorney',
     title: 'When to Hire a Tax Attorney (and When You Don’t)',
     excerpt:

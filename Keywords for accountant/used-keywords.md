@@ -30,3 +30,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-08-24 | tax resolution services | /blog/tax-resolution-services | E. Behind on taxes / haven't filed (audit-support intent) |
 | 2026-08-25 | bookkeeping vs accounting | /blog/bookkeeping-vs-accounting | B. Bookkeeper vs Accountant (service education) |
 | 2026-08-27 | when to hire a tax attorney | /blog/when-to-hire-a-tax-attorney | D. Tax + accountant pricing anxiety (transparency angle) |
+| 2026-08-27 | is fresh start tax relief legit | /blog/is-fresh-start-tax-relief-legit | E. Behind on taxes / haven't filed (audit-support intent) |
