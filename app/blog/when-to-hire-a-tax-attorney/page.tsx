@@ -214,6 +214,9 @@ export default function Post() {
             <p className="mt-4 text-body text-graphite">
               That phrase is doing a lot of work on purpose. It&rsquo;s the
               IRS telling him this might follow him home, not just the LLC.
+              Somewhere around the third re-read, he starts wondering whether
+              &ldquo;responsible person&rdquo; is a job title he could put on
+              a business card, or just a very polite threat.
             </p>
             <p className="mt-4 text-body text-graphite">
               Ade genuinely needs to make a call today. But most people who
@@ -284,6 +287,13 @@ export default function Post() {
                 anything.
               </li>
             </ul>
+
+            <p className="mt-8 text-body text-graphite">
+              A landscaping company doesn&rsquo;t technically come with a
+              captain, the way a ship does &mdash; but the IRS treats whoever
+              signs the payroll like it does, which is Ade&rsquo;s entire
+              problem in one nautical metaphor.
+            </p>
           </div>
         </Section>
 
@@ -300,6 +310,9 @@ export default function Post() {
               </SourceLink>
               , and the honest way to pick between them is to ask which job
               you actually need done, not which title sounds most serious.
+              Ask any of the four below what they do and you&rsquo;ll get an
+              answer generous enough to make you late for lunch &mdash; here
+              is the version that fits in one sentence each.
             </p>
 
             <ol className="mt-8 space-y-6 text-body text-graphite">
@@ -373,7 +386,9 @@ export default function Post() {
             </h2>
             <p className="mt-4 text-body text-graphite">
               Most letters people panic-Google over look nothing like
-              Ade&rsquo;s. They look like these.
+              Ade&rsquo;s. They look like these &mdash; and the IRS could
+              summarize most of them in one text message, if it were the kind
+              of agency that sent text messages.
             </p>
 
             <ul className="mt-8 space-y-4 text-body text-graphite">
@@ -475,7 +490,9 @@ export default function Post() {
               first: an hour of attorney time to confirm you don&rsquo;t
               actually need an attorney is an expensive way to learn something
               a $299-a-month accountant would have told you for free on a
-              discovery call.
+              discovery call &mdash; the accounting equivalent of paying a
+              locksmith $400 to inform you the door was unlocked the whole
+              time.
             </p>
           </div>
         </Section>
@@ -488,7 +505,10 @@ export default function Post() {
             </h2>
             <p className="mt-4 text-body text-graphite">
               Answer these honestly, in order. The first &ldquo;yes&rdquo;
-              you hit tells you who to call.
+              you hit tells you who to call. We kept it to four questions on
+              purpose &mdash; a twelve-question quiz would just be
+              procrastination with extra steps, and somewhere Ade&rsquo;s crew
+              is still waiting on that huddle.
             </p>
 
             <ol className="mt-8 space-y-6 text-body text-graphite">
@@ -576,7 +596,9 @@ export default function Post() {
                 </strong>{' '}
                 Prior notices, bank statements, payroll records &mdash;
                 whoever you call will ask, and having it ready saves you
-                billable time either way.
+                billable time either way. Yes, including the one you swore
+                you filed under &ldquo;important&rdquo; and can now only find
+                under &ldquo;miscellaneous.&rdquo;
               </li>
               <li>
                 <strong className="text-aubergine">

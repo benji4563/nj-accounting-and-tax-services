@@ -188,6 +188,13 @@ Non-negotiables while writing:
   `text-persimmon-deep`. Both rules exist because the site holds
   100/100/100/100 on Lighthouse and these were the two things that broke it.
 - At least one passage that honestly argues *against* hiring an accountant.
+- **Every body H2 section carries its own recognition-humour aside** — not
+  just the cold open. Before moving past step 4, scan every section heading
+  and confirm each one has a wry, specific, relatable beat (per
+  `references/voice-and-humor.md` rule 3). A post that is funny in the intro
+  and flat, procedural prose for the rest has not applied the humour skill —
+  it has applied one-fifth of it. This has shipped before and is the single
+  most common way this pipeline produces a technically-correct, boring post.
 
 ### 5. Register it in three places
 

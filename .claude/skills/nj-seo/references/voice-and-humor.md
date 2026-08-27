@@ -44,6 +44,25 @@ This is the emotional centre of the whole method. Every post needs one.
 The funny comes from a detail so precise the reader recognises it. It is
 never a punchline, never a pun, never an exclamation mark.
 
+**This is not optional, and it is not satisfied by the cold-open scene
+alone.** A post that nails move 1 (open on a person) and then goes flat,
+procedural, and list-only for the rest of the piece has *not* applied this
+rule — it's applied one move out of five and called it done. That specific
+failure has shipped before: a whole post read as straight storytelling with
+no recognition-humour anywhere past the intro, which is the thing this rule
+exists to prevent.
+
+**Concrete requirement:** every body H2 section needs at least one aside
+that makes the reader feel caught out, recognised, or quietly laughed-with —
+a wry specific detail, an everyday analogy, a dry one-liner about the
+absurdity of the process. Roughly one per section, per the humour skill's
+"sprinkle, don't slather" rule — not one per paragraph, and never inside the
+answer box or an FAQ answer, which stay literal for GEO/snippet extraction.
+Before shipping, scan the section headings top to bottom and confirm each
+one has its beat. If a section is pure list-and-explain with nothing that
+would make a tired reader half-smile in recognition, add one before moving
+on — don't ship it and mean to fix it later.
+
 > …trying to work out whether the coffee her supplier sent as a thank-you
 > counts as "office supplies," "gifts received," or a category the software
 > is asking her to invent.
