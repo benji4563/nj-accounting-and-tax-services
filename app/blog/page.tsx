@@ -29,6 +29,17 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: 'when-to-hire-a-tax-attorney',
+    title: 'When to Hire a Tax Attorney (and When You Don’t)',
+    excerpt:
+      'The specific situations that genuinely need a tax attorney, the far more common ones that don’t, and a 60-second gut-check to tell them apart.',
+    date: '2026-08-27',
+    minutes: 9,
+    cover: '/blog/when-to-hire-a-tax-attorney/hero-stacked-case-documents.webp',
+    coverAlt:
+      'A close-up overhead view of a thick stack of assorted papers and documents fanned out on a desk surface',
+  },
+  {
     slug: 'bookkeeping-vs-accounting',
     title: 'Bookkeeping vs. Accounting: What’s the Difference?',
     excerpt:

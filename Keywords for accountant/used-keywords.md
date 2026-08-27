@@ -29,3 +29,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-08-17 | accrual basis accounting | /blog/accrual-basis-accounting | N. Accounting methods — cash vs accrual |
 | 2026-08-24 | tax resolution services | /blog/tax-resolution-services | E. Behind on taxes / haven't filed (audit-support intent) |
 | 2026-08-25 | bookkeeping vs accounting | /blog/bookkeeping-vs-accounting | B. Bookkeeper vs Accountant (service education) |
+| 2026-08-27 | when to hire a tax attorney | /blog/when-to-hire-a-tax-attorney | D. Tax + accountant pricing anxiety (transparency angle) |
