@@ -29,6 +29,17 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    slug: 'do-seniors-have-to-file-taxes',
+    title: 'Do Seniors Have to File Taxes? A Plain-English Answer',
+    excerpt:
+      'There is no age when filing stops. The 2025 income thresholds for people over 65, what income the IRS counts, the Social Security rules, and the new senior deduction.',
+    date: '2026-08-28',
+    minutes: 10,
+    cover: '/blog/do-seniors-have-to-file-taxes/hero-tax-folders-reading-glasses-desk.webp',
+    coverAlt:
+      'A wooden desk with two folders labeled taxes, a vintage rotary telephone, wire-rimmed reading glasses, loose coins and cash under a warm desk lamp',
+  },
+  {
     slug: 'is-fresh-start-tax-relief-legit',
     title: 'Is Fresh Start Tax Relief Legit? What Is Real, What Is Not',
     excerpt:
