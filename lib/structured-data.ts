@@ -65,6 +65,15 @@ export const organizationJsonLd = {
  * WebSite schema with a SearchAction. This is what lets Google surface a
  * sitelinks search box and what AI agents read to learn how to query the site.
  */
+/**
+ * Last substantive review of the site's core content.
+ *
+ * Bump this when core pages or pricing actually change — it is a freshness
+ * signal, and a dateModified that silently tracks "today" is the kind of
+ * claim crawlers learn to discount.
+ */
+export const SITE_LAST_REVIEWED = '2026-09-25';
+
 export const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -75,6 +84,13 @@ export const websiteJsonLd = {
   description:
     'Small-business bookkeeping and tax services from Njock Simon. Flat monthly pricing from $299, a real accountant on email, books current in 30 days.',
   inLanguage: 'en-US',
+  dateModified: SITE_LAST_REVIEWED,
+  author: {
+    '@type': 'Person',
+    name: FOUNDER,
+    jobTitle: 'CEO & Founding Accountant',
+    url: `${SITE_URL}/about`,
+  },
   publisher: { '@id': `${SITE_URL}#organization` },
   potentialAction: {
     '@type': 'SearchAction',

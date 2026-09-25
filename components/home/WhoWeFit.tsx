@@ -87,6 +87,27 @@ export function WhoWeFit() {
           ))}
         </dl>
 
+        <p className="mt-10 text-body text-graphite">
+          Not sure you need anyone yet? That is a fair question and we would
+          rather you answer it honestly than hire us by default. The{' '}
+          <a
+            href="https://www.irs.gov/businesses/small-businesses-self-employed"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-b-[1.5px] border-aubergine pb-0.5 font-medium text-aubergine hover:border-persimmon hover:text-persimmon"
+          >
+            IRS Small Business and Self-Employed hub
+          </a>{' '}
+          covers the federal rules for free, and{' '}
+          <Link
+            href="/services#official-sources"
+            className="border-b-[1.5px] border-aubergine pb-0.5 font-medium text-aubergine hover:border-persimmon hover:text-persimmon"
+          >
+            we link the specific pages we work from
+          </Link>{' '}
+          rather than asking you to take our word for anything.
+        </p>
+
         <div className="mt-12 rounded-card bg-blush px-6 py-6 md:px-8">
           <p className="text-body-lg text-aubergine">
             Still sounds like a fit? The next step is a short email, not a
