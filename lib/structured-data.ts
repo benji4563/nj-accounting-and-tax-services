@@ -19,14 +19,21 @@ const FOUNDER = 'Njock Simon';
  * Do not "simplify" alternateName or the founder-forward description away.
  */
 export const SAME_AS: string[] = [
-  // Add real profile URLs here as they go live. Each one is a Knowledge Graph
-  // pillar link that helps Google resolve us as a distinct entity.
-  // Leave this list empty rather than pointing at a profile that does not
-  // exist — a 404 in sameAs is a negative trust signal.
-  // 'https://www.linkedin.com/company/...',
+  // Each one is a Knowledge Graph pillar link that helps Google resolve us as
+  // a distinct entity. Leave a profile out rather than pointing at one that
+  // does not exist — a 404 in sameAs is a negative trust signal.
+  //
+  // TODO: LinkedIn lets you claim a vanity URL for a company page
+  // (linkedin.com/company/njaccountstax instead of a numeric id). A vanity
+  // slug containing the brand name is a stronger entity signal than an
+  // opaque number. It is free — set it, then update this line.
+  'https://www.linkedin.com/company/145227827',
   // 'https://www.facebook.com/...',
   // 'https://www.instagram.com/...',
 ].filter(Boolean);
+
+/** The LinkedIn page, also used for the footer link and the Person profile. */
+export const LINKEDIN_URL = 'https://www.linkedin.com/company/145227827';
 
 export const organizationJsonLd = {
   '@context': 'https://schema.org',
