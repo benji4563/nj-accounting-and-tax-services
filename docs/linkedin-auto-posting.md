@@ -98,19 +98,74 @@ enterprise buyer would, so run warm and personality-forward, not cautious.
   together than in a blog post, but humor is still seasoning.
 - At least one moment must feel specific and authored, not generic filler.
 
-## The call
+## How it posts: Zapier Catch Hook webhook
 
+**The Zapier MCP path does not work.** `execute_zapier_write_action` needs its
+fields inside a `params` record; the server publishes no property schema for
+the tool, so an object passed as `params` is serialized to a string and
+rejected with `expected record, received string`. Flattened fields are silently
+dropped, and describing the values in `instructions` does not fill them either.
+The connection itself is healthy — `company_id` 145227827 resolves to
+"Njaccountstax" — so this is a call-path problem, not an auth problem.
+
+A Catch Hook sidesteps it: we POST plain JSON, the Zap maps the fields onto
+LinkedIn's Create Company Update.
+
+### The script
+
+`.claude/skills/nj-seo/scripts/post_to_linkedin.py`
+
+```bash
+python .claude/skills/nj-seo/scripts/post_to_linkedin.py     --comment-file <file holding the post body>     --url https://njaccountstax.com/blog/<slug>     --title "<post title>"     --description "<one-line summary>"
 ```
-execute_zapier_write_action
-  tool_name: linkedin_create_company_update
-  instructions: <natural-language description of the post>
-  connection_id: 66209388        <-- required, numeric, see above
-  company_id: 145227827          <-- verified = "Njaccountstax"
-  comment: <the post body, parentheses escaped>
-  submitted_url: https://njaccountstax.com/blog/<slug>
-  title: <post title, max 400 chars>
-  description: <one-line summary, max 4086 chars>
-```
+
+Use `--comment-file`, not `--comment` — it keeps newlines and quotes intact
+through the shell. Add `--dry-run` to see the exact payload without sending.
+
+It refuses to send bad content before it reaches LinkedIn:
+
+| Guard | Exit |
+|---|---|
+| Comment over 3,000 chars | 3 |
+| Unescaped `(` or `)` — the Little Text Format trap | 3 |
+| Title over 400 / description over 4,086 | 3 |
+| No `LINKEDIN_WEBHOOK_URL` configured | 2 |
+| Webhook unreachable or non-2xx | 4 |
+
+It flags unescaped parentheses rather than auto-escaping them: silently
+rewriting someone's copy is worse than making them look at it.
+
+### Setup
+
+1. In Zapier: **Webhooks by Zapier → Catch Hook** as the trigger,
+   **LinkedIn → Create Company Update** as the action.
+2. Copy the Catch Hook URL. It looks like
+   `https://hooks.zapier.com/hooks/catch/1234567/abcdefg/` — *not* the
+   `zapier.com/editor/...` address, which is just the editor page.
+3. Put it in `.env.local` at the project root:
+   ```
+   LINKEDIN_WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/XXXXXXX/YYYYYYY/
+   ```
+   `.env.local` is gitignored. **Never commit the hook URL** — anyone holding
+   it can post to the page.
+4. Prime the field mapping so Zapier learns the shape:
+   ```bash
+   python .claude/skills/nj-seo/scripts/post_to_linkedin.py --test
+   ```
+5. In the Zap's action step, map:
+
+   | LinkedIn field | Webhook field |
+   |---|---|
+   | Update Content | `comment` |
+   | LinkedIn Company Page | `company_id` — or hard-code 145227827 |
+   | Media URL | `submitted_url` |
+   | Preview - Title | `title` |
+   | Preview - Description | `description` |
+
+6. Turn the Zap on.
+
+A 200 from the hook means **Zapier accepted** the payload, not that LinkedIn
+published it. If a post does not appear, check the Zap's run history.
 
 ## Failure policy
 
