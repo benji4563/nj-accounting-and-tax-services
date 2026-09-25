@@ -11,33 +11,45 @@ the NJ's Accounting LinkedIn company page.
 
 ---
 
-## ⚠️ One-time setup you must do — it is not working until you do this
+## Status: connected and verified (2026-09-25)
 
-The Zapier LinkedIn connection exists (`Benjamin Enyong Njock`, connected
-2026-09-13) but **its access token is missing**, so it cannot currently list
-your company pages or post. Reconnect it here:
+The Zapier LinkedIn connection was reconnected on 2026-09-25 and the company
+page now resolves:
+
+```
+company_id: "145227827"  ->  "Njaccountstax"
+```
+
+### The one non-obvious thing: connection_id must be passed explicitly
+
+`connection_id: 66209388` is **required on every call**. Without it the action
+fails with:
+
+> Authorization error: Authorization access_token missing for LinkedIn.
+
+...even though `list_zapier_connections` reports the connection as healthy and
+freshly refreshed. The default-connection path does not pick up the token; only
+an explicit `connection_id` does.
+
+It is a **number** (`66209388`, from the `connectionId` query param on the
+reconnect URL) — *not* the connection UUID that `list_zapier_connections`
+returns as `connection_id`. Passing the UUID errors with
+`expected number, received NaN`.
+
+If the token expires again, reconnect at:
 
 **https://mcp.zapier.com/api/v1/connect-auth/LinkedInCLIAPI?accountId=28664510&connectionId=66209388**
 
-While reconnecting, two things must be true or posting will fail:
+and re-verify with:
 
-1. **You must be an admin of the company page.** Zapier's own help text:
-   *"You must be an administrator of a Company Page for it to show up here."*
-   Check at LinkedIn → Me → Manage → Company Pages.
-2. **Grant the page/organization permissions** when LinkedIn asks. If you only
-   grant personal-profile scopes, `create_company_update` cannot see the page.
+> Resolve the `company_id` enum for `linkedin_create_company_update`, connection_id 66209388
 
-After reconnecting, confirm it worked by asking Claude:
+Two things must stay true or posting breaks:
 
-> Resolve the `company_id` enum for `linkedin_create_company_update`
-
-You should get NJ's Accounting back in the list. Note the value it returns —
-if it is not `145227827`, put the correct value in `LINKEDIN_COMPANY_ID` below
-and in the routine prompt.
-
-```
-LINKEDIN_COMPANY_ID = 145227827
-```
+1. **You must remain an admin of the company page.** Zapier: *"You must be an
+   administrator of a Company Page for it to show up here."*
+2. **Organization/page scopes must be granted**, not just personal-profile
+   scopes.
 
 ---
 
@@ -69,7 +81,8 @@ Constraints enforced in the routine:
 execute_zapier_write_action
   tool_name: linkedin_create_company_update
   instructions: <natural-language description of the post>
-  company_id: 145227827
+  connection_id: 66209388        <-- required, numeric, see above
+  company_id: 145227827          <-- verified = "Njaccountstax"
   comment: <the post body, parentheses escaped>
   submitted_url: https://njaccountstax.com/blog/<slug>
   title: <post title, max 400 chars>
