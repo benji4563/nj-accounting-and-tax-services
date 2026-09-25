@@ -18,6 +18,30 @@ export type Post = {
   minutes: number;
   cover: string;
   coverAlt: string;
+  /**
+   * The LinkedIn post copy for this article.
+   *
+   * This is NOT the excerpt and NOT a summary — it is its own piece of
+   * writing, run through the `anthropic-skills:seo-blog-humor-style` skill,
+   * with its own hook, analogy and callback. Accounting is a boring niche;
+   * funny and interesting is the differentiator, and a feed-templated post
+   * throws that away.
+   *
+   * It is published in the RSS feed as `<content:encoded>`, which is what the
+   * "RSS by Zapier" trigger maps onto LinkedIn's Update Content field. That
+   * is why the good copy lives here rather than only in a routine's report:
+   * Zapier polls the feed from its own cloud, so posting keeps working when
+   * this machine is closed.
+   *
+   * Constraints, enforced by scripts/post_to_linkedin.py and by LinkedIn:
+   *   - 3,000 characters max
+   *   - no unescaped `(` or `)` — LinkedIn's Little Text Format treats them as
+   *     reserved. Easiest fix is to write copy that needs none.
+   *
+   * Optional: a post without it falls back to the excerpt in the feed, which
+   * still works but reads flat.
+   */
+  linkedin?: string;
 };
 
 export const POSTS: Post[] = [
@@ -31,6 +55,27 @@ export const POSTS: Post[] = [
     cover: '/blog/why-is-tax-relief-services-calling-me/hero-desk-phone-document-tray.webp',
     coverAlt:
       'A classic black push-button desk telephone beside a wire document tray holding white papers on a wood-veneer office desk',
+    linkedin: `You know the call. Different number every time, always a "Senior Tax Resolution Specialist," always somehow free to talk right this second.
+
+Here's the part nobody mentions: that is not the IRS.
+
+A tax lien is public record. Filing one is less like sealing an envelope and more like putting your phone number on a billboard — and there is an entire industry out there that reads billboards for a living. Your number hit a lead list, the list got sold, the phone started ringing. None of it is coincidence. It's the product working exactly as designed.
+
+Three things worth knowing:
+
+→ The IRS opens with a letter. Not a call, not a text, and never a gift card. If someone skipped the boring envelope stage entirely, be suspicious.
+
+→ "Pennies on the dollar" is a sales line, not a program. Offer in Compromise is real — but the IRS decides who qualifies, and a call centre gets exactly zero votes.
+
+→ Most of what they want to charge you for is free at irs.gov. Tedious, yes. Free, also yes.
+
+We're accountants. We are not, by trade, a thrilling people. But we wrote the whole thing up in plain English anyway — including the part about making the calls actually stop.
+
+https://njaccountstax.com/blog/why-is-tax-relief-services-calling-me
+
+Your Senior Tax Resolution Specialist will have to find someone else to help.
+
+#SmallBusiness #Tax #IRS #Bookkeeping #TaxRelief`,
   },
   {
     slug: 'do-seniors-have-to-file-taxes',

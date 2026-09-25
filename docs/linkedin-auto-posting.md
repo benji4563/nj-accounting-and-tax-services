@@ -98,74 +98,70 @@ enterprise buyer would, so run warm and personality-forward, not cautious.
   together than in a blog post, but humor is still seasoning.
 - At least one moment must feel specific and authored, not generic filler.
 
-## How it posts: Zapier Catch Hook webhook
+## How it posts: RSS feed -> Zapier -> LinkedIn
 
-**The Zapier MCP path does not work.** `execute_zapier_write_action` needs its
-fields inside a `params` record; the server publishes no property schema for
-the tool, so an object passed as `params` is serialized to a string and
-rejected with `expected record, received string`. Flattened fields are silently
-dropped, and describing the values in `instructions` does not fill them either.
-The connection itself is healthy — `company_id` 145227827 resolves to
-"Njaccountstax" — so this is a call-path problem, not an auth problem.
+Zapier polls `https://njaccountstax.com/rss.xml` from its own cloud and posts
+new articles to the company page. **Nothing local has to be running** — the
+desktop app can be closed and posting still happens.
 
-A Catch Hook sidesteps it: we POST plain JSON, the Zap maps the fields onto
-LinkedIn's Create Company Update.
+### The trick that keeps the copy good
 
-### The script
+A plain RSS-to-LinkedIn Zap can only template the feed's own fields, so posts
+come out as a title and a link, which is exactly the dull output the humor rule
+exists to prevent.
 
-`.claude/skills/nj-seo/scripts/post_to_linkedin.py`
+So the good copy travels *inside the feed*. Each post in `lib/posts.ts` carries
+a `linkedin` field holding its finished, humor-skill-written LinkedIn copy, and
+`app/rss.xml/route.ts` publishes it as `<content:encoded>`. The Zap maps that
+field onto LinkedIn's Update Content.
 
-```bash
-python .claude/skills/nj-seo/scripts/post_to_linkedin.py     --comment-file <file holding the post body>     --url https://njaccountstax.com/blog/<slug>     --title "<post title>"     --description "<one-line summary>"
+```
+lib/posts.ts  ->  linkedin: "..."
+                     |
+app/rss.xml/route.ts  ->  <content:encoded><![CDATA[ ...copy... ]]></content:encoded>
+                     |
+RSS by Zapier  ->  Create Company Update  ->  Update Content
 ```
 
-Use `--comment-file`, not `--comment` — it keeps newlines and quotes intact
-through the shell. Add `--dry-run` to see the exact payload without sending.
+Posts without a `linkedin` field fall back to the excerpt, so nothing ever
+publishes empty.
 
-It refuses to send bad content before it reaches LinkedIn:
+Verified 2026-09-25 end to end: the feed parses as valid XML and the copy
+round-trips with newlines, arrows, em dashes, curly apostrophes and double
+quotes all intact.
 
-| Guard | Exit |
-|---|---|
-| Comment over 3,000 chars | 3 |
-| Unescaped `(` or `)` — the Little Text Format trap | 3 |
-| Title over 400 / description over 4,086 | 3 |
-| No `LINKEDIN_WEBHOOK_URL` configured | 2 |
-| Webhook unreachable or non-2xx | 4 |
+### Zap setup — one time
 
-It flags unescaped parentheses rather than auto-escaping them: silently
-rewriting someone's copy is worse than making them look at it.
+1. **Trigger:** *RSS by Zapier -> New Item in Feed*
+   - Feed URL: `https://njaccountstax.com/rss.xml`
+   - RSS by Zapier is available on the free plan. Webhooks by Zapier is not,
+     which is why this is the route.
+2. **Action:** *LinkedIn -> Create Company Update*
+3. **Map the fields:**
 
-### Setup
-
-1. In Zapier: **Webhooks by Zapier → Catch Hook** as the trigger,
-   **LinkedIn → Create Company Update** as the action.
-2. Copy the Catch Hook URL. It looks like
-   `https://hooks.zapier.com/hooks/catch/1234567/abcdefg/` — *not* the
-   `zapier.com/editor/...` address, which is just the editor page.
-3. Put it in `.env.local` at the project root:
-   ```
-   LINKEDIN_WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/XXXXXXX/YYYYYYY/
-   ```
-   `.env.local` is gitignored. **Never commit the hook URL** — anyone holding
-   it can post to the page.
-4. Prime the field mapping so Zapier learns the shape:
-   ```bash
-   python .claude/skills/nj-seo/scripts/post_to_linkedin.py --test
-   ```
-5. In the Zap's action step, map:
-
-   | LinkedIn field | Webhook field |
+   | LinkedIn field | RSS field |
    |---|---|
-   | Update Content | `comment` |
-   | LinkedIn Company Page | `company_id` — or hard-code 145227827 |
-   | Media URL | `submitted_url` |
-   | Preview - Title | `title` |
-   | Preview - Description | `description` |
+   | Update Content | **Content Encoded** — not Description, not Title |
+   | LinkedIn Company Page | Njaccountstax, id 145227827 |
+   | Media URL | Link |
+   | Preview - Title | Title |
+   | Preview - Description | Description |
 
-6. Turn the Zap on.
+   The only mapping that really matters is **Update Content -> Content
+   Encoded**. Map it to Description and you get the dull version.
+4. Test the Zap, check the post looks right, then turn it on.
 
-A 200 from the hook means **Zapier accepted** the payload, not that LinkedIn
-published it. If a post does not appear, check the Zap's run history.
+### Cadence note
+
+The blog routine publishes daily, so the feed gains one item a day and the Zap
+posts one update a day. Zapier's RSS trigger polls on its own interval — a new
+post typically appears within about 15 minutes on paid plans and up to an hour
+on free. That lag is fine and needs no handling.
+
+### Do not leave a Schedule-triggered Zap enabled
+
+A `Schedule by Zapier` trigger fires on a timer regardless of whether anything
+was published, which posts duplicates or blanks. The trigger must be RSS.
 
 ## Failure policy
 
