@@ -53,27 +53,50 @@ Two things must stay true or posting breaks:
 
 ---
 
-## What gets posted
+## What gets posted — voice is not optional
 
-Not an RSS dump. The routine writes the LinkedIn copy itself, because a post
-that is just a headline plus a link performs badly. The shape:
+Not an RSS dump, and not a straight-faced summary either.
 
-- **A hook line** — the specific, surprising thing in the post, not the title.
-  (e.g. *"Chicago's tax on your software went up 67% in January. Most owners
-  still have not noticed."*)
-- **2–4 short lines** of genuinely useful substance, so the post stands on its
-  own for someone who never clicks.
-- **The link**, on its own line, as a full URL.
-- **3–5 hashtags**, relevant and lowercase-ish, no hashtag soup.
+**Every LinkedIn post must be written through the
+`anthropic-skills:seo-blog-humor-style` skill.** Invoke it before writing the
+copy — the same skill the blog posts themselves go through. This is a standing
+rule set by Ben on 2026-09-25, and the reasoning is the whole strategy:
 
-Constraints enforced in the routine:
-- `comment` (post body) max 3,000 characters.
-- Reserved characters must be escaped per LinkedIn's Little Text Format —
-  **parentheses must be written `\(like this\)`**. This is the single most
-  common cause of a failed or mangled post.
-- `submitted_url` is the post URL, which gives the link preview card.
-- `title` and `description` populate that card and both require
-  `submitted_url` to be set.
+> Accounting is a boring niche. Funny and interesting is the differentiator.
+> A correct, dull post about tax liens is indistinguishable from every other
+> firm's correct, dull post about tax liens, and it will be scrolled past.
+
+Calibration for this audience: NJ's talks to small-business owners, and the
+brand guidelines say *plain-spoken, calm, jargon-free — never a stuffy
+accounting firm.* That earns more comedic latitude than a government or
+enterprise buyer would, so run warm and personality-forward, not cautious.
+
+### The shape
+
+- **A hook that breaks the ice** — recognition humor works best here. Name the
+  thing the reader has actually experienced so precisely that they think
+  "that is exactly it." Never the headline restated.
+- **An everyday analogy** doing the teaching, so the mechanism lands without
+  jargon.
+- **2–4 short lines of real substance**, so the post stands alone for someone
+  who never clicks. The jokes sit *around* the facts, never inside them — a
+  wrong-but-funny post costs more than a dull one.
+- **One beat of light self-deprecation**, aimed at the firm. Never at the
+  reader, never at a competitor.
+- **A running callback** — plant something small in the hook, bring it back in
+  the sign-off, so the post reads authored rather than assembled.
+- **The full URL** on its own line.
+- **3–5 relevant hashtags.** No hashtag soup.
+- **A wry sign-off**, not "read more."
+
+### Non-negotiables from the skill
+
+- PG-13 ceiling. Nothing political, controversial, or divisive — ever.
+- Universal references only. If a joke needs a cultural or generational
+  footnote, cut it.
+- Sprinkle, don't slather. A LinkedIn post is short, so beats land closer
+  together than in a blog post, but humor is still seasoning.
+- At least one moment must feel specific and authored, not generic filler.
 
 ## The call
 
