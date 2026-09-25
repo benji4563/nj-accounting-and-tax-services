@@ -5,7 +5,7 @@ import { GuaranteeChip, ALL_GUARANTEES } from '@/components/proof/GuaranteeChip'
 import { CtaDrop } from '@/components/home/CtaDrop';
 
 export const metadata: Metadata = {
-  title: 'How We Work — 30-Day Onboarding & Guaranteed Response Times',
+  title: 'How We Work — 30-Day Onboarding',
   description:
     'Your first 30 days with NJ: discovery call, then we build your books from scratch. Reply within 4 business hours, one clean report every month — or your month is free.',
   alternates: { canonical: '/how-we-work' },
@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 };
 
 export default function HowWeWorkPage() {
-  console.log('[page] /how-we-work rendered');
   return (
     <>
       <Section background="cream">

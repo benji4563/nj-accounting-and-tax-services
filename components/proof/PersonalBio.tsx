@@ -13,6 +13,7 @@ export function PersonalBio({ photoSrc }: { photoSrc?: string }) {
           <Image
             src={photoSrc}
             alt="Njock Simon Ndum, Co-founder and CEO of NJ's Accounting and Tax Services"
+            title="Njock Simon Ndum — the accountant who answers your email"
             fill
             sizes="200px"
             style={{ objectFit: 'cover', objectPosition: 'center top' }}

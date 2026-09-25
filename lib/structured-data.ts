@@ -1,20 +1,89 @@
 const SITE_URL = 'https://njaccountstax.com';
 const BUSINESS_NAME = 'NJ’s Accounting and Tax Services';
 const BUSINESS_EMAIL = 'hello@njaccountstax.com';
-const FOUNDER = 'Njock';
+const FOUNDER = 'Njock Simon';
+
+/**
+ * Entity disambiguation — the "NJ" problem.
+ *
+ * Google currently resolves the "NJ" token in our brand to the state of New
+ * Jersey: we do not rank in the top 25 for our own brand term, and position 1
+ * belongs to njatservices.com. "NJ" is short for Njock, the founder, and the
+ * firm serves small businesses nationwide — it has no connection to New Jersey.
+ *
+ * Every signal below exists to tell Google and AI answer engines that:
+ *   1. NJ = Njock Simon (a person), not New Jersey (a place)
+ *   2. the service area is the whole United States
+ *   3. this is a distinct entity from the similarly-named NJ firms
+ *
+ * Do not "simplify" alternateName or the founder-forward description away.
+ */
+export const SAME_AS: string[] = [
+  // Add real profile URLs here as they go live. Each one is a Knowledge Graph
+  // pillar link that helps Google resolve us as a distinct entity.
+  // Leave this list empty rather than pointing at a profile that does not
+  // exist — a 404 in sameAs is a negative trust signal.
+  // 'https://www.linkedin.com/company/...',
+  // 'https://www.facebook.com/...',
+  // 'https://www.instagram.com/...',
+].filter(Boolean);
 
 export const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': `${SITE_URL}#organization`,
   name: BUSINESS_NAME,
-  alternateName: 'NJ’s Accounting',
+  alternateName: [
+    'NJ’s Accounting',
+    'NJs Accounting and Tax Services',
+    'Njock’s Accounting and Tax Services',
+    'NJ Accounting Tax',
+  ],
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   email: BUSINESS_EMAIL,
-  founder: { '@type': 'Person', name: FOUNDER },
+  founder: {
+    '@type': 'Person',
+    name: FOUNDER,
+    jobTitle: 'CEO & Founding Accountant',
+    url: `${SITE_URL}/about`,
+  },
   description:
-    'Small-business bookkeeping and tax services with flat monthly pricing, a real accountant on email, and a 30-day guarantee.',
+    'Small-business bookkeeping and tax services founded by Njock Simon — the “NJ” in the name. Flat monthly pricing, a real accountant on email, and a 30-day guarantee. Serving small businesses across the United States.',
+  areaServed: { '@type': 'Country', name: 'United States' },
+  knowsAbout: [
+    'Small business bookkeeping',
+    'Tax preparation',
+    'Quarterly tax planning',
+    'Catch-up bookkeeping',
+    'IRS audit support',
+  ],
+  ...(SAME_AS.length > 0 && { sameAs: SAME_AS }),
+};
+
+/**
+ * WebSite schema with a SearchAction. This is what lets Google surface a
+ * sitelinks search box and what AI agents read to learn how to query the site.
+ */
+export const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}#website`,
+  url: SITE_URL,
+  name: BUSINESS_NAME,
+  alternateName: 'NJ’s Accounting',
+  description:
+    'Small-business bookkeeping and tax services from Njock Simon. Flat monthly pricing from $299, a real accountant on email, books current in 30 days.',
+  inLanguage: 'en-US',
+  publisher: { '@id': `${SITE_URL}#organization` },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
 };
 
 export const professionalServiceJsonLd = {
@@ -22,10 +91,12 @@ export const professionalServiceJsonLd = {
   '@type': 'ProfessionalService',
   '@id': `${SITE_URL}#business`,
   name: BUSINESS_NAME,
+  alternateName: 'Njock’s Accounting and Tax Services',
   url: SITE_URL,
   image: `${SITE_URL}/og-default.png`,
   priceRange: '$$',
   email: BUSINESS_EMAIL,
+  parentOrganization: { '@id': `${SITE_URL}#organization` },
   serviceType: [
     'Bookkeeping',
     'Tax preparation',
@@ -34,6 +105,7 @@ export const professionalServiceJsonLd = {
   ],
   areaServed: { '@type': 'Country', name: 'United States' },
   founder: { '@type': 'Person', name: FOUNDER, jobTitle: 'CEO & Founding Accountant' },
+  ...(SAME_AS.length > 0 && { sameAs: SAME_AS }),
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Small-business plans',
@@ -164,7 +236,42 @@ export function localBusinessJsonLd(city: {
       addressRegion: city.regionCode,
       addressCountry: city.country ?? 'US',
     },
+    parentOrganization: { '@id': `${SITE_URL}#organization` },
     founder: { '@type': 'Person', name: FOUNDER, jobTitle: 'CEO & Founding Accountant' },
+    ...(SAME_AS.length > 0 && { sameAs: SAME_AS }),
+  };
+}
+
+/**
+ * Review / testimonial schema.
+ *
+ * Deliberately driven by `lib/testimonials.ts`, which ships empty. Nothing
+ * renders and no markup is emitted until real client quotes are added there.
+ * Never populate this with invented quotes or an invented aggregateRating —
+ * fabricated review markup is a manual-action risk, not a ranking shortcut.
+ */
+export function reviewsJsonLd(
+  reviews: Array<{ author: string; body: string; rating?: number; datePublished?: string }>,
+) {
+  if (reviews.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': `${SITE_URL}#business`,
+    name: BUSINESS_NAME,
+    review: reviews.map((r) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.author },
+      reviewBody: r.body,
+      ...(r.datePublished && { datePublished: r.datePublished }),
+      ...(r.rating && {
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: String(r.rating),
+          bestRating: '5',
+        },
+      }),
+    })),
   };
 }
 

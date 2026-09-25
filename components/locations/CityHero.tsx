@@ -47,7 +47,11 @@ export function CityHero({ cityName, slug, description, floatingHeadline, floati
         </div>
 
         <div className="relative">
-          <BlobImage src="/njock-portrait.webp" alt="Njock Simon Ndum, Co-founder and CEO" />
+          <BlobImage
+            src="/njock-portrait.webp"
+            alt="Njock Simon Ndum, Co-founder and CEO of NJ’s Accounting and Tax Services"
+            title="Njock Simon Ndum — the accountant who answers your email"
+          />
 
           <div className="absolute bottom-10 left-0 z-20 flex max-w-[260px] items-center gap-3 rounded-card bg-ivory px-5 py-4 shadow-elevated">
             <div

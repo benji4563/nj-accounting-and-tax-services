@@ -67,3 +67,11 @@ Disallow: /thank-you
 
 Sitemap: https://njaccountstax.com/sitemap.xml
 Host: https://njaccountstax.com
+
+# --- Machine-readable companions (added 2026-09-25) ---
+# AI crawler policy:   https://njaccountstax.com/.well-known/ai.txt
+# Site guide for LLMs: https://njaccountstax.com/llms.txt
+# Structured summary:  https://njaccountstax.com/ai/summary.json
+# Structured FAQ:      https://njaccountstax.com/ai/faq.json
+# Services + areas:    https://njaccountstax.com/ai/service.json
+# Article feed:        https://njaccountstax.com/rss.xml

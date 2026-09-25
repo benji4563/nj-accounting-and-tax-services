@@ -19,5 +19,17 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    // Other AfriShield client sites live in subfolders of this repo but are
+    // separate Next.js projects with their own tsconfig and their own "@/*"
+    // path roots. Type-checking them from here resolves "@/..." against NJ's
+    // directory and fails on every import, which broke `next build` — and
+    // therefore the automated blog-publishing routine, which gates its commit
+    // on a clean build. They are excluded here; build them from their own
+    // directories.
+    "Afrishield Clients",
+    "AI SEO website builder",
+    ".claude/worktrees"
+  ]
 }

@@ -1,0 +1,39 @@
+{
+  "name": "NJ’s Accounting and Tax Services — FAQ",
+  "url": "https://njaccountstax.com/pricing",
+  "lastUpdated": "2026-09-25",
+  "questions": [
+    {
+      "question": "How much does a small-business accountant cost at NJ’s Accounting?",
+      "answer": "Plans start at $299/mo for Essential (monthly bookkeeping plus the annual tax return), $549/mo for Growth (adds quarterly tax planning and a monthly 30-minute call), and $949/mo for Full-Service (adds audit representation and priority response). Pricing is flat and published — there is no “call for a quote.”"
+    },
+    {
+      "question": "What is included at no extra charge?",
+      "answer": "Phone calls, emails, quick questions, adding a category to your books, and explaining a form. If it takes less than 15 minutes, it is included."
+    },
+    {
+      "question": "What costs extra?",
+      "answer": "Multi-state returns are +$75 per state. Prior-year cleanup is a one-time fee quoted upfront based on volume. Special situations such as crypto, K-1s, or S-corp elections are always quoted before work starts, never after."
+    },
+    {
+      "question": "Do you guarantee response times?",
+      "answer": "Yes. NJ’s replies within 4 business hours to any email. If that is missed in a given month, that month is free, and the guarantee is written into the invoice."
+    },
+    {
+      "question": "What if my books are behind?",
+      "answer": "NJ’s builds books from scratch. If your books cannot be brought current within 30 days, the first month is free."
+    },
+    {
+      "question": "Who actually does the work?",
+      "answer": "Njock Simon, the founder. He is QuickBooks-certified and is the person who answers client email directly — not a receptionist, a bot, or a junior."
+    },
+    {
+      "question": "Does NJ’s Accounting serve New Jersey?",
+      "answer": "The “NJ” in the name is short for Njock, the founder — it is not a reference to the state of New Jersey. The firm is remote-first and serves small businesses across the United States, with dedicated pages for Cincinnati, Cleveland, Chicago, Dallas, San Diego, Raleigh, and Charlotte."
+    },
+    {
+      "question": "What kinds of businesses is NJ’s a good fit for?",
+      "answer": "Sole traders, LLCs and small S-corps — typically one to fifteen people, under a few million in revenue, in one or two states. Service businesses, trades, e-commerce, consultants, agencies and nonprofits. It is not the right fit for venture-backed companies needing multi-entity GAAP consolidation, or for businesses that need someone physically on site each week."
+    }
+  ]
+}

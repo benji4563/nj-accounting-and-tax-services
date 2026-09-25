@@ -37,3 +37,11 @@ tsconfig.tsbuildinfo
 
 # Word/Office lock & temp files
 ~$*
+
+# Other AfriShield clients' projects live in subfolders of this repo but are
+# separate codebases with their own git history. The blog-publishing routine
+# runs `git add -A`, which would otherwise sweep them (and their node_modules)
+# into NJ's repo. Per CLAUDE.md, another client's data does not belong here.
+Afrishield Clients/
+Reciept tracker/
+AI SEO website builder/

@@ -49,15 +49,16 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <Field label="Your name" name="name" required />
-      <Field label="Email" name="email" type="email" required />
-      <Field label="Phone (optional)" name="phone" type="tel" />
-      <Field label="Business name" name="business_name" />
+      <Field label="Your name" name="name" required autoComplete="name" />
+      <Field label="Email" name="email" type="email" required autoComplete="email" />
+      <Field label="Phone (optional)" name="phone" type="tel" autoComplete="tel" />
+      <Field label="Business name" name="business_name" autoComplete="organization" />
       <div>
-        <Label>Yearly revenue</Label>
+        <Label htmlFor="field-revenue_range">Yearly revenue</Label>
         <select
+          id="field-revenue_range"
           name="revenue_range"
-          className="mt-2 w-full rounded border-[1.5px] border-fog bg-ivory px-4 py-3 text-body text-graphite focus:border-persimmon focus:outline-none"
+          className={FIELD_CLASS}
         >
           <option value="">Prefer not to say</option>
           {REVENUE_RANGES.map((r) => (
@@ -68,24 +69,32 @@ export function ContactForm() {
         </select>
       </div>
       <div>
-        <Label>What&rsquo;s on your mind?</Label>
+        <Label htmlFor="field-message">What&rsquo;s on your mind?</Label>
         <textarea
+          id="field-message"
           name="message"
           required
           rows={5}
-          className="mt-2 w-full rounded border-[1.5px] border-fog bg-ivory px-4 py-3 text-body text-graphite focus:border-persimmon focus:outline-none"
+          className={FIELD_CLASS}
           placeholder="Tell us anything — behind on books, tax question, considering a switch…"
         />
       </div>
-      <label className="flex items-start gap-3 text-body-sm text-graphite">
+      <div className="flex items-start gap-3">
         <input
+          id="field-switching_from_accountant"
           type="checkbox"
           name="switching_from_accountant"
           value="true"
           className="mt-1 h-4 w-4 accent-persimmon"
         />
-        I&rsquo;m switching from another accountant (I&rsquo;ll get 50% off my first month)
-      </label>
+        <label
+          htmlFor="field-switching_from_accountant"
+          className="text-body-sm text-graphite"
+        >
+          I&rsquo;m switching from another accountant (I&rsquo;ll get 50% off my
+          first month)
+        </label>
+      </div>
       <input type="hidden" name="source" value="/contact" />
 
       {error && (
@@ -109,33 +118,58 @@ export function ContactForm() {
   );
 }
 
-function Label({ children }: { children: React.ReactNode }) {
+/**
+ * A real <label htmlFor>, not a styled <span>.
+ *
+ * These were spans until 2026-09-25, which meant no field on this form was
+ * programmatically labelled: screen readers announced unlabelled inputs, and
+ * the geo-optimizer flagged the form as unusable by AI agents. `htmlFor` also
+ * makes the label text clickable, which is a real usability win on mobile.
+ */
+function Label({
+  htmlFor,
+  children,
+}: {
+  htmlFor: string;
+  children: React.ReactNode;
+}) {
   return (
-    <span className="block text-[13px] font-medium uppercase tracking-[0.04em] text-aubergine">
+    <label
+      htmlFor={htmlFor}
+      className="block text-[13px] font-medium uppercase tracking-[0.04em] text-aubergine"
+    >
       {children}
-    </span>
+    </label>
   );
 }
+
+const FIELD_CLASS =
+  'mt-2 w-full rounded border-[1.5px] border-fog bg-ivory px-4 py-3 text-body text-graphite focus:border-persimmon focus:outline-none';
 
 function Field({
   label,
   name,
   type = 'text',
   required = false,
+  autoComplete,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
+  autoComplete?: string;
 }) {
+  const id = `field-${name}`;
   return (
     <div>
-      <Label>{label}</Label>
+      <Label htmlFor={id}>{label}</Label>
       <input
+        id={id}
         name={name}
         type={type}
         required={required}
-        className="mt-2 w-full rounded border-[1.5px] border-fog bg-ivory px-4 py-3 text-body text-graphite focus:border-persimmon focus:outline-none"
+        autoComplete={autoComplete}
+        className={FIELD_CLASS}
       />
     </div>
   );

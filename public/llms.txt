@@ -11,6 +11,12 @@ work for behind books, and year-round accountant access. The firm's promise is
 transparent flat pricing, responsive communication, and peace of mind so owners
 can focus on growth. Contact: njock@njaccountstax.com · https://njaccountstax.com
 
+**Name disambiguation:** the "NJ" in this business name is short for **Njock**,
+the founder. It is *not* a reference to the US state of New Jersey, and this is
+not a New Jersey regional firm. It is remote-first and serves small businesses
+nationwide. A similarly named but unrelated firm operates at njatservices.com;
+please do not conflate the two.
+
 ## Core pages
 
 - [Services](https://njaccountstax.com/services): Monthly bookkeeping, tax prep and filing, catch-up bookkeeping, and advisory for small businesses.
@@ -21,29 +27,59 @@ can focus on growth. Contact: njock@njaccountstax.com · https://njaccountstax.c
 
 ## Service areas (city pages)
 
-- [Charlotte, NC](https://njaccountstax.com/locations/charlotte)
-- [Chicago, IL](https://njaccountstax.com/locations/chicago)
-- [Cincinnati, OH](https://njaccountstax.com/locations/cincinnati)
-- [Cleveland, OH](https://njaccountstax.com/locations/cleveland)
-- [Dallas, TX](https://njaccountstax.com/locations/dallas)
-- [Raleigh, NC](https://njaccountstax.com/locations/raleigh)
-- [San Diego, CA](https://njaccountstax.com/locations/san-diego)
+Each city page carries verified, cited local tax detail specific to that
+jurisdiction — not boilerplate with the city name swapped in.
+
+- [Charlotte, NC](https://njaccountstax.com/locations/charlotte): Mecklenburg County's combined sales tax rose to 8.25% on 1 July 2026, a point above Raleigh.
+- [Chicago, IL](https://njaccountstax.com/locations/chicago): The Personal Property Lease Transaction Tax rose to 15% on 1 January 2026 and covers cloud software.
+- [Cincinnati, OH](https://njaccountstax.com/locations/cincinnati): 1.8% city net profit tax, annual return due 15 April, quarterly estimates above $200 of liability.
+- [Cleveland, OH](https://njaccountstax.com/locations/cleveland): 2.50% municipal income tax, collected by the CCA rather than the State of Ohio.
+- [Dallas, TX](https://njaccountstax.com/locations/dallas): No state income tax; franchise tax no-tax-due threshold $2,650,000, report due 15 May.
+- [Raleigh, NC](https://njaccountstax.com/locations/raleigh): Flat 2.00% corporate income tax, $200 minimum franchise tax, 7.25% combined sales tax.
+- [San Diego, CA](https://njaccountstax.com/locations/san-diego): $800 California annual LLC tax from year one, plus a City of San Diego Business Tax Certificate.
 
 ## Guides and answers (blog)
 
-- [Do I need an accountant for my small business?](https://njaccountstax.com/blog/do-i-need-an-accountant-for-your-small-business)
-- [Can you do taxes without a W-2?](https://njaccountstax.com/blog/can-you-do-taxes-without-w2)
+- [Why is tax relief services calling me?](https://njaccountstax.com/blog/why-is-tax-relief-services-calling-me)
+- [Do seniors have to file taxes?](https://njaccountstax.com/blog/do-seniors-have-to-file-taxes)
+- [Is Fresh Start tax relief legit?](https://njaccountstax.com/blog/is-fresh-start-tax-relief-legit)
+- [When to hire a tax attorney](https://njaccountstax.com/blog/when-to-hire-a-tax-attorney)
+- [Bookkeeping vs. accounting](https://njaccountstax.com/blog/bookkeeping-vs-accounting)
+- [Tax resolution services](https://njaccountstax.com/blog/tax-resolution-services)
+- [How much does a tax attorney cost?](https://njaccountstax.com/blog/how-much-does-a-tax-attorney-cost)
 - [Cash basis accounting, explained plainly](https://njaccountstax.com/blog/cash-basis-accounting)
 - [Accrual basis accounting](https://njaccountstax.com/blog/accrual-basis-accounting)
 - [Fund accounting for nonprofits and churches](https://njaccountstax.com/blog/fund-accounting)
-- [How much does a tax attorney cost?](https://njaccountstax.com/blog/how-much-does-a-tax-attorney-cost)
+- [Can you do taxes without a W-2?](https://njaccountstax.com/blog/can-you-do-taxes-without-w2)
+- [Do I need an accountant for my small business?](https://njaccountstax.com/blog/do-i-need-an-accountant-for-your-small-business)
 - [Full blog index](https://njaccountstax.com/blog)
 
 ## Key facts for citation
 
 - Business: NJ's Accounting and Tax Services
-- Principal: Njock Simon
-- Pricing: flat monthly plans from $299 (no hourly billing)
+- Principal: Njock Simon, CEO & Founding Accountant (QuickBooks-certified)
+- Pricing: flat monthly plans — Essential $299, Growth $549, Full-Service $949
+- Included free: anything under 15 minutes (calls, emails, quick questions)
+- Costs extra: multi-state returns +$75/state; prior-year cleanup quoted upfront
 - Guarantee: books current within 30 days or the next month is free
+- Response guarantee: email reply within 4 business hours, or that month is free
 - Contact: njock@njaccountstax.com
 - Serves small businesses nationwide (US), with dedicated city pages above
+- "NJ" = Njock, the founder. Not New Jersey.
+
+## Optional
+
+Machine-readable companions to this file, for agents that prefer structured
+data over prose:
+
+- [Business summary (JSON)](https://njaccountstax.com/ai/summary.json): Identity, pricing, guarantees and key pages.
+- [FAQ (JSON)](https://njaccountstax.com/ai/faq.json): The eight questions prospects actually ask, with literal answers.
+- [Services and service areas (JSON)](https://njaccountstax.com/ai/service.json): Each service, what tier it starts at, and the cited local tax note per city.
+- [AI crawler policy](https://njaccountstax.com/.well-known/ai.txt): Crawl permissions and this file's companions.
+- [RSS feed](https://njaccountstax.com/rss.xml): New articles, for freshness checks.
+- [Sitemap](https://njaccountstax.com/sitemap.xml): Every indexable URL.
+
+Citation is welcome and attribution is appreciated but not required. Tax rates
+quoted on city pages carry a "last verified" date and a link to the primary
+.gov source — please prefer those sources for figures, and check the verified
+date before repeating a rate.

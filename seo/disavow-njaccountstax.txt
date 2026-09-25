@@ -1,0 +1,55 @@
+# Disavow file for njaccountstax.com
+# Prepared 2026-09-25 from a DataForSEO live backlink pull.
+#
+# HOW TO USE THIS FILE
+#   1. Go to https://search.google.com/search-console/disavow-links
+#   2. Select the njaccountstax.com property
+#   3. Upload this file (it replaces any previous disavow list entirely)
+#
+# Only the property owner can do this, and it requires a verified Google
+# Search Console property. Uploading replaces the whole list, so never upload
+# a partial file.
+#
+# ---------------------------------------------------------------------------
+# WHAT WAS FOUND
+#
+# The domain had exactly 6 backlinks from 5 referring domains, with an
+# aggregate spam score of 52. Every one of them is junk. There is no
+# legitimate inbound link on this domain to preserve.
+#
+#   Four of them (pmt-ae.com, kaila.biz, webmaster-philippines.com,
+#   gunghapcafe.com) are the same auto-generated scraper template — pages
+#   titled "Find Backlinks, Owners & WHOIS - New & Old Domains" that list
+#   1,000-1,900 external links each with an identical flaticon image. These
+#   are link-farm directories, not editorial mentions.
+#
+#   Two of them come from 8pw.ru, a Russian open-redirect script
+#   (/r.php?url=...) whose pages point at .xyz and .vip spam domains.
+#
+# ---------------------------------------------------------------------------
+# A HONEST CAVEAT BEFORE YOU UPLOAD
+#
+# Google's own guidance is that most sites never need a disavow file: the
+# algorithm already discounts obvious link-farm spam, and none of these links
+# was built by you, so there is no manual-action risk to undo. Disavowing is
+# therefore unlikely to move rankings on its own.
+#
+# It is still worth doing here for one reason: these five domains are 100% of
+# the link profile. Until real links exist, this is the entire signal Google
+# has about who vouches for the site. Clearing it costs nothing and removes
+# any ambiguity.
+#
+# The fix that actually moves rankings is the opposite of this file — earning
+# real referring domains (Google Business Profile, industry directories,
+# genuine citations, reviews). Do that first; treat this as housekeeping.
+#
+# ---------------------------------------------------------------------------
+
+# Auto-generated backlink-scraper directory farms
+domain:pmt-ae.com
+domain:kaila.biz
+domain:webmaster-philippines.com
+domain:gunghapcafe.com
+
+# Russian open-redirect spam pointing at .xyz / .vip domains
+domain:8pw.ru

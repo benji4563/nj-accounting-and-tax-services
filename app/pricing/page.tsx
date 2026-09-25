@@ -7,7 +7,7 @@ import { StructuredData } from '@/components/seo/StructuredData';
 import { pricingFaqJsonLd } from '@/lib/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Small-Business Accountant Pricing — Flat Monthly, In Writing',
+  title: 'Pricing — Flat Monthly Plans From $299',
   description:
     'Real prices, in writing. Three plans from $299/mo. Monthly bookkeeping, annual tax prep, quarterly planning — flat monthly pricing, no “call for a quote.”',
   alternates: { canonical: '/pricing' },
@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
-  console.log('[page] /pricing rendered');
   return (
     <>
       <StructuredData data={pricingFaqJsonLd} />

@@ -9,9 +9,15 @@ import Image from 'next/image';
 export function BlobImage({
   src,
   alt,
+  title,
 }: {
   src?: string;
   alt: string;
+  /**
+   * Optional tooltip. Only pass this when it says something the alt text
+   * does not — a title that just repeats alt is noise for screen readers.
+   */
+  title?: string;
 }) {
   return (
     <div className="relative flex h-[460px] w-full items-center justify-center">
@@ -49,6 +55,7 @@ export function BlobImage({
           <Image
             src={src}
             alt={alt}
+            title={title}
             fill
             priority
             sizes="380px"

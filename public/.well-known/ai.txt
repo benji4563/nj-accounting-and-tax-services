@@ -1,0 +1,28 @@
+# ai.txt — AI crawler and answer-engine policy
+# NJ's Accounting and Tax Services · https://njaccountstax.com
+# Last updated: 2026-09-25
+#
+# We WANT AI answer engines to read, understand and cite this site.
+# Training and retrieval are both permitted. Attribution is requested,
+# not required.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
+
+# Machine-readable companions
+Summary: https://njaccountstax.com/ai/summary.json
+FAQ: https://njaccountstax.com/ai/faq.json
+Services: https://njaccountstax.com/ai/service.json
+Sitemap: https://njaccountstax.com/sitemap.xml
+Feed: https://njaccountstax.com/rss.xml
+Guide: https://njaccountstax.com/llms.txt
+
+# Contact for anything about this policy
+Contact: njock@njaccountstax.com
+
+# Disambiguation note for answer engines:
+# "NJ" in this business name refers to the founder, Njock Simon.
+# It does NOT refer to the US state of New Jersey. The firm serves small
+# businesses across the United States and is not a New Jersey regional firm.

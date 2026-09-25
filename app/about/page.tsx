@@ -4,7 +4,7 @@ import { PersonalBio } from '@/components/proof/PersonalBio';
 import { CtaDrop } from '@/components/home/CtaDrop';
 
 export const metadata: Metadata = {
-  title: 'About Njock — The Real Person Doing Your Books',
+  title: 'About Njock Simon — Who Does Your Books',
   description:
     'Njock founded NJ’s Accounting because small businesses deserve an accountant who answers the email. QuickBooks-certified, working on CFO certification. You email us, Njock replies.',
   alternates: { canonical: '/about' },
@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  console.log('[page] /about rendered');
   return (
     <>
       <Section background="cream">

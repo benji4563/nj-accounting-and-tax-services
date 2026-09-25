@@ -1,0 +1,91 @@
+{
+  "provider": {
+    "name": "NJ’s Accounting and Tax Services",
+    "url": "https://njaccountstax.com",
+    "founder": "Njock Simon"
+  },
+  "lastUpdated": "2026-09-25",
+  "services": [
+    {
+      "name": "Monthly bookkeeping",
+      "description": "Transactions categorised, accounts reconciled, and a monthly financial statement pack delivered. Works with QuickBooks Online.",
+      "includedFrom": "Essential ($299/mo)"
+    },
+    {
+      "name": "Tax preparation and filing",
+      "description": "Federal and state business and personal returns prepared and filed. Multi-state returns +$75 per state.",
+      "includedFrom": "Essential ($299/mo)"
+    },
+    {
+      "name": "Quarterly tax planning",
+      "description": "Quarterly review of your position to estimate liability and avoid April surprises.",
+      "includedFrom": "Growth ($549/mo)"
+    },
+    {
+      "name": "Catch-up and clean-up bookkeeping",
+      "description": "Rebuilding books from scratch when you are months or years behind. One-time fee quoted upfront based on volume.",
+      "includedFrom": "Quoted separately"
+    },
+    {
+      "name": "IRS audit support and representation",
+      "description": "Representation and document preparation if the IRS or a state authority opens an examination.",
+      "includedFrom": "Full-Service ($949/mo)"
+    }
+  ],
+  "serviceAreas": [
+    {
+      "city": "Cincinnati",
+      "state": "OH",
+      "url": "https://njaccountstax.com/locations/cincinnati",
+      "localNote": "Cincinnati levies a 1.8% net profit tax on business activity inside city limits, with the annual return due 15 April.",
+      "source": "https://www.cincinnati-oh.gov/finance/income-taxes/"
+    },
+    {
+      "city": "Cleveland",
+      "state": "OH",
+      "url": "https://njaccountstax.com/locations/cleveland",
+      "localNote": "Cleveland’s 2.50% municipal income tax is collected by the Central Collection Agency (CCA), separately from the Ohio Department of Taxation.",
+      "source": "https://www.ccaohio.gov/tax-rates"
+    },
+    {
+      "city": "Chicago",
+      "state": "IL",
+      "url": "https://njaccountstax.com/locations/chicago",
+      "localNote": "Chicago’s Personal Property Lease Transaction Tax rose to 15% on 1 January 2026 and covers non-possessory computer leases, which includes cloud software.",
+      "source": "https://www.chicago.gov/city/en/depts/fin/supp_info/revenue/tax_list/personal_propertyleasetransactiontax.html"
+    },
+    {
+      "city": "Dallas",
+      "state": "TX",
+      "url": "https://njaccountstax.com/locations/dallas",
+      "localNote": "Texas has no personal state income tax; the franchise tax no-tax-due threshold is $2,650,000 for 2026-2027 and reports are due 15 May.",
+      "source": "https://comptroller.texas.gov/taxes/franchise/"
+    },
+    {
+      "city": "San Diego",
+      "state": "CA",
+      "url": "https://njaccountstax.com/locations/san-diego",
+      "localNote": "California LLCs owe an $800 annual tax from year one, and the City of San Diego requires its own Business Tax Certificate.",
+      "source": "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html"
+    },
+    {
+      "city": "Raleigh",
+      "state": "NC",
+      "url": "https://njaccountstax.com/locations/raleigh",
+      "localNote": "North Carolina’s corporate income tax is a flat 2.00%; the franchise tax minimum is $200. Raleigh’s combined sales tax rate is 7.25%.",
+      "source": "https://www.ncdor.gov/taxes-forms/corporate-income-franchise-tax/corporate-income-and-franchise-tax-rates"
+    },
+    {
+      "city": "Charlotte",
+      "state": "NC",
+      "url": "https://njaccountstax.com/locations/charlotte",
+      "localNote": "Mecklenburg County’s combined sales tax rate rose to 8.25% effective 1 July 2026 — a full point above Raleigh.",
+      "source": "https://www.ncdor.gov/taxes-forms/sales-and-use-tax/other-sales-and-use-tax-resources/important-notices-issued-sales-and-use-tax-division/important-notice-mecklenburg-county-sales-and-use-tax-increase"
+    }
+  ],
+  "contact": {
+    "email": "njock@njaccountstax.com",
+    "url": "https://njaccountstax.com/contact",
+    "typicalResponseTime": "4 business hours"
+  }
+}

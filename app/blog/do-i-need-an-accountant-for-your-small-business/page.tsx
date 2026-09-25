@@ -34,7 +34,7 @@ const TOC = [
 ];
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
   openGraph: {

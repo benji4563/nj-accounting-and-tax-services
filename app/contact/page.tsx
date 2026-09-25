@@ -4,7 +4,7 @@ import { ContactForm } from './ContactForm';
 import { Calendar, Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact NJ’s Accounting — Book a Free 15-Min Discovery Call',
+  title: 'Contact Us — Free 15-Min Discovery Call',
   description:
     'Two easy ways to reach us: book a 15-minute discovery call with Njock (no pitch), or send a message and we’ll reply within 4 business hours. Small-business bookkeeping and tax.',
   alternates: { canonical: '/contact' },
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
 const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK || 'njock/discovery';
 
 export default function ContactPage() {
-  console.log('[page] /contact rendered');
   return (
     <>
       <Section background="cream">

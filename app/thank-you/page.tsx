@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 };
 
 export default function ThankYouPage() {
-  console.log('[page] /thank-you rendered');
   return (
     <Section background="cream">
       <div className="mx-auto max-w-prose text-center">

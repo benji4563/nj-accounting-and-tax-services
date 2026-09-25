@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { CityHero } from '@/components/locations/CityHero';
 import { CityLocalTrust } from '@/components/locations/CityLocalTrust';
 import { CityFaq } from '@/components/locations/CityFaq';
+import { CityTaxGuide } from '@/components/locations/CityTaxGuide';
 import { ProofStrip } from '@/components/home/ProofStrip';
 import { EmotionalRecognition } from '@/components/home/EmotionalRecognition';
 import { ServicesGrid } from '@/components/home/ServicesGrid';
@@ -16,8 +17,10 @@ import {
   breadcrumbJsonLd,
 } from '@/lib/structured-data';
 import { RALEIGH } from '@/lib/city-data';
+import { cityTaxGuide } from '@/lib/city-tax-guides';
 
 const c = RALEIGH;
+const guide = cityTaxGuide(c.slug);
 
 export const metadata: Metadata = {
   title: c.metaTitle,
@@ -68,6 +71,7 @@ export default function RaleighLandingPage() {
         paragraphs={c.localTrustBody}
         neighborhoods={c.neighborhoods}
       />
+      {guide && <CityTaxGuide guide={guide} cityName={c.name} slug={c.slug} />}
       <EmotionalRecognition />
       <ServicesGrid />
       <MeetNjock />

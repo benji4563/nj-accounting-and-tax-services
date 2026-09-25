@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { CincinnatiHero } from '@/components/locations/CincinnatiHero';
 import { CincinnatiLocalTrust } from '@/components/locations/CincinnatiLocalTrust';
 import { CincinnatiFaq, CINCINNATI_FAQ } from '@/components/locations/CincinnatiFaq';
+import { CityTaxGuide } from '@/components/locations/CityTaxGuide';
 import { ProofStrip } from '@/components/home/ProofStrip';
 import { EmotionalRecognition } from '@/components/home/EmotionalRecognition';
 import { ServicesGrid } from '@/components/home/ServicesGrid';
@@ -15,8 +16,10 @@ import {
   faqPageJsonLd,
   breadcrumbJsonLd,
 } from '@/lib/structured-data';
+import { cityTaxGuide } from '@/lib/city-tax-guides';
 
-const TITLE = 'Small-Business Accountant in Cincinnati — Bookkeeping & Tax Services';
+const TITLE = 'Cincinnati Bookkeeping & Tax Services';
+const GUIDE = cityTaxGuide('cincinnati');
 const DESCRIPTION =
   'Monthly bookkeeping and tax preparation for Cincinnati small businesses. Flat pricing from $299/mo. Books current in 30 days or your next month is free. Serving all of Hamilton County.';
 
@@ -59,6 +62,9 @@ export default function CincinnatiLandingPage() {
       <CincinnatiHero />
       <ProofStrip />
       <CincinnatiLocalTrust />
+      {GUIDE && (
+        <CityTaxGuide guide={GUIDE} cityName="Cincinnati" slug="cincinnati" />
+      )}
       <EmotionalRecognition />
       <ServicesGrid />
       <MeetNjock />

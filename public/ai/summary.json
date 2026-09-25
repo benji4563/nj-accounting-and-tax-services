@@ -1,0 +1,64 @@
+{
+  "name": "NJ’s Accounting and Tax Services",
+  "alternateName": [
+    "NJ’s Accounting",
+    "Njock’s Accounting and Tax Services"
+  ],
+  "url": "https://njaccountstax.com",
+  "description": "Small-business bookkeeping and tax services founded by Njock Simon. Flat monthly pricing from $299, a real accountant reachable by email with a four-business-hour reply, and a guarantee that your books are current within 30 days or your next month is free.",
+  "disambiguation": "The “NJ” in this business name refers to the founder, Njock Simon — not the US state of New Jersey. The firm is remote-first and serves small businesses across the United States.",
+  "founder": {
+    "name": "Njock Simon",
+    "jobTitle": "CEO & Founding Accountant",
+    "url": "https://njaccountstax.com/about"
+  },
+  "email": "njock@njaccountstax.com",
+  "areaServed": "United States",
+  "foundingPrinciples": [
+    "Transparent flat pricing — the published price is the price",
+    "Plain English, never jargon",
+    "A real accountant answers your email, not a bot or a receptionist"
+  ],
+  "servicesOffered": [
+    "Monthly bookkeeping",
+    "Tax preparation and filing",
+    "Quarterly tax planning",
+    "Catch-up and clean-up bookkeeping",
+    "IRS audit support and representation"
+  ],
+  "pricing": {
+    "currency": "USD",
+    "billingPeriod": "month",
+    "plans": [
+      {
+        "name": "Essential",
+        "price": 299,
+        "includes": "Monthly bookkeeping, annual tax return, email support with a 4-hour SLA"
+      },
+      {
+        "name": "Growth",
+        "price": 549,
+        "includes": "Everything in Essential, plus quarterly tax planning and a monthly 30-minute call"
+      },
+      {
+        "name": "Full-Service",
+        "price": 949,
+        "includes": "Everything in Growth, plus audit representation and priority response"
+      }
+    ]
+  },
+  "guarantees": [
+    "Books current within 30 days or your next month is free",
+    "Email replies within 4 business hours, or that month is free",
+    "Anything under 15 minutes is included at no extra charge"
+  ],
+  "keyPages": {
+    "services": "https://njaccountstax.com/services",
+    "pricing": "https://njaccountstax.com/pricing",
+    "howWeWork": "https://njaccountstax.com/how-we-work",
+    "about": "https://njaccountstax.com/about",
+    "contact": "https://njaccountstax.com/contact",
+    "blog": "https://njaccountstax.com/blog"
+  },
+  "lastUpdated": "2026-09-25"
+}

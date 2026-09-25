@@ -3,11 +3,12 @@ import Image from 'next/image';
 import { Section, SectionHeader } from '@/components/design-system/Section';
 import { ServicesGrid } from '@/components/home/ServicesGrid';
 import { CtaDrop } from '@/components/home/CtaDrop';
+import { OfficialSources } from '@/components/home/OfficialSources';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { servicesJsonLd } from '@/lib/structured-data';
 
 export const metadata: Metadata = {
-  title: 'Bookkeeping, Tax Prep & Planning for Small Businesses',
+  title: 'Small-Business Bookkeeping & Tax Prep',
   description:
     'Monthly bookkeeping, tax preparation, quarterly tax planning, and audit support for small businesses. Flat monthly pricing, plain-English deliverables, a real accountant on email.',
   alternates: { canonical: '/services' },
@@ -20,7 +21,6 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  console.log('[page] /services rendered');
   return (
     <>
       <StructuredData data={servicesJsonLd} />
@@ -53,6 +53,7 @@ export default function ServicesPage() {
         </figure>
       </Section>
       <ServicesGrid />
+      <OfficialSources />
       <CtaDrop />
     </>
   );

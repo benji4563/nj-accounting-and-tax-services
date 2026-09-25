@@ -25,7 +25,7 @@ export const SAN_DIEGO: CityConfig = {
   state: 'California',
   stateCode: 'CA',
   county: 'San Diego County',
-  metaTitle: 'Small-Business Accountant in San Diego — Bookkeeping & Tax Services',
+  metaTitle: 'San Diego Bookkeeping & Tax Services',
   metaDescription:
     'Monthly bookkeeping and tax preparation for San Diego small businesses. Flat pricing from $299/mo. Books current in 30 days or your next month is free. Serving all of San Diego County.',
 
@@ -96,7 +96,7 @@ export const CHICAGO: CityConfig = {
   state: 'Illinois',
   stateCode: 'IL',
   county: 'Cook County',
-  metaTitle: 'Small-Business Accountant in Chicago — Bookkeeping & Tax Services',
+  metaTitle: 'Chicago Bookkeeping & Tax Services',
   metaDescription:
     'Monthly bookkeeping and tax preparation for Chicago small businesses. Flat pricing from $299/mo. Books current in 30 days or your next month is free. Serving all of Cook County.',
 
@@ -167,7 +167,7 @@ export const CLEVELAND: CityConfig = {
   state: 'Ohio',
   stateCode: 'OH',
   county: 'Cuyahoga County',
-  metaTitle: 'Small-Business Accountant in Cleveland — Bookkeeping & Tax Services',
+  metaTitle: 'Cleveland Bookkeeping & Tax Services',
   metaDescription:
     'Monthly bookkeeping and tax preparation for Cleveland small businesses. Flat pricing from $299/mo. Books current in 30 days or your next month is free. Serving all of Cuyahoga County.',
 
@@ -238,7 +238,7 @@ export const RALEIGH: CityConfig = {
   state: 'North Carolina',
   stateCode: 'NC',
   county: 'Wake County',
-  metaTitle: 'Small-Business Accountant in Raleigh NC — Bookkeeping & Tax Services',
+  metaTitle: 'Raleigh NC Bookkeeping & Tax Services',
   metaDescription:
     'Monthly bookkeeping and tax preparation for Raleigh small businesses. Flat pricing from $299/mo. Books current in 30 days or your next month is free. Serving the Triangle area.',
 
@@ -309,7 +309,7 @@ export const CHARLOTTE: CityConfig = {
   state: 'North Carolina',
   stateCode: 'NC',
   county: 'Mecklenburg County',
-  metaTitle: 'Small-Business Accountant in Charlotte NC — Bookkeeping & Tax Services',
+  metaTitle: 'Charlotte NC Bookkeeping & Tax Services',
   metaDescription:
     'Monthly bookkeeping and tax preparation for Charlotte small businesses. Flat pricing from $299/mo. Books current in 30 days or your next month is free. Serving all of Mecklenburg County.',
 
@@ -380,7 +380,7 @@ export const DALLAS: CityConfig = {
   state: 'Texas',
   stateCode: 'TX',
   county: 'Dallas County',
-  metaTitle: 'Small-Business Accountant in Dallas TX — Bookkeeping & Tax Services',
+  metaTitle: 'Dallas TX Bookkeeping & Tax Services',
   metaDescription:
     'Monthly bookkeeping and tax preparation for Dallas small businesses. Flat pricing from $299/mo. Books current in 30 days or your next month is free. Serving the DFW metroplex.',
 
