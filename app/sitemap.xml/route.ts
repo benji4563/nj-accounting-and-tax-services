@@ -47,21 +47,30 @@ export function GET() {
     })),
   ];
 
-  const body =
-    `<?xml version="1.0" encoding="UTF-8"?>\n` +
-    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-    entries
-      .map(
-        (r) =>
-          `  <url>\n` +
-          `    <loc>${SITE_URL}${r.path}</loc>\n` +
-          `    <lastmod>${r.lastmod}</lastmod>\n` +
-          `    <changefreq>${r.changefreq}</changefreq>\n` +
-          `    <priority>${r.priority}</priority>\n` +
-          `  </url>`,
-      )
-      .join('\n') +
-    `\n</urlset>\n`;
+  // Single template literals, not concatenated chunks.
+  // The concatenated form (`chunk\n` + `chunk\n` + ...) miscompiled in the
+  // production build of app/rss.xml/route.ts on 2026-09-25: SWC merged the
+  // adjacent literals and dropped the segment following each `${}`
+  // interpolation, silently deleting every closing tag. The dev server was
+  // unaffected, so it looked correct locally and shipped broken.
+  // This route happened to survive, but it is the same construct — hardened
+  // here so a broken sitemap can never reach Google the same way.
+  const urls = entries
+    .map(
+      (r) => `  <url>
+    <loc>${SITE_URL}${r.path}</loc>
+    <lastmod>${r.lastmod}</lastmod>
+    <changefreq>${r.changefreq}</changefreq>
+    <priority>${r.priority}</priority>
+  </url>`,
+    )
+    .join('\n');
+
+  const body = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>
+`;
 
   return new Response(body, {
     headers: {

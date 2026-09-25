@@ -52,38 +52,43 @@ export function GET() {
     // produces something publishable rather than an empty update.
     const social = post.linkedin?.trim() || post.excerpt;
 
-    return (
-      `    <item>\n` +
-      `      <title>${escapeXml(post.title)}</title>\n` +
-      `      <link>${url}</link>\n` +
-      `      <guid isPermaLink="true">${url}</guid>\n` +
-      `      <pubDate>${pubDate}</pubDate>\n` +
-      `      <description>${escapeXml(post.excerpt)}</description>\n` +
-      `      <content:encoded>${cdata(social)}</content:encoded>\n` +
-      `      <enclosure url="${SITE_URL}${post.cover}" type="image/webp" />\n` +
-      `      <author>njock@njaccountstax.com (Njock Simon)</author>\n` +
-      `    </item>`
-    );
+    // Built as ONE template literal on purpose. The previous form —
+    // `chunk\n` + `chunk\n` + ... — miscompiled in the production build:
+    // SWC merged the adjacent literals and dropped the segment following each
+    // `${}` interpolation, so every closing tag vanished
+    // (`</title>`, `</link>`, `</content:encoded>`, the `<enclosure>` tail).
+    // The dev server was unaffected, so the feed looked fine locally and
+    // shipped broken. Do not "tidy" this back into concatenated chunks.
+    return `    <item>
+      <title>${escapeXml(post.title)}</title>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
+      <pubDate>${pubDate}</pubDate>
+      <description>${escapeXml(post.excerpt)}</description>
+      <content:encoded>${cdata(social)}</content:encoded>
+      <enclosure url="${SITE_URL}${post.cover}" type="image/webp" />
+      <author>njock@njaccountstax.com (Njock Simon)</author>
+    </item>`;
   }).join('\n');
 
   const lastBuild = POSTS.length
     ? new Date(`${POSTS[0].date}T12:00:00Z`).toUTCString()
     : new Date().toUTCString();
 
-  const body =
-    `<?xml version="1.0" encoding="UTF-8"?>\n` +
-    `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" ` +
-    `xmlns:content="http://purl.org/rss/1.0/modules/content/">\n` +
-    `  <channel>\n` +
-    `    <title>${escapeXml(TITLE)}</title>\n` +
-    `    <link>${SITE_URL}/blog</link>\n` +
-    `    <description>${escapeXml(DESCRIPTION)}</description>\n` +
-    `    <language>en-us</language>\n` +
-    `    <lastBuildDate>${lastBuild}</lastBuildDate>\n` +
-    `    <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />\n` +
-    items +
-    `\n  </channel>\n` +
-    `</rss>\n`;
+  // Single template literal, same reason as the item builder above.
+  const body = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>${escapeXml(TITLE)}</title>
+    <link>${SITE_URL}/blog</link>
+    <description>${escapeXml(DESCRIPTION)}</description>
+    <language>en-us</language>
+    <lastBuildDate>${lastBuild}</lastBuildDate>
+    <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
+${items}
+  </channel>
+</rss>
+`;
 
   return new Response(body, {
     headers: {
