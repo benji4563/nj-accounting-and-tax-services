@@ -183,3 +183,42 @@ The trade-off is post quality: a Zap can only template the feed fields
 (title, excerpt, link), so you lose the written hook. Reasonable fallback,
 weaker posts. You can also run both if you are careful not to double-post —
 they would need different triggers.
+
+
+---
+
+## Post-deploy check — do not skip this
+
+A malformed feed **silently kills LinkedIn posting**: Zapier cannot parse it,
+so it just stops, with no error anywhere you would look. HTTP 200 proves
+nothing. Always parse it.
+
+```bash
+python .claude/skills/nj-seo/scripts/verify_feeds.py --expect-linkedin 1
+```
+
+It parses both `rss.xml` and `sitemap.xml`, checks every `<item>` has the tags
+it should, verifies `<content:encoded>` is present and under 3,000 characters,
+and counts how many posts carry bespoke LinkedIn copy rather than falling back
+to the excerpt. Exit 0 = healthy.
+
+### The bug this exists to catch
+
+On 2026-09-25 the live feed was malformed and had been since it shipped. Every
+closing tag inside `<item>` was missing. Cause: building the XML as
+
+```js
+`    <item>\n` +
+`      <title>${escapeXml(post.title)}</title>\n` +   // <- ...</title>\n dropped
+```
+
+miscompiles in the production build. SWC merges the adjacent template literals
+and drops the literal segment following each `${}` interpolation. **The dev
+server does not do this**, so it was correct on localhost and broken in
+production.
+
+Both routes now build their XML as single multi-line template literals.
+**Do not "tidy" them back into concatenated chunks.**
+
+The wider lesson: for anything prerendered, verifying against `next dev` is not
+verification. Check `.next/server/app/<route>.body`, or run `next start`.
