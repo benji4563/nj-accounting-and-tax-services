@@ -11,7 +11,30 @@ the NJ's Accounting LinkedIn company page.
 
 ---
 
-## Status: connected and verified (2026-09-25)
+## Status: LIVE and confirmed posting (2026-09-25)
+
+The Zap is on and a test post published successfully to the company page.
+End-to-end path proven:
+
+    lib/posts.ts `linkedin`  ->  <content:encoded> in rss.xml
+        ->  RSS by Zapier  ->  LinkedIn Create Company Update  ->  published
+
+The first fully unattended run is the 9:17am routine publishing a new article,
+which enters the feed as a genuinely new item and triggers the Zap on its own.
+
+**Note on the RSS trigger:** it only fires for items that appear *after* the
+Zap is enabled. Articles already in the feed at setup time are treated as seen
+and will not be replayed — which is correct, it stops 12 old posts flooding the
+page. To publish an existing article, use the Zap's own Test action.
+
+**Checking whether something posted:** ask Ben. LinkedIn redirects every
+logged-out request to a sign-in page, so it cannot be verified from here. What
+*can* be checked from here is the feed — run `verify_feeds.py`, that is the
+input side and it is fully inspectable.
+
+---
+
+## Connection details (verified 2026-09-25)
 
 The Zapier LinkedIn connection was reconnected on 2026-09-25 and the company
 page now resolves:
