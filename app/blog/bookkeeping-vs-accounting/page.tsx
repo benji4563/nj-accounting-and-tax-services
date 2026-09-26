@@ -361,7 +361,12 @@ export default function Post() {
                 </strong>{' '}
                 They take the bookkeeper’s clean records and turn them
                 into the actual filing — federal, state, and often
-                quarterly estimates along the way.
+                quarterly estimates along the way. That includes the returns
+                people forget are returns, like{' '}
+                <Link href="/blog/sales-tax-compliance-services" className={linkClass}>
+                  sales tax filings
+                </Link>
+                .
               </li>
               <li>
                 <strong className="text-aubergine">

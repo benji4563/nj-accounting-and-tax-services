@@ -46,6 +46,40 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'sales-tax-compliance-services',
+    title: 'Sales Tax Compliance Services: What Small Businesses Need',
+    excerpt:
+      'What sales tax compliance services cover, whether labor is taxed in Texas, Florida and New York, when returns are due, and when you can honestly do it yourself.',
+    date: '2026-09-26',
+    minutes: 10,
+    cover: '/blog/sales-tax-compliance-services/hero-vintage-cash-register-counter.webp',
+    coverAlt:
+      'A pale green vintage cash register with a hand crank on a shop counter beside a white teacup and saucer',
+    linkedin: `It's the 19th. The sales tax return is due tomorrow. And you are staring at a $50 invoice that says "tightened loose bolts," wondering whether the drop of oil you used on the stuck one counts as a sale.
+
+In Florida, it might. That is not a joke. It is the Department of Revenue's own example.
+
+With sales tax, you are the middleman. You collect it from your customer, hold it for a few weeks, and hand it to the state — like being the friend stuck holding everyone's coats at a party, except the coats are money and the host can audit you.
+
+What trips up small businesses most is labor:
+
+→ Texas taxes a list of services. Repairing a homeowner's kitchen is not on it. Repairing a restaurant's kitchen is.
+
+→ Florida exempts labor-only repairs, but only if your records prove no part or material went in. One part, and the whole charge is taxable.
+
+→ New York taxes contractor repair work, labor included. Capital improvements are not taxed.
+
+And every one of those states wants a return even when you sold nothing. The zero return feels silly. States do not find it silly.
+
+We are accountants, so reading three states' sales tax bulletins counts as a fun evening for us. We wrote it all up in plain English, including when you honestly do not need to pay anyone to handle this.
+
+https://njaccountstax.com/blog/sales-tax-compliance-services
+
+A drop of oil is cheap. Knowing what it means is cheaper than finding out later.
+
+#SmallBusiness #SalesTax #Bookkeeping #Contractors #Tax`,
+  },
+  {
     slug: 'why-is-tax-relief-services-calling-me',
     title: 'Why Is Tax Relief Services Calling Me? And How to Stop It',
     excerpt:

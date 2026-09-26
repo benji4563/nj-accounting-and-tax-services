@@ -259,12 +259,28 @@ def check(src, path, keyword):
 
 
 def check_registrations(slug):
-    """The three places a post must be registered to actually ship."""
+    """The places a post must be registered to actually ship.
+
+    Since 2026-09-25 the blog index, RSS feed and sitemap all read lib/posts.ts,
+    so a slug listed there counts for all three - provided each consumer still
+    imports POSTS (checked below, so a regression back to a local list FAILs).
+    """
     out = []
     idx = os.path.join(PROJECT, "app", "blog", "page.tsx")
     smap = os.path.join(PROJECT, "app", "sitemap.xml", "route.ts")
+    posts = os.path.join(PROJECT, "lib", "posts.ts")
     used = os.path.join(PROJECT, "Keywords for accountant", "used-keywords.md")
+    in_registry = False
+    if os.path.exists(posts):
+        with open(posts, encoding="utf-8") as f:
+            in_registry = f"slug: '{slug}'" in f.read()
     for label, p in [("Blog index", idx), ("Sitemap", smap), ("used-keywords.md", used)]:
+        if label != "used-keywords.md" and in_registry and os.path.exists(p):
+            with open(p, encoding="utf-8") as f:
+                if "@/lib/posts" in f.read():
+                    out.append({"status": "PASS", "name": f"{label} registration",
+                                "detail": "via lib/posts.ts"})
+                    continue
         if not os.path.exists(p):
             out.append({"status": "WARN", "name": f"{label} registration",
                         "detail": f"file not found: {p}"})
