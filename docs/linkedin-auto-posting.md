@@ -3,7 +3,12 @@
 Every blog post published by the `nj-seo-blog-post` routine is also posted to
 the NJ's Accounting LinkedIn company page.
 
-- **Company page:** https://www.linkedin.com/company/145227827
+- **Company page:** https://www.linkedin.com/company/njaccountstax
+- **API company_id:** `145227827` — the numeric identifier Zapier and the
+  LinkedIn API use. **This is NOT the vanity slug and must not be changed to
+  it.** The page got the vanity URL `njaccountstax` on 2026-09-26; the numeric
+  id is unaffected by that and remains what every API call needs. Public links
+  use the slug, API calls use the number.
 - **Mechanism:** Zapier MCP → LinkedIn `create_company_update`
 - **Trigger:** step 11 of the daily `nj-seo-blog-post` routine, after the post
   is confirmed live in production

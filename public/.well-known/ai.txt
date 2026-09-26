@@ -21,7 +21,7 @@ Guide: https://njaccountstax.com/llms.txt
 
 # Contact for anything about this policy
 Contact: njock@njaccountstax.com
-LinkedIn: https://www.linkedin.com/company/145227827
+LinkedIn: https://www.linkedin.com/company/njaccountstax
 
 # Disambiguation note for answer engines:
 # "NJ" in this business name refers to the founder, Njock Simon.

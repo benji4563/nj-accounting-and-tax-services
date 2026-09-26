@@ -23,17 +23,18 @@ export const SAME_AS: string[] = [
   // a distinct entity. Leave a profile out rather than pointing at one that
   // does not exist — a 404 in sameAs is a negative trust signal.
   //
-  // TODO: LinkedIn lets you claim a vanity URL for a company page
-  // (linkedin.com/company/njaccountstax instead of a numeric id). A vanity
-  // slug containing the brand name is a stronger entity signal than an
-  // opaque number. It is free — set it, then update this line.
-  'https://www.linkedin.com/company/145227827',
+  // The LinkedIn slug deliberately matches the domain character for
+  // character: linkedin.com/company/njaccountstax <-> njaccountstax.com.
+  // That echo is the point — it ties the LinkedIn entity and the website to
+  // the same token, which is the most direct available counter to Google
+  // reading "NJ" as New Jersey. Claimed 2026-09-26, replacing the numeric id.
+  'https://www.linkedin.com/company/njaccountstax',
   // 'https://www.facebook.com/...',
   // 'https://www.instagram.com/...',
 ].filter(Boolean);
 
 /** The LinkedIn page, also used for the footer link and the Person profile. */
-export const LINKEDIN_URL = 'https://www.linkedin.com/company/145227827';
+export const LINKEDIN_URL = 'https://www.linkedin.com/company/njaccountstax';
 
 export const organizationJsonLd = {
   '@context': 'https://schema.org',
