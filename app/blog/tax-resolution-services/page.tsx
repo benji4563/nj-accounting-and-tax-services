@@ -590,6 +590,15 @@ export default function Post() {
             </ol>
 
             <p className="mt-8 text-body text-graphite">
+              If the real problem is a return you never filed rather than a
+              balance you can&rsquo;t pay, start there first. Here&rsquo;s{' '}
+              <Link href="/blog/what-happens-if-i-didnt-file-last-years-taxes" className={linkClass}>
+                what happens if you didn&rsquo;t file last year&rsquo;s taxes
+              </Link>
+              , and why filing late costs ten times more than paying late.
+            </p>
+
+            <p className="mt-4 text-body text-graphite">
               Where it stops being a DIY afternoon: multiple unresolved
               years, payroll or trust-fund taxes tied to a business, a levy
               already in motion, or you simply don&rsquo;t have the hours to

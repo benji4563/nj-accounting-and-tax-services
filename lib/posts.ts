@@ -46,6 +46,42 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'what-happens-if-i-didnt-file-last-years-taxes',
+    title: "What Happens If I Didn't File Last Year's Taxes? Next Steps",
+    excerpt:
+      "If you're owed a refund, there's no penalty, but a three-year clock. If you owe, filing late costs ten times more than paying late. What the IRS can do, and how to catch up.",
+    date: '2026-09-28',
+    minutes: 10,
+    cover: '/blog/what-happens-if-i-didnt-file-last-years-taxes/hero-bundle-of-unopened-letters.webp',
+    coverAlt:
+      'A stack of airmail envelopes and a handwritten card tied together with twine on a dark table',
+    linkedin: `There is an envelope from the IRS on your kitchen counter. It has been there since June. At this point it is less a letter and more a coaster.
+
+If you didn't file last year's return, here's the part nobody tells you: the IRS is far more upset that you didn't file than that you didn't pay.
+
+Think of a parent who is mostly fine that you missed curfew, but genuinely hurt that you didn't text. Not filing is the not-texting.
+
+The numbers, straight from the IRS:
+
+→ Not filing costs 5% of the unpaid tax per month, up to 25%.
+
+→ Not paying costs 0.5% per month. Ten times less.
+
+→ Owe $4,000 and file five months late, and the penalties come to about $1,000. File on time and just not pay, and those same five months cost $100.
+
+→ If the IRS owes you a refund, there is no penalty at all. But you only have three years to claim it, and then the money is gone for good.
+
+So the move is almost always the same: file the missing return now, even if you can't pay yet.
+
+We're accountants. Opening IRS envelopes is, sadly, one of the more exciting parts of our week. We wrote the whole thing up in plain English, including the version where you honestly don't need to hire anyone at all.
+
+https://njaccountstax.com/blog/what-happens-if-i-didnt-file-last-years-taxes
+
+Go ahead and lift the mug. The envelope is smaller than it looks.
+
+#SmallBusiness #Tax #IRS #Bookkeeping #SelfEmployed`,
+  },
+  {
     slug: 'sales-tax-compliance-services',
     title: 'Sales Tax Compliance Services: What Small Businesses Need',
     excerpt:

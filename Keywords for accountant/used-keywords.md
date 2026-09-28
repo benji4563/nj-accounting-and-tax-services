@@ -34,3 +34,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-08-28 | do seniors have to file taxes | /blog/do-seniors-have-to-file-taxes | F. Solopreneur / gig / 1099 tax questions |
 | 2026-08-28 | why is tax relief services calling me | /blog/why-is-tax-relief-services-calling-me | E. Behind on taxes / haven't filed (audit-support intent) |
 | 2026-09-26 | sales tax compliance services | /blog/sales-tax-compliance-services | H. Sales tax — general small business (light coverage) |
+| 2026-09-28 | what happens if i didn't file last year's taxes | /blog/what-happens-if-i-didnt-file-last-years-taxes | E. Behind on taxes / haven't filed (audit-support intent) |
