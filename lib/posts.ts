@@ -46,6 +46,50 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'does-shopify-collect-sales-tax',
+    title: "Does Shopify Collect Sales Tax? What It Does and Doesn't Do",
+    excerpt:
+      'Shopify charges sales tax at checkout once you switch it on, but it never files or remits it. Where the line falls, the one exception, and why Etsy is different.',
+    date: '2026-09-30',
+    minutes: 10,
+    cover: '/blog/does-shopify-collect-sales-tax/hero-packing-desk-labels-laptop.webp',
+    coverAlt:
+      'An overhead view of a wooden desk with labelled shipping boxes, a tape dispenser, printed order forms on a clipboard and an open laptop',
+    linkedin: `There is a column in your Shopify reports called "taxes." You have looked at it. You have never once clicked it.
+
+Fair enough. It has a number in it, the number goes up, and nothing on the screen has ever suggested you should do something about that.
+
+Here is the thing nobody tells new store owners: Shopify collects sales tax. Shopify does not send it anywhere.
+
+Picture a waiter who adds the tax line to your check perfectly, hands you the cash at the end of the night, and goes home. Impeccable arithmetic. Zero follow-through.
+
+What that means in practice:
+
+→ Shopify charges tax only in the states you switched on. A brand new store charges nothing, anywhere, until you tell it to.
+
+→ Registering, filing and paying are all you. No form is generated. No deadline is tracked.
+
+→ The tax arrives in your payout mixed in with your revenue. It looks like a good month. It is a slightly less good month wearing a costume.
+
+→ One real exception: orders through the Shop app are collected, remitted and filed by Shopify. Orders through Shop Pay on your own checkout are not. Same brand, one word apart, opposite treatment.
+
+→ Etsy is different because state law makes it different. Etsy is a marketplace facilitator. Your own store is not a marketplace. It is your shop.
+
+The fix costs about ten minutes a month. Book the collected tax as a liability rather than revenue, and sweep the cash into a separate account. Then the quarterly payment is a transfer instead of an event.
+
+And the part we are apparently constitutionally unable to stop saying: if you sell in one state and ship mostly within it, you do not need us for this. Register once, file on the state portal, roughly twenty minutes a quarter. We would rather tell you that than invoice you for it.
+
+It stops being twenty minutes when the states multiply. That is a different conversation, and a longer one.
+
+Full breakdown, including the nexus thresholds and the bits that catch people out:
+
+https://njaccountstax.com/blog/does-shopify-collect-sales-tax
+
+Shopify is an excellent waiter. Just remember that nobody has walked the money to the bank yet.
+
+#Shopify #Ecommerce #SalesTax #SmallBusiness #Bookkeeping`,
+  },
+  {
     slug: 'what-happens-if-i-didnt-file-last-years-taxes',
     title: "What Happens If I Didn't File Last Year's Taxes? Next Steps",
     excerpt:

@@ -540,7 +540,12 @@ export default function Post() {
                   Marketplaces may collect for you.
                 </strong>{' '}
                 Many states require large marketplaces to collect on sales made
-                through them. Your own website sales are still yours.
+                through them. Your own website sales are still yours &mdash;
+                which is exactly why{' '}
+                <Link href="/blog/does-shopify-collect-sales-tax" className={linkClass}>
+                  Shopify collects sales tax but never remits it
+                </Link>{' '}
+                while Etsy handles the whole job for you.
               </li>
             </ul>
           </div>
