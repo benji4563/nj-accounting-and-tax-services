@@ -532,6 +532,11 @@ export default function Post() {
               first, a named representative, a published fee structure, and no
               objection when you say you want to run the free IRS Pre-Qualifier
               yourself to sanity-check the plan.
+              We ran one named firm through this same test in{' '}
+              <Link href="/blog/is-tax-relief-advocates-legit" className={linkClass}>
+                is Tax Relief Advocates legit
+              </Link>
+              .
             </p>
           </div>
         </Section>

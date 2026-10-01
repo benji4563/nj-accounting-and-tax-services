@@ -46,6 +46,48 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'is-tax-relief-advocates-legit',
+    title: 'Is Tax Relief Advocates Legit? An Honest, Sourced Answer',
+    excerpt:
+      'Yes, it is a real, BBB-accredited company. Whether it fits your tax debt is a separate question. The public record, the real costs, and five questions to ask before signing.',
+    date: '2026-10-01',
+    minutes: 10,
+    cover: '/blog/is-tax-relief-advocates-legit/hero-magnifier-documents-phone-desk.webp',
+    coverAlt:
+      'Overhead view of a magnifying glass resting on printed documents beside a smartphone, a fountain pen, a cup of coffee and a laptop on a pale wooden desk',
+    linkedin: `You have typed a company's name into a search bar and then added the word "legit." Do not be embarrassed. It is the adult version of sniffing the milk.
+
+This week's most-asked version in our corner of the internet: is Tax Relief Advocates legit?
+
+Short answer: yes. Real company, Irvine California, BBB accredited since 2018, A+ rating when we checked on October 1.
+
+Longer answer: "legit" is the lowest bar there is.
+
+A restaurant with a health inspection certificate on the wall will not poison you. That certificate says nothing about whether you will like dinner, or what dinner costs.
+
+So here is what is actually worth checking, with any tax relief firm at all:
+
+→ A star rating and a long complaints list can both be true at once. Read the complaints for the pattern, not the count.
+
+→ Only enrolled agents, CPAs and attorneys can represent you before the IRS. Ask for the person's name. If the answer is a department, that is an answer.
+
+→ No firm has a private door. Every one of them uses the same IRS programs you can apply for yourself.
+
+→ The IRS charges $29 to set up a payment plan online with direct debit, if you owe $50,000 or less. Paying thousands for that is like hiring movers to carry one box across the street. Sensible if the box is a piano. Usually it is a box.
+
+→ Once a payment plan is approved, the monthly late-payment penalty drops from 0.5% to 0.25% for individuals who filed on time. Deciding is cheaper than browsing.
+
+In fairness, we are an accounting firm reviewing a neighbor, which is a bit like one restaurant reviewing another. Salt accordingly. We have never worked with them and we say so in the piece. We also do not negotiate with the IRS ourselves, which makes us a strange choice of critic and a fairly safe one.
+
+Everything is sourced to the IRS, the FTC and the BBB profile:
+
+https://njaccountstax.com/blog/is-tax-relief-advocates-legit
+
+The certificate on the wall means you can sit down. You still have to read the menu.
+
+#SmallBusiness #TaxDebt #IRS #TaxRelief #Bookkeeping`,
+  },
+  {
     slug: 'does-shopify-collect-sales-tax',
     title: "Does Shopify Collect Sales Tax? What It Does and Doesn't Do",
     excerpt:
