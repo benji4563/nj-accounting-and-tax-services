@@ -457,6 +457,12 @@ export default function Post() {
                 what our bookkeeping and tax service actually covers
               </Link>{' '}
               if you&rsquo;re not sure which bucket your letter falls into.
+              And if the real question is the ordinary one &mdash; what a
+              normal return should run you &mdash; we worked through{' '}
+              <Link href="/blog/how-much-does-it-cost-to-do-your-taxes" className={linkClass}>
+                how much it costs to do your taxes
+              </Link>{' '}
+              with the IRS&rsquo;s own averages.
             </p>
           </div>
         </Section>

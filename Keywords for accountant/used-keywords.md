@@ -37,3 +37,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-09-28 | what happens if i didn't file last year's taxes | /blog/what-happens-if-i-didnt-file-last-years-taxes | E. Behind on taxes / haven't filed (audit-support intent) |
 | 2026-09-30 | does shopify collect sales tax | /blog/does-shopify-collect-sales-tax | C. Shopify / Etsy / e-commerce sales tax (high-intent ICP) |
 | 2026-10-01 | is tax relief advocates legit | /blog/is-tax-relief-advocates-legit | E. Behind on taxes / haven't filed (audit-support intent) |
+| 2026-10-05 | how much does it cost to do your taxes | /blog/how-much-does-it-cost-to-do-your-taxes | D. Tax + accountant pricing anxiety (transparency angle) |

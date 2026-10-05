@@ -46,6 +46,50 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'how-much-does-it-cost-to-do-your-taxes',
+    title: 'How Much Does It Cost to Do Your Taxes? The Real Numbers',
+    excerpt:
+      'From $0 with IRS Free File to $600 or more for a business return. The IRS’s own averages, what moves the price, how preparers bill, and when free is enough.',
+    date: '2026-10-05',
+    minutes: 10,
+    cover: '/blog/how-much-does-it-cost-to-do-your-taxes/hero-wooden-desk-tax-folder-coins.webp',
+    coverAlt:
+      'A wooden desk with a paper folder labelled taxes, a folded banknote, scattered coins, reading glasses, stacked files and a vintage rotary telephone',
+    linkedin: `You know the moment. Forty minutes into "free" tax software, you mention one small thing, and a new screen appears. The screen has a price on it.
+
+Nobody did anything wrong. You just asked a question that sounds like it has one answer and actually has about five.
+
+Asking what it costs to do your taxes is like asking a mechanic what it costs to fix a car. The only honest reply is: well, what is it doing?
+
+So here are real numbers, from the one source almost nobody reads. The IRS publishes its own estimate of how painful its own form is. It sits near the back of the 1040 instructions, like a confession.
+
+→ Average filer: about 12 hours and $290.
+
+→ No business income: about 8 hours and $160. That is 71% of returns.
+
+→ Business income: about 21 hours and $610.
+
+→ Of those 21 hours, 10 are recordkeeping. Filling in the actual form is 5. Roughly half the job is looking for things.
+
+→ If your adjusted gross income is $89,000 or less, IRS Free File costs $0 for the federal return. Start from the IRS page, not the software company's own site, or you get the paid version.
+
+That fourth line is the whole secret of what a business return costs. Nobody's tax return is expensive. Their January is expensive. A preparer quoting $900 is usually not pricing the return. They are pricing twelve months of uncategorised bank statements, done all at once, in March, by the most expensive person in the building.
+
+One to walk away from: the IRS says to avoid any preparer whose fee is a percentage of your refund.
+
+In fairness, our profession did this to itself. Accountants spent decades answering "what will it cost" with "it depends," which is accurate and also the least reassuring sentence in the language. We put our prices on a page mostly out of embarrassment.
+
+And yes, we are about to say the thing again: if you have a W-2 and the standard deduction, you do not need us. File free. Spend the money on something with a better story.
+
+The full breakdown, with every source linked:
+
+https://njaccountstax.com/blog/how-much-does-it-cost-to-do-your-taxes
+
+So. What is yours doing?
+
+#Taxes #SmallBusiness #TaxPrep #IRS #Bookkeeping`,
+  },
+  {
     slug: 'is-tax-relief-advocates-legit',
     title: 'Is Tax Relief Advocates Legit? An Honest, Sourced Answer',
     excerpt:
