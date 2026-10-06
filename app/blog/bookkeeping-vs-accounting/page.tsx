@@ -231,7 +231,16 @@ export default function Post() {
             <p className="mt-4 text-body text-graphite">
               Every accounting system runs on the same two-layer structure,
               whether the business is a bakery or a law firm. The layers
-              don’t compete — one feeds the other.
+              don’t compete — one feeds the other. (If you are still at the
+              stage of wondering why either layer is worth the bother, start
+              with{' '}
+              <Link
+                href="/blog/why-is-accounting-important-in-business"
+                className={linkClass}
+              >
+                why accounting is important in business
+              </Link>
+              .)
             </p>
 
             <ul className="mt-8 space-y-4 text-body text-graphite">
