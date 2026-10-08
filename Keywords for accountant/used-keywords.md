@@ -39,3 +39,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-10-01 | is tax relief advocates legit | /blog/is-tax-relief-advocates-legit | E. Behind on taxes / haven't filed (audit-support intent) |
 | 2026-10-05 | how much does it cost to do your taxes | /blog/how-much-does-it-cost-to-do-your-taxes | D. Tax + accountant pricing anxiety (transparency angle) |
 | 2026-10-06 | why is accounting important in business | /blog/why-is-accounting-important-in-business | B. Bookkeeper vs Accountant (service education) |
+| 2026-10-08 | is labor taxed in florida | /blog/is-labor-taxed-in-florida | H. Sales tax — general small business (light coverage) |

@@ -46,6 +46,46 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'is-labor-taxed-in-florida',
+    title: 'Is Labor Taxed in Florida? Repairs, Contractors, Services',
+    excerpt:
+      'Repair labor is taxed the moment any part is used, even a free one. Most contractor labor on buildings is not. The three categories Florida uses, with the state sources.',
+    date: '2026-10-08',
+    minutes: 9,
+    cover: '/blog/is-labor-taxed-in-florida/hero-open-toolbox-wrenches-on-concrete-floor.webp',
+    coverAlt:
+      'An open blue toolbox on a concrete floor filled with rows of wrenches, sockets and screwdrivers, with a pair of hands reaching for a socket',
+    linkedin: `Every repair tech has a part they give away for free. A hose clamp. A washer. A squirt of lubricant. It lives loose in the van, it costs nothing, and you feel quietly generous every time you say "no charge for that."
+
+In Florida, that free hose clamp is the most expensive thing on the invoice.
+
+Here is why. Florida does not tax labor by how hard you worked. It taxes labor by what you touched. Think of it like airline baggage. Nobody at the counter cares how carefully you packed. They only care which category the bag is in.
+
+There are three categories.
+
+→ Things that move. Cars, mowers, phones, a washing machine that plugs into the wall. Labor is tax free only if the job was labor and nothing else. Add one part, even a free one, and the whole bill is taxable. Not the part. The whole bill.
+
+→ Things that are bolted to the planet. Roofs, driveways, tile, central air. The contractor pays tax on the materials at the supplier and, under most contracts, charges the customer no sales tax at all.
+
+→ A short list of named services. Security, commercial cleaning, commercial pest control. It reads less like tax policy and more like the supporting cast of a detective novel.
+
+The line between the first two can be thin. The state's own example is a mailbox. Bricked into a post, it is part of the property. Screwed onto a wooden post, it is a movable object. Somebody in Tallahassee wrote that down with a straight face, and we respect them for it.
+
+The practical fix is two words. If a repair really was labor only, write "Labor Only" on the invoice and keep it. That note is your entire defense, and it is free.
+
+Now the part where we talk ourselves out of work, which is apparently our whole marketing strategy. If you do one kind of job in one county, you do not need an accountant for this. Learn your category once, set the tax in your invoicing app, file on the state portal. Done.
+
+It gets harder when one business straddles the categories. The handyman who fixes the dishwasher and the wall behind it. The cleaner with offices and homes.
+
+The full guide, with every rule checked against the Florida Department of Revenue's own publications:
+
+https://njaccountstax.com/blog/is-labor-taxed-in-florida
+
+Be generous with your customers. Just keep the hose clamps in a labeled bin, so you know when you have been.
+
+#FloridaBusiness #SalesTax #SmallBusiness #Contractors #Bookkeeping`,
+  },
+  {
     slug: 'why-is-accounting-important-in-business',
     title: 'Why Is Accounting Important in Business? 5 Honest Reasons',
     excerpt:

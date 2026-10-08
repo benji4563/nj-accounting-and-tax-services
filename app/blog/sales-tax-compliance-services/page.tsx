@@ -405,7 +405,12 @@ export default function Post() {
                 charge is taxable &mdash; even if you didn&rsquo;t bill for the
                 part. The brochure&rsquo;s own example is a $50 mower repair that
                 became taxable because of a little lubricant. Marco&rsquo;s drop of
-                oil is, it turns out, a documented case study.
+                oil is, it turns out, a documented case study. Contractors and
+                cleaners get different rules again, which we break down in{' '}
+                <Link href="/blog/is-labor-taxed-in-florida" className={linkClass}>
+                  is labor taxed in Florida
+                </Link>
+                .
               </li>
               <li>
                 <strong className="text-aubergine">
