@@ -46,6 +46,46 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'do-babysitters-have-to-pay-taxes',
+    title: 'Do Babysitters Have to Pay Taxes? The $400 and $3,000 Rules',
+    excerpt:
+      'Babysitting money is taxable, even in cash. What you owe depends on whether you are self-employed or a household employee. Both rules, with worked numbers and IRS sources.',
+    date: '2026-10-09',
+    minutes: 10,
+    cover: '/blog/do-babysitters-have-to-pay-taxes/hero-toy-train-on-wooden-floor.webp',
+    coverAlt:
+      'A baby hand resting on a light wooden floor beside a curved wooden toy train track with a red and a black toy train car',
+    linkedin: `There is a text message that has frightened more babysitters than any toddler ever has.
+
+"Hi love, can you send me your Social Security number? Our accountant needs it."
+
+You are nineteen. You have spent the year being paid in Venmo transfers with notes like "sorry about the slime." Nobody mentioned accountants.
+
+Here is what nobody tells sitters. Yes, babysitting money is taxable, even the folded twenties at the front door. But there are two completely different sets of rules, and which one you get works a lot like the difference between a taxi and a chauffeur.
+
+A taxi driver picks the route, owns the car and takes whoever waves. A chauffeur drives the family's car, on the family's schedule, by the family's rules. Same skill. Different job.
+
+→ Taxi: you mind kids in your own home, set your own rates and rules. You are self-employed. Once you clear $400 in a year you file a return and pay self-employment tax, which is 15.3% on most of your net.
+
+→ Chauffeur: you work in their living room, by the laminated schedule on their fridge. You are a household employee. Social Security and Medicare only kick in when one family pays you $3,000 or more in 2026. Your share is 7.65%, and the family matches it.
+
+→ Chauffeur who is under 18 and still in school: those wages generally are not counted for Social Security and Medicare at all.
+
+The difference is real money. On $4,950 from three families, a sitter who wrongly assumes she is self-employed pays about $699. As a household employee with one family over the line, her share is $260.
+
+So that scary text is good news. It means a family is putting your work on the record and paying half the bill.
+
+Now the part where an accounting firm tells you not to hire an accounting firm. Most babysitters do not need us. A notes app, a total per family and free filing software will do it. We have been told this is not how marketing works.
+
+The full guide, checked line by line against IRS publications:
+
+https://njaccountstax.com/blog/do-babysitters-have-to-pay-taxes
+
+Send the number. Keep the slime note. It is the closest thing to a pay stub you have.
+
+#Babysitting #Taxes #SideHustle #SelfEmployed #NannyTax`,
+  },
+  {
     slug: 'is-labor-taxed-in-florida',
     title: 'Is Labor Taxed in Florida? Repairs, Contractors, Services',
     excerpt:

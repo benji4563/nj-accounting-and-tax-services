@@ -486,7 +486,12 @@ export default function Post() {
                 Schedule C, deduct genuine business expenses, and handle
                 self-employment tax. Missing 1099s do not stop you either —
                 your own records are the authority, and you owe tax on the
-                income whether or not anyone sent a form.
+                income whether or not anyone sent a form. That includes cash
+                work like childcare, which has its own thresholds:{' '}
+                <Link href="/blog/do-babysitters-have-to-pay-taxes" className={linkClass}>
+                  do babysitters have to pay taxes
+                </Link>
+                .
               </li>
               <li>
                 <strong className="text-aubergine">
