@@ -1,0 +1,24 @@
+# Non-target brands dropped from NJ keyword runs (one per line).
+# From the exclude list in SEED-LIST-v2.md plus the tax chains seen in test runs.
+turbotax
+intuit
+quickbooks
+xero
+freshbooks
+gusto
+adp
+netsuite
+h&r block
+hr block
+jackson hewitt
+liberty tax
+taxact
+taxslayer
+chime
+novo
+bluevine
+navy federal
+deloitte
+pwc
+kpmg
+ernst & young

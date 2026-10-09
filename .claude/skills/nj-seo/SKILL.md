@@ -37,9 +37,19 @@ we have several posts in is where Google already sees topical authority
 building, so the next post there is the one most likely to push a page from the
 bottom of page 1 (or top of page 2) onto page 1. The unattended scheduled run
 uses this flag; a human doing fresh research can omit it. If Google Search
-Console or DataForSEO ranked-keyword data is available at run time, prefer the
-real queries sitting in positions 8–20 (one good post often lifts those onto
-page 1) over raw volume.
+Console data is available at run time, prefer the real queries sitting in
+positions 8–20 (one good post often lifts those onto page 1) over raw volume.
+
+**Keyword data sources.** DataForSEO is retired for keyword research (company
+rule, 2026-10-09). New keyword ideas, volume, CPC and competition come from
+AfriShield's shared keyword engine — use the `keyword-finder` skill, with NJ's
+seeds and brand list in `keyword-finder/`. `refresh_volumes.py` re-verifies the
+curated cluster files through the same engine and writes `kp_volume`,
+`kp_competition`, `kp_cpc`, `kp_updated` beside the export's numbers ($0.012 per
+keyword; dry run by default, `--apply` to spend). `kp_competition` is Google Ads
+advertiser competition, not keyword difficulty: the export's `kd` column still
+drives ranking, and `serp_competition.py` shows who actually holds page one.
+`dataforseo_client.py` remains only for pulling a live SERP.
 
 Unions the **curated** cluster files (`keyword-clusters.csv` +
 `keyword-clusters-expanded.csv`), then filters:

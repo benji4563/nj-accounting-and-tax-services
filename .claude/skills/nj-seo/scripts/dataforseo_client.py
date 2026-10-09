@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 """
-Minimal DataForSEO client for the AI-SEO keyword pipeline.
+Minimal DataForSEO client for the AI-SEO pipeline: SERP pulls only.
 
-Deliberately narrow. DataForSEO is *not* the discovery layer here — Ahrefs /
-SEMrush exports remain the source of new keywords, because discovery on
-DataForSEO costs ~$0.09 per seed expansion and you need dozens of them. What
-this client does is the cheap half: re-verify volume and difficulty for the
-small curated set we actually act on, and pull a SERP when a post needs one.
+DataForSEO was retired for keyword research on 2026-10-09. Keyword ideas,
+volume, CPC and competition come from AfriShield's shared keyword engine
+(`00 Knowledge/Keyword Finder`), and refresh_volumes.py re-verifies the
+curated cluster files through it. What remains here is pulling one live SERP
+when a post needs the ranking pages and People Also Ask questions.
 
-Costs, confirmed against this account's own /appendix/user_data price tree:
+Cost, confirmed against this account's own /appendix/user_data price tree:
 
-  keyword_overview/live   $0.012 per request + $0.00012 per keyword
-                          (<= 700 keywords per request, so ~$0.10 per 700)
   serp .../live           $0.002 per request (one keyword's SERP)
 
 Two guards exist because the working balance is small:
@@ -26,11 +24,11 @@ Usage as a library
     from dataforseo_client import DataForSEO
     dfs = DataForSEO()
     print(dfs.balance())
-    rows = dfs.keyword_overview(["accounting firms chicago", ...])
+    organic, questions = dfs.serp("how to switch accountants")
 
 Usage as a CLI (a cheap way to sanity-check credentials and balance)
     python dataforseo_client.py --balance
-    python dataforseo_client.py --lookup "accounting firms chicago" "bookkeeping nj"
+    python dataforseo_client.py --serp "how to switch accountants"
 """
 
 import argparse
@@ -208,42 +206,17 @@ class DataForSEO:
         return float(body["tasks"][0]["result"][0]["money"]["balance"])
 
     def keyword_overview(self, keywords):
-        """Volume, CPC, competition and difficulty for each keyword.
+        """Retired 2026-10-09: DataForSEO is no longer used for keyword metrics.
 
-        Chunks automatically. Returns a list of flat dicts — the raw response
-        nests these under keyword_info/keyword_properties, which is tedious
-        for every caller to unpick.
+        Volume, CPC and competition now come from AfriShield's shared keyword
+        engine (`00 Knowledge/Keyword Finder`); refresh_volumes.py is the
+        caller that replaced this. Kept as a stub so an old call fails loudly
+        instead of spending DataForSEO credit.
         """
-        keywords = [k for k in dict.fromkeys(k.strip() for k in keywords) if k]
-        rows = []
-        for start in range(0, len(keywords), MAX_KEYWORDS_PER_REQUEST):
-            batch = keywords[start : start + MAX_KEYWORDS_PER_REQUEST]
-            payload = [
-                {
-                    "keywords": batch,
-                    "location_code": self.config["location_code"],
-                    "language_code": self.config["language_code"],
-                }
-            ]
-            result = self._call(
-                "dataforseo_labs/google/keyword_overview/live",
-                payload,
-                keywords=len(batch),
-                estimated_cost=0.012 + 0.00012 * len(batch),
-            )
-            for item in (result[0]["items"] if result else []) or []:
-                info = item.get("keyword_info") or {}
-                props = item.get("keyword_properties") or {}
-                rows.append(
-                    {
-                        "keyword": item.get("keyword"),
-                        "volume": info.get("search_volume"),
-                        "cpc_usd": info.get("cpc"),
-                        "competition": info.get("competition"),
-                        "kd": props.get("keyword_difficulty"),
-                    }
-                )
-        return rows
+        raise DataForSEOError(
+            "keyword_overview is retired: use refresh_volumes.py (Keyword Planner via "
+            "the shared keyword engine) for volume, CPC and competition."
+        )
 
     def serp(self, keyword, depth=10):
         """Live organic SERP for one keyword. $0.002.
@@ -288,7 +261,8 @@ class DataForSEO:
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     parser.add_argument("--balance", action="store_true", help="print balance and exit")
-    parser.add_argument("--lookup", nargs="+", metavar="KW", help="volume/KD for keywords")
+    parser.add_argument("--lookup", nargs="+", metavar="KW",
+                        help="retired: keyword metrics now come from refresh_volumes.py")
     parser.add_argument("--serp", metavar="KW", help="pull one live SERP")
     parser.add_argument("--dry-run", action="store_true", help="cost only, no calls")
     args = parser.parse_args()

@@ -1,14 +1,13 @@
 {
-  "_comment": "Per-client DataForSEO settings. To stand up a new client, copy this file and change these values — the code in dataforseo_client.py has no client-specific knowledge in it.",
-
+  "_comment": "Per-client keyword settings. keyword_dir / cluster_glob / country / lang / max_spend_per_refresh_usd drive refresh_volumes.py (Keyword Planner via the shared keyword engine). location_code / language_code / budget_* are for dataforseo_client.py, which is now used for SERP pulls only.",
   "client": "NJ's Accounting and Tax Services",
-
   "keyword_dir": "Keywords for accountant",
   "cluster_glob": "keyword-clusters*.csv",
-
   "location_code": 2840,
   "language_code": "en",
-
-  "budget_floor_usd": 0.10,
-  "max_spend_per_run_usd": 0.25
+  "budget_floor_usd": 0.1,
+  "max_spend_per_run_usd": 0.25,
+  "country": "us",
+  "lang": "en",
+  "max_spend_per_refresh_usd": 0.8
 }

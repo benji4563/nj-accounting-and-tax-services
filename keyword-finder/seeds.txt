@@ -1,0 +1,16 @@
+# NJ's Accounting & Tax Services — keyword seeds (market: US, English)
+# Source: Tier 1 of "Keywords for accountant/SEED-LIST-v2.md". Add Tier 2/3 seeds as separate runs.
+# Run from this folder:
+#   python "../../00 Knowledge/Keyword Finder/keyword_orchestrator.py" --seeds-file seeds.txt --brands-file brands.txt --country us --lang en --out-dir output --save-raw --prefix nj
+# Then check who ranks on page one for the top 20 (about $0.09):
+#   python "../../00 Knowledge/Keyword Finder/serp_competition.py" --input output/nj_verified.csv --top 20 --country us --lang en --own-domain njaccountstax.com
+do i need an llc for my small business
+llc vs s corp for small business
+when should i become an s corp
+how to pay yourself from your llc
+how much does bookkeeping cost for a small business
+how much does an accountant cost for a small business
+how to switch accountants
+do i have to pay quarterly taxes
+how much should i set aside for taxes self employed
+how to calculate estimated taxes

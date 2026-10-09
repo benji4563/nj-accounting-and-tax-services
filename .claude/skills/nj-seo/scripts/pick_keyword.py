@@ -169,7 +169,7 @@ def to_num(v, default=0.0):
 def to_num_or_none(v):
     """Like to_num but distinguishes "no data" from zero.
 
-    The dfs_* columns are blank for keywords DataForSEO has never returned,
+    The kp_* / dfs_* columns are blank for keywords never checked,
     and a blank must not read as a volume of 0 — that would make an unverified
     keyword look like a dead one.
     """
@@ -230,6 +230,10 @@ def load_rows(include_raw=False):
                     "source": os.path.basename(path),
                     # Written by refresh_volumes.py, alongside (never over) the
                     # export's own numbers. Absent until a refresh has run.
+                    "kp_volume": to_num_or_none(r.get("kp_volume")),
+                    "kp_competition": to_num_or_none(r.get("kp_competition")),
+                    "kp_updated": (r.get("kp_updated") or "").strip(),
+                    # Legacy DataForSEO check (retired 2026-10-09), kept as history.
                     "dfs_volume": to_num_or_none(r.get("dfs_volume")),
                     "dfs_kd": to_num_or_none(r.get("dfs_kd")),
                     "dfs_updated": (r.get("dfs_updated") or "").strip(),
@@ -280,26 +284,33 @@ def score(r):
     return s
 
 
-def dfs_note(r):
+def verify_note(r):
     """One-line reality check on the export's volume, or "" if there's nothing to say.
 
-    Ranking deliberately still runs on the export's numbers — DataForSEO
+    Ranking deliberately still runs on the export's numbers — Keyword Planner
     measures volume differently, so swapping the inputs would silently rewrite
     every past decision. This only surfaces disagreement for a human to judge.
+
+    Prefers the Keyword Planner check written by refresh_volumes.py and falls
+    back to the retired DataForSEO check where that is all a row has.
     """
-    new = r.get("dfs_volume")
-    if new is None:
-        return "not yet checked against DataForSEO - run refresh_volumes.py"
+    if r.get("kp_volume") is not None:
+        source, new, stamp = "Keyword Planner", r["kp_volume"], r.get("kp_updated") or "?"
+        comp = r.get("kp_competition")
+        extra = f", ad competition {int(comp)}/100" if comp is not None else ""
+    elif r.get("dfs_volume") is not None:
+        source, new, stamp = "DataForSEO (retired)", r["dfs_volume"], r.get("dfs_updated") or "?"
+        kd = r.get("dfs_kd")
+        extra = f", KD {int(kd)}" if kd is not None else ""
+    else:
+        return "not yet checked against Keyword Planner - run refresh_volumes.py"
     old = r.get("volume") or 0
-    stamp = r.get("dfs_updated") or "?"
-    kd = r.get("dfs_kd")
-    kd_text = f", KD {int(kd)}" if kd is not None else ""
     if not old:
-        return f"DataForSEO says {int(new)}/mo{kd_text} ({stamp})"
+        return f"{source} says {int(new)}/mo{extra} ({stamp})"
     delta = (new - old) / old
     verdict = "confirms" if abs(delta) < 0.30 else "DISAGREES with"
-    return (f"DataForSEO {verdict} the export: {int(new)}/mo vs {int(old)} "
-            f"({delta:+.0%}{kd_text}, {stamp})")
+    return (f"{source} {verdict} the export: {int(new)}/mo vs {int(old)} "
+            f"({delta:+.0%}{extra}, {stamp})")
 
 
 def build_cluster(rows, primary, limit=14):
@@ -326,6 +337,38 @@ def slugify(kw):
     s = re.sub(r"[^a-z0-9\s-]", "", kw.lower())
     s = re.sub(r"\s+", "-", s.strip())
     return re.sub(r"-{2,}", "-", s)[:60].strip("-")
+
+
+def candidate_pool(rows, used, service_pages=False, cluster=None):
+    """Rows still eligible as a primary. service_pages=None keeps both blog-post
+    and service-page targets (refresh_volumes.py checks the two together)."""
+    parked = load_parked()
+    used_terms = [terms(u) for u in used]
+    pool = []
+    for r in rows:
+        k = norm(r["keyword"])
+        if k in used:
+            continue
+        if is_near_dupe(r["keyword"], used_terms):
+            continue
+        if k in parked:
+            continue
+        if r["cluster"].startswith(SKIP_CLUSTER_PREFIXES):
+            continue
+        if NOISE_RE.search(r["keyword"]):
+            continue
+        # Commercial "X accounting services" terms belong on a service or
+        # niche landing page, not a blog post. Ranking a post for them would
+        # also compete with the page that should own them.
+        is_service = "service" in r.get("target", "").lower()
+        if service_pages is not None and is_service != bool(service_pages):
+            continue
+        if r["volume"] < 30:          # too thin to justify a full post
+            continue
+        if cluster and cluster.lower() not in r["cluster"].lower():
+            continue
+        pool.append(r)
+    return pool
 
 
 def main():
@@ -355,33 +398,7 @@ def main():
         return 1
 
     used = load_used()
-    parked = load_parked()
-    used_terms = [terms(u) for u in used]
-    pool = []
-    for r in rows:
-        k = norm(r["keyword"])
-        if k in used:
-            continue
-        if is_near_dupe(r["keyword"], used_terms):
-            continue
-        if k in parked:
-            continue
-        if r["cluster"].startswith(SKIP_CLUSTER_PREFIXES):
-            continue
-        if NOISE_RE.search(r["keyword"]):
-            continue
-        # Commercial "X accounting services" terms belong on a service or
-        # niche landing page, not a blog post. Ranking a post for them would
-        # also compete with the page that should own them.
-        if not args.service_pages and "service" in r.get("target", "").lower():
-            continue
-        if args.service_pages and "service" not in r.get("target", "").lower():
-            continue
-        if r["volume"] < 30:          # too thin to justify a full post
-            continue
-        if args.cluster and args.cluster.lower() not in r["cluster"].lower():
-            continue
-        pool.append(r)
+    pool = candidate_pool(rows, used, service_pages=args.service_pages, cluster=args.cluster)
 
     # de-dupe across the two CSVs
     seen, uniq = set(), []
@@ -415,7 +432,7 @@ def main():
             print(f"CLUSTER   {p['cluster']}")
             print(f"METRICS   vol {int(p['volume'])} · KD {int(p['kd'])} · "
                   f"CPC ${p['cpc']:.2f} · {p['intent']}")
-            verify = dfs_note(p)
+            verify = verify_note(p)
             if verify:
                 print(f"VERIFY    {verify}")
             print(f"SERP      {p['serp']}")
