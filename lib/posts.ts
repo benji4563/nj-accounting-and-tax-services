@@ -46,6 +46,42 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'is-tax-forgiveness-real',
+    title: 'Is Tax Forgiveness Real? What the IRS Actually Offers',
+    excerpt:
+      'The IRS has no program called tax forgiveness, but several real ones can settle, pause, or trim a debt. What each does, who qualifies, and what waiting costs, with IRS sources.',
+    date: '2026-10-11',
+    minutes: 10,
+    cover: '/blog/is-tax-forgiveness-real/hero-metal-mailbox-against-hedge.webp',
+    coverAlt:
+      'A weathered metal mailbox with a raised red flag standing on a wooden post in front of a dark green hedge',
+    linkedin: `There is a radio ad that plays at 7:40 every morning, and it sounds more confident about your tax bill than you have ever felt.
+
+"The IRS is FORGIVING tax debt. You may qualify." Then a man reads the terms at the speed of an auctioneer who has left the oven on.
+
+So is tax forgiveness real? Partly. But asking the IRS for "forgiveness" is like walking into a hardware store and asking for the fixing tool. They have several. Which one you need depends on what is broken.
+
+→ The Offer in Compromise is the one that actually shrinks the debt. In fiscal 2025, taxpayers proposed 38,797 offers and the IRS accepted 5,464. Roughly one in seven, and mostly people with very little left to collect.
+
+→ Penalty relief is what "one-time forgiveness" usually means. Three clean years of filing and paying on time, and certain penalties come off. The tax stays. Think of a library waiving the late fee. You still have to return the book.
+
+→ Currently Not Collectible is a pause button, not a delete key. Penalties and interest keep growing while you are paused.
+
+→ A payment plan forgives nothing. It costs $29 to set up online with direct debit, and it halves the failure to pay penalty for an individual who filed on time.
+
+That last one matters more than it sounds. On $28,000 of unpaid tax, the penalty runs $140 a month. Six months of waiting for forgiveness costs $840. An approved plan drops it to $70.
+
+Now the awkward bit for an accounting firm. If you owe under $50,000 and your returns are filed, you probably do not need us. It is a phone call and an online form. We keep writing posts that end this way. We have been told there are easier ways to run a business.
+
+The full guide, program by program, with every IRS page linked:
+
+https://njaccountstax.com/blog/is-tax-forgiveness-real
+
+Open the envelope. The man on the radio will still be talking when you get back.
+
+#TaxDebt #IRS #SmallBusiness #TaxRelief #Bookkeeping`,
+  },
+  {
     slug: 'do-babysitters-have-to-pay-taxes',
     title: 'Do Babysitters Have to Pay Taxes? The $400 and $3,000 Rules',
     excerpt:

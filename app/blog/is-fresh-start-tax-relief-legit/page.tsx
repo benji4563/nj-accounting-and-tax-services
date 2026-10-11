@@ -274,7 +274,12 @@ export default function Post() {
               free to apply for. The &ldquo;program&rdquo; as sold in cold calls
               &mdash; a one-time amnesty, guaranteed forgiveness, act now
               &mdash; is not a thing that exists. Same two words, two very
-              different claims.
+              different claims. We took the word &ldquo;forgiveness&rdquo; apart
+              on its own in{' '}
+              <Link href="/blog/is-tax-forgiveness-real" className={linkClass}>
+                is tax forgiveness real
+              </Link>
+              .
             </p>
 
             <ul className="mt-8 space-y-4 text-body text-graphite">

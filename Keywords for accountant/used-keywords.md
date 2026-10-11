@@ -41,3 +41,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-10-06 | why is accounting important in business | /blog/why-is-accounting-important-in-business | B. Bookkeeper vs Accountant (service education) |
 | 2026-10-08 | is labor taxed in florida | /blog/is-labor-taxed-in-florida | H. Sales tax — general small business (light coverage) |
 | 2026-10-09 | do babysitters have to pay taxes | /blog/do-babysitters-have-to-pay-taxes | F. Solopreneur / gig / 1099 tax questions |
+| 2026-10-11 | is tax forgiveness real | /blog/is-tax-forgiveness-real | E. Behind on taxes / haven't filed (audit-support intent) |
