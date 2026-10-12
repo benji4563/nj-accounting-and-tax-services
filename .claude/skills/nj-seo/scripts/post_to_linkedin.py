@@ -1,23 +1,38 @@
 #!/usr/bin/env python3
 """
-Post a blog article to the NJ's Accounting LinkedIn company page via a
-Zapier "Catch Hook" webhook.
+Validate LinkedIn copy for the NJ's Accounting company page and, as a fallback,
+post it via a Zapier "Catch Hook" webhook.
 
-WHY A WEBHOOK AND NOT THE ZAPIER MCP
-------------------------------------
-The Zapier MCP `execute_zapier_write_action` is not callable: the action needs
-its fields inside a `params` record, the server publishes no property schema
-for the tool, so an object passed as `params` is serialized to a string and
-rejected with `expected record, received string`. Flattened fields are dropped;
-`instructions` does not fill them either. The LinkedIn connection itself is
-healthy — `company_id` 145227827 resolves to "Njaccountstax" — so this is a
-call-path problem, not an auth problem.
+HOW POSTING ACTUALLY HAPPENS NOW
+--------------------------------
+The scheduled blog task posts directly through the Zapier MCP, not through this
+script. It calls `execute_zapier_write_action` with
 
-A Catch Hook sidesteps it entirely: we POST plain JSON, Zapier's Zap maps the
-fields onto LinkedIn's "Create Company Update" action.
+    selected_api: LinkedInCLIAPI
+    action:       create_company_update
+    tool_name:    linkedin_create_company_update
+    params:       company_id "145227827", comment, submitted_url, title
 
-SETUP
------
+and gets back `"lifecycleState": "PUBLISHED"` plus the post `url`. That call
+worked on 2026-10-09 and again on 2026-10-12.
+
+This script's everyday job is therefore the `--dry-run` check: it enforces the
+3,000-character limit and the no-unescaped-parentheses rule before the copy is
+committed to `lib/posts.ts` and sent. Nothing is posted in a dry run.
+
+An earlier version of this docstring said the MCP call could not work
+(`expected record, received string` when passing `params`). That was true when
+written in September 2026 and is no longer the case.
+
+THE WEBHOOK PATH (FALLBACK)
+---------------------------
+Running without `--dry-run` POSTs plain JSON to a Catch Hook, and a Zap maps
+the fields onto LinkedIn's "Create Company Update" action. Use it only if the
+MCP route is unavailable. Never use both for the same article: that publishes
+the post twice.
+
+WEBHOOK SETUP
+-------------
   1. In Zapier, create a Zap:
        Trigger:  Webhooks by Zapier -> Catch Hook
        Action:   LinkedIn -> Create Company Update
@@ -37,15 +52,16 @@ SETUP
 
 USAGE
 -----
-  # normal use: copy from a file so newlines and quotes survive the shell
+  # normal use: validate the copy and print the payload, send nothing
+  python post_to_linkedin.py --comment-file copy.txt --url ... --dry-run
+
+  # fallback: post through the webhook. Copy comes from a file so newlines and
+  # quotes survive the shell
   python post_to_linkedin.py \
       --comment-file /path/to/copy.txt \
       --url https://njaccountstax.com/blog/<slug> \
       --title "<post title>" \
       --description "<one-line summary>"
-
-  # see exactly what would be sent, send nothing
-  python post_to_linkedin.py --comment-file copy.txt --url ... --dry-run
 
   # send a harmless payload to prime the Zap's field mapping
   python post_to_linkedin.py --test
@@ -137,7 +153,10 @@ def validate(comment, title, description):
 
 def main():
     ap = argparse.ArgumentParser(
-        description="Post a blog article to the LinkedIn company page via a Zapier Catch Hook."
+        description=(
+            "Validate LinkedIn copy for the company page (--dry-run). Without "
+            "--dry-run, posts it via the fallback Zapier Catch Hook."
+        )
     )
     ap.add_argument("--comment", help="Post body. Prefer --comment-file.")
     ap.add_argument(
@@ -209,8 +228,10 @@ def main():
     if not hook:
         print(
             "ERROR: no webhook URL. Set LINKEDIN_WEBHOOK_URL in the environment "
-            "or add it to .env.local at the project root. See the setup notes at "
-            "the top of this file, and docs/linkedin-auto-posting.md.",
+            "or add it to .env.local at the project root. See the webhook setup "
+            "notes at the top of this file. The webhook is only the fallback: "
+            "normal posting goes through the Zapier MCP, as described in "
+            "docs/linkedin-auto-posting.md.",
             file=sys.stderr,
         )
         sys.exit(2)

@@ -9,14 +9,57 @@ the NJ's Accounting LinkedIn company page.
   it.** The page got the vanity URL `njaccountstax` on 2026-09-26; the numeric
   id is unaffected by that and remains what every API call needs. Public links
   use the slug, API calls use the number.
-- **Mechanism:** Zapier MCP → LinkedIn `create_company_update`
-- **Trigger:** step 11 of the daily `nj-seo-blog-post` routine, after the post
-  is confirmed live in production
-- **Set up:** 2026-09-25
+- **Mechanism:** Zapier MCP → LinkedIn `create_company_update`, called
+  directly by the routine
+- **Trigger:** step 12 of the daily `nj-seo-blog-post` routine, after the post
+  is confirmed live in production (step 11 writes and validates the copy)
+- **Set up:** 2026-09-25; switched to direct posting 2026-10-09
 
 ---
 
-## Status: LIVE and confirmed posting (2026-09-25)
+## Current status: direct posting via the Zapier MCP (since 2026-10-09)
+
+The routine posts each article itself, once, with `execute_zapier_write_action`:
+
+```
+selected_api: LinkedInCLIAPI
+action:       create_company_update
+tool_name:    linkedin_create_company_update
+params:
+  company_id:    "145227827"
+  comment:       the post's `linkedin` field from lib/posts.ts
+  submitted_url: https://njaccountstax.com/blog/<slug>
+  title:         the post title
+```
+
+Success is `"lifecycleState": "PUBLISHED"` with a `url` for the post in the
+result, so a run can report the post link itself. Confirmed working on
+2026-10-09 and 2026-10-12. The 2026-10-12 call passed no `connection_id` and
+used the default connection.
+
+Rules the routine follows:
+
+- **One call per run.** If it errors or times out, do not retry: a timed-out
+  call may still have published. Report the error and the copy instead.
+- **Only after the article URL returns 200 in production.**
+- **Never `linkedin_create_share_update`** — that posts to a personal profile.
+
+Before posting, the copy is checked with
+`python .claude/skills/nj-seo/scripts/post_to_linkedin.py --comment-file <file> --url <url> --dry-run`
+(3,000-character limit, no unescaped parentheses). That script's webhook mode
+is a fallback only.
+
+**The RSS Zap described further down is retired.** On 2026-10-01 it published
+placeholder text because its fields were never mapped. Everything below from
+"Status: LIVE" to the end of "How it posts" is kept as history and as the
+recipe if the RSS route is ever wanted again. The `linkedin` field is still
+published in the feed as `<content:encoded>`.
+
+---
+
+## History — the RSS Zap (retired 2026-10-09)
+
+### Status: LIVE and confirmed posting (2026-09-25)
 
 The Zap is on and a test post published successfully to the company page.
 End-to-end path proven:
@@ -48,7 +91,11 @@ page now resolves:
 company_id: "145227827"  ->  "Njaccountstax"
 ```
 
-### The one non-obvious thing: connection_id must be passed explicitly
+### connection_id (was required in September; not needed on 2026-10-12)
+
+The note below was true when written. The 2026-10-12 direct call succeeded
+without any `connection_id`. Try without it first, and come back here only if
+the authorization error reappears.
 
 `connection_id: 66209388` is **required on every call**. Without it the action
 fails with:
@@ -193,7 +240,7 @@ was published, which posts duplicates or blanks. The trigger must be RSS.
 
 ## Failure policy
 
-LinkedIn posting is **step 11, after** the blog post is confirmed live. It is
+LinkedIn posting is **step 12, after** the blog post is confirmed live. It is
 deliberately last and deliberately non-fatal: if LinkedIn fails, the blog post
 has already shipped and that is the thing that matters. The routine reports the
 failure plainly rather than retrying in a loop or marking the run as failed.
