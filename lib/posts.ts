@@ -46,6 +46,42 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'do-i-charge-sales-tax-on-services-in-texas',
+    title: 'Do I Charge Sales Tax on Services in Texas? The Full List',
+    excerpt:
+      'Texas taxes services by list: 16 categories are taxable and everything else is not. What is on the list, the homes-versus-businesses split, the 5 percent rule and filing dates, with Comptroller sources.',
+    date: '2026-10-12',
+    minutes: 10,
+    cover: '/blog/do-i-charge-sales-tax-on-services-in-texas/hero-orange-lawn-mower-on-backyard-grass.webp',
+    coverAlt:
+      'An orange and white push lawn mower standing on a freshly cut backyard lawn in front of a dark line of trees',
+    linkedin: `There is a moment, late on a Friday, when a Texas business owner stares at the tax field on an invoice the way you stare at a parking sign with four different sets of hours on it.
+
+You fixed a gate. You did not sell a gate. Surely nobody taxes a person for owning a drill.
+
+Sometimes they do. Texas has no general sales tax on services. It has a guest list. Sixteen categories of service are on it. If yours is one of them, you collect. If not, you do not. The bouncer does not care how hard you worked.
+
+→ On the list: lawn care, janitorial work, pest control, locksmiths, appliance repair, dog grooming, web hosting. Also fortune telling, which they presumably saw coming.
+
+→ Not on the list: accounting, legal work, most consulting, design. And repair labor on a home.
+
+→ The strange one: rehang a gate at a house and the labor is not taxed. Rehang the identical gate behind a dentist's office and the whole bill is taxed, labor and hinges together. Same drill. Different building.
+
+→ The expensive one: bundle a taxable and a non-taxable service into one price, and if the taxable part is more than 5 percent, Texas presumes the whole thing is taxable. A $600 design plus $400 of planting on one line is taxed on $1,000. On two lines, it is taxed on $400.
+
+It is one red sock in a white wash. Small sock. Pink everything.
+
+Awkward confession from an accounting firm: our own service is not on the list, and most one-trade businesses can sort this out with a single careful read. We wrote the careful read anyway.
+
+The full list, the 5 percent rule, the rate and the filing dates, all checked against the Texas Comptroller:
+
+https://njaccountstax.com/blog/do-i-charge-sales-tax-on-services-in-texas
+
+Read it before Friday. The parking sign will still be confusing. The invoice will not.
+
+#SalesTax #Texas #SmallBusiness #Bookkeeping`,
+  },
+  {
     slug: 'bookkeeping-terms',
     title: 'Bookkeeping Terms: 25 Plain-English Definitions for Owners',
     excerpt:

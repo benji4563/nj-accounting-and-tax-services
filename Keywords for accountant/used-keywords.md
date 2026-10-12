@@ -43,3 +43,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-10-09 | do babysitters have to pay taxes | /blog/do-babysitters-have-to-pay-taxes | F. Solopreneur / gig / 1099 tax questions |
 | 2026-10-11 | is tax forgiveness real | /blog/is-tax-forgiveness-real | E. Behind on taxes / haven't filed (audit-support intent) |
 | 2026-10-12 | bookkeeping terms | /blog/bookkeeping-terms | B. Bookkeeper vs Accountant (service education) |
+| 2026-10-12 | do i charge sales tax on services in texas | /blog/do-i-charge-sales-tax-on-services-in-texas | H. Sales tax — general small business (light coverage) |

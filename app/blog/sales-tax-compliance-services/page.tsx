@@ -437,6 +437,11 @@ export default function Post() {
                 Dallas small-business accounting page
               </Link>{' '}
               covers the other Texas tax that surprises people: the franchise tax.
+              For the full list of what Texas taxes, see{' '}
+              <Link href="/blog/do-i-charge-sales-tax-on-services-in-texas" className={linkClass}>
+                do I charge sales tax on services in Texas
+              </Link>
+              .
             </p>
           </div>
         </Section>
