@@ -522,7 +522,12 @@ export default function Post() {
               its keep. Revenue, profit, assets and liabilities mean the same
               thing on every set of statements, so a stranger can read yours in
               ten minutes. It is the one language where being fluent mostly
-              means being consistent.
+              means being consistent. If some of the vocabulary is still
+              foreign, we put the 25 words that matter into{' '}
+              <Link href="/blog/bookkeeping-terms" className={linkClass}>
+                a plain-English list of bookkeeping terms
+              </Link>
+              .
             </p>
           </div>
         </Section>

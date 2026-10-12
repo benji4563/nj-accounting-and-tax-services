@@ -46,6 +46,42 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'bookkeeping-terms',
+    title: 'Bookkeeping Terms: 25 Plain-English Definitions for Owners',
+    excerpt:
+      'The 25 bookkeeping terms a small-business owner actually meets, grouped by where you meet them instead of A to Z. Plain-English definitions, worked numbers and IRS sources.',
+    date: '2026-10-12',
+    minutes: 11,
+    cover: '/blog/bookkeeping-terms/hero-tabbed-notebook-glasses-pencil.webp',
+    coverAlt:
+      'An open notebook full of handwritten notes with a row of coloured sticky tabs along its edge, a pair of round glasses and a pencil resting on the page, beside a closed laptop on a wooden desk',
+    linkedin: `There is a specific kind of "yes" that only happens on the phone with a bookkeeper.
+
+She asks, "Do you want me to accrue that, or just expense it when it clears?" And you say "Yes." Firmly. Like a tourist agreeing to whatever the waiter just said, and hoping it is not the fish.
+
+Bookkeeping is a foreign language where every word is something you already know, wearing a suit. So here is the phrasebook, minus the page about aardvarks.
+
+→ Accounts receivable: money customers owe you. Accounts payable: money you owe. They sound like two departments in a building you would not want to visit. They are "owed to me" and "owed by me."
+
+→ Debit and credit: left and right. That is all. Your bank taught you one is good news and one is bad. In the books they have no mood whatsoever.
+
+→ Cash basis or accrual basis: do you count a sale when you are paid, or when you earn it? Send a $480 invoice on March 28, get paid April 19. Cash basis calls that April. Accrual calls it March. Move it to December and it is a different tax year.
+
+→ Revenue, gross profit, net profit: three numbers that all get called "what I made." On $7,400 of sales with $2,100 of parts and $1,850 of other costs, only $3,450 is the real answer.
+
+→ Write-off: the most optimistic word in the language. A $500 write-off does not hand you $500. It lowers the income you are taxed on by $500.
+
+Awkward confession from an accounting firm: you need about ten of these words, not all 25, and you do not need us to learn them. We wrote the full list anyway. Our business model is apparently "explain it so well they can leave."
+
+All 25, in the order you actually meet them, with the IRS pages linked:
+
+https://njaccountstax.com/blog/bookkeeping-terms
+
+Next time she asks, you will not say yes. You will say "which one saves me money?" And it will not be the fish.
+
+#Bookkeeping #SmallBusiness #Accounting #Entrepreneurs`,
+  },
+  {
     slug: 'is-tax-forgiveness-real',
     title: 'Is Tax Forgiveness Real? What the IRS Actually Offers',
     excerpt:
