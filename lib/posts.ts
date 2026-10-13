@@ -46,6 +46,46 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'when-should-i-start-my-taxes',
+    title: 'When Should I Start My Taxes? A Month-by-Month Answer',
+    excerpt:
+      'Starting your taxes and filing them are two different dates. Gather in January, file the week after your last form arrives, and start earlier still if you are self-employed. The calendar, with IRS sources.',
+    date: '2026-10-13',
+    minutes: 10,
+    cover: '/blog/when-should-i-start-my-taxes/hero-metal-mailbox-with-red-flag.webp',
+    coverAlt:
+      'A weathered metal roadside mailbox with its red flag raised, standing on a wooden post in front of a dark green hedge',
+    linkedin: `Every January there is one person who files their taxes on the first possible evening and then mentions it to you. Twice. With the calm of someone who has already packed for a trip that is three months away.
+
+And every February, that same person opens an envelope from an investing app they forgot they had.
+
+Here is the thing nobody says out loud: starting your taxes and filing your taxes are two different jobs with two different dates. Treating them as one is like saying dinner takes three minutes because that is how long the microwave ran.
+
+What the IRS calendar actually looks like:
+
+→ Late January: the filing season opens and W-2s arrive. Start a folder. Do not press the button.
+
+→ Mid-February: brokerage forms are due. For the 2025 tax year, brokers had until February 17. This is the envelope.
+
+→ File a return that is missing a form and you fix it with an amended return. The IRS says to allow 8 to 12 weeks for that, sometimes 16.
+
+→ Wait until April and miss the deadline, and filing late costs ten times what paying late does. Owe $3,000 and that is $150 a month against $15.
+
+So the answer is neither early nor late. It is the week after your last form arrives. For most people that is a quiet stretch between mid-February and mid-March that almost nobody uses.
+
+Self-employed? You have four payment dates of your own, and one of the IRS quarters is two months long. We are accountants and we cannot explain that either.
+
+Awkward admission from a firm that sells this: with one job and one W-2, you need a folder and a free evening, not us.
+
+The full month-by-month calendar, checked against the IRS:
+
+https://njaccountstax.com/blog/when-should-i-start-my-taxes
+
+File in March. You are still allowed to tell two people.
+
+#Taxes #SmallBusiness #SelfEmployed #IRS #Bookkeeping`,
+  },
+  {
     slug: 'do-i-charge-sales-tax-on-services-in-texas',
     title: 'Do I Charge Sales Tax on Services in Texas? The Full List',
     excerpt:

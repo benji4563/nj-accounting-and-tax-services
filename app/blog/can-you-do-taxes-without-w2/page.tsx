@@ -243,7 +243,12 @@ export default function Post() {
                 </strong>{' '}
                 Employers have to get your W-2 to you by January 31 — it slides
                 to the next business day when that lands on a weekend. If it is
-                the first week of February, nothing has gone wrong yet.
+                the first week of February, nothing has gone wrong yet. Our
+                month-by-month guide to{' '}
+                <Link href="/blog/when-should-i-start-my-taxes" className={linkClass}>
+                  when to start your taxes
+                </Link>{' '}
+                has the rest of the dates.
               </li>
               <li>
                 <strong className="text-aubergine">
