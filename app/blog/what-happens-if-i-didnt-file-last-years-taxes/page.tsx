@@ -472,6 +472,14 @@ export default function Post() {
               </Link>{' '}
               using the IRS&rsquo;s own substitute form.
             </p>
+            <p className="mt-4 text-body text-graphite">
+              And if one missed year has quietly become several, the arithmetic
+              changes. We cover that in{' '}
+              <Link href="/blog/what-happens-if-you-dont-file-taxes-for-3-years" className={linkClass}>
+                what happens if you don&rsquo;t file taxes for 3 years
+              </Link>
+              , including which old refunds are about to expire.
+            </p>
           </div>
         </Section>
 

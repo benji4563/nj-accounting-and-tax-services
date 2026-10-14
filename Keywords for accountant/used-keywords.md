@@ -45,3 +45,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-10-12 | bookkeeping terms | /blog/bookkeeping-terms | B. Bookkeeper vs Accountant (service education) |
 | 2026-10-12 | do i charge sales tax on services in texas | /blog/do-i-charge-sales-tax-on-services-in-texas | H. Sales tax — general small business (light coverage) |
 | 2026-10-13 | when should i start my taxes | /blog/when-should-i-start-my-taxes | F. Solopreneur / gig / 1099 tax questions |
+| 2026-10-14 | what happens if you don't file taxes for 3 years | /blog/what-happens-if-you-dont-file-taxes-for-3-years | E. Behind on taxes / haven't filed (audit-support intent) |

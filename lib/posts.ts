@@ -46,6 +46,44 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'what-happens-if-you-dont-file-taxes-for-3-years',
+    title: "What Happens If You Don't File Taxes for 3 Years, Explained",
+    excerpt:
+      'Three unfiled years means three sets of penalties if you owe, up to 47.5 percent a year plus interest, or three refunds on an expiry clock if you are owed. Substitute returns, the six-year rule and how to catch up, with IRS sources.',
+    date: '2026-10-14',
+    minutes: 11,
+    cover: '/blog/what-happens-if-you-dont-file-taxes-for-3-years/hero-hourglass-in-afternoon-light.webp',
+    coverAlt:
+      'A glass hourglass of pale sand on a dark wooden table, crossed by bands of low afternoon sunlight',
+    linkedin: `Every house has one drawer. Takeout menus, a single AA battery of unknown charge, a key to nothing, and, in a surprising number of homes, three years of tax paperwork that nobody has opened.
+
+The IRS envelopes are usually at the bottom. Moving them there felt like progress.
+
+So what actually happens if you don't file taxes for three years? It splits on one question: do you owe, or are you owed?
+
+If you owe, each year is its own bill, running on its own clock:
+
+→ Failure to file: 5% a month, capped at 25%. Most of the damage lands in the first five months, like a gym membership with a joining fee.
+
+→ Failure to pay: 0.5% a month, also capped at 25%. Together the ceiling is 47.5% per year, plus interest with no ceiling at all.
+
+→ The IRS can file a substitute return for you. It counts the income and can skip the deductions you would have claimed. It is a stranger packing your suitcase.
+
+If you are owed refunds, there is usually no penalty, but each refund expires three years after that return was due. For tax year 2022, the IRS said over 1.3 million people left about $1.2 billion unclaimed. That deadline passed in April. The 2023 one is next.
+
+And for a year with no return, the IRS clock to assess tax never starts. Its own guidance says to keep your records indefinitely.
+
+Awkward admission from an accounting firm: if all three years are one W-2 and probably refunds, you do not need us. You need your IRS transcripts, an afternoon and a pot of coffee.
+
+The full breakdown, with the real arithmetic and the order to fix it in:
+
+https://njaccountstax.com/blog/what-happens-if-you-dont-file-taxes-for-3-years
+
+Open the drawer this week. The envelopes are rarely as bad as the drawer makes them sound. The battery, on the other hand, is definitely dead.
+
+#Taxes #SmallBusiness #SelfEmployed #IRS #Bookkeeping`,
+  },
+  {
     slug: 'when-should-i-start-my-taxes',
     title: 'When Should I Start My Taxes? A Month-by-Month Answer',
     excerpt:
