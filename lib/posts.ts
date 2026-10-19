@@ -46,6 +46,44 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'accounting-for-donations-to-nonprofit-organizations',
+    title: 'Accounting for Donations to Nonprofit Organizations: 6 Rules',
+    excerpt:
+      'Pledges are revenue when promised, matching gifts wait for the match, donated goods go in at fair value and most volunteer hours never touch the books. Six rules for recording gifts, plus the IRS receipt rules, with sources.',
+    date: '2026-10-19',
+    minutes: 10,
+    cover: '/blog/accounting-for-donations-to-nonprofit-organizations/hero-donated-canned-goods-on-table.webp',
+    coverAlt:
+      'Stacks of unlabeled food cans beside bags of bread on a table at a donation drive',
+    linkedin: `Every food pantry treasurer eventually gets the treadmill.
+
+Not a metaphor. An actual treadmill, donated after the gala, now living in a volunteer's garage, waiting for someone to decide what it is worth.
+
+Donations look like the simplest money a nonprofit receives. Someone gives, you say thank you, done. Then the accounting starts, and it turns out every gift has its own rules, like a family dinner where each cousin has a different allergy.
+
+The short version:
+
+→ A signed pledge is revenue the day it is promised, before a cent arrives. It works like an invoice, not a wish.
+
+→ A matching gift is not revenue until the match happens. "We'll give $10,000 if you raise $10,000" is a promise with a punch card.
+
+→ Donated goods go on the books at fair value. That means the sofa from the curb, not the sofa from the donor's memory.
+
+→ Most volunteer hours never touch the books. An electrician rewiring the kitchen counts. The person sorting cans every Saturday is a hero and, for accounting purposes, invisible.
+
+→ A single gift of $250 or more needs a written acknowledgment before the donor can deduct it. A gala ticket over $75 with dinner attached needs a disclosure of how much is actually deductible. Skip it and the IRS penalty is $10 per ticket, up to $5,000 per event.
+
+Honest admission from an accounting firm: a small congregation taking cash and checks, with no pledges and no gala, can handle all of this with decent donor software and a careful volunteer. We mostly earn our fee once matching grants and multi-year pledges show up.
+
+All six rules, with the journal entries and the IRS sources:
+
+https://njaccountstax.com/blog/accounting-for-donations-to-nonprofit-organizations
+
+As for the treadmill: describe it on the receipt, put a fair value on it in your books, and do not, under any circumstances, let anyone hold the next board meeting on it.
+
+#Nonprofit #NonprofitAccounting #Fundraising #Bookkeeping #SmallBusiness`,
+  },
+  {
     slug: 'what-happens-if-you-dont-file-taxes-for-3-years',
     title: "What Happens If You Don't File Taxes for 3 Years, Explained",
     excerpt:

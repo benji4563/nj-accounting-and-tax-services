@@ -461,7 +461,16 @@ export default function Post() {
             <p className="mt-4 text-body text-graphite">
               Most fund-accounting mistakes happen at the moment a donation is
               entered, not later. Get this part right and the rest is mostly
-              maintenance.
+              maintenance. For pledges, matching gifts, donated goods and the
+              IRS receipt rules, see our{' '}
+              <Link
+                href="/blog/accounting-for-donations-to-nonprofit-organizations"
+                className={linkClass}
+              >
+                six rules for accounting for donations to nonprofit
+                organizations
+              </Link>
+              .
             </p>
 
             <ul className="mt-8 space-y-4 text-body text-graphite">
