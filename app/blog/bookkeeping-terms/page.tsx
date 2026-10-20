@@ -284,6 +284,11 @@ export default function Post() {
               <Link href="/blog/bookkeeping-vs-accounting" className={linkClass}>
                 bookkeeping versus accounting
               </Link>
+              . And if you would rather learn to keep the books yourself, here
+              is{' '}
+              <Link href="/blog/how-to-learn-bookkeeping" className={linkClass}>
+                how to learn bookkeeping on your own books
+              </Link>
               .
             </p>
           </div>

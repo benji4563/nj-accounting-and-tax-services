@@ -46,6 +46,46 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'how-to-learn-bookkeeping',
+    title: 'How to Learn Bookkeeping: A 6-Step Plan for Owners',
+    excerpt:
+      'Learn the five account types, read the free IRS guide, then record and reconcile one real month of your own books. A six-step plan for owners, the reconciliation habit most skip, and when doing it yourself stops paying.',
+    date: '2026-10-20',
+    minutes: 10,
+    cover: '/blog/how-to-learn-bookkeeping/hero-open-notebook-pen-wooden-desk.webp',
+    coverAlt:
+      'An open lined notebook with a black pen resting across its blank pages on a warm wooden desk by a window',
+    linkedin: `Every business owner who decides to learn bookkeeping does the same thing first.
+
+They buy a brand new notebook. They watch four videos about debits and credits. They write "debit = left??" on page one.
+
+Meanwhile, in the next tab, their accounting software has 61 transactions sitting in a category called Uncategorized, which is what software calls it when it has quietly given up.
+
+Learning bookkeeping is a lot like learning to do laundry. Sort, record, check, fold, repeat. Nobody ever got good at laundry by watching a lecture about fabric.
+
+The plan that actually works:
+
+→ Learn the five account types and about ten words. One evening, not a semester.
+
+→ Read IRS Publication 583. It is free, it is dry, and it is the rulebook everyone else is paraphrasing.
+
+→ Open a separate business checking account. The IRS calls it one of the first things you should do, and it turns bookkeeping from detective work into data entry.
+
+→ Record one real month of your own transactions, then reconcile it to the bank statement. The reconciliation is the real exam, and it is the step most self-taught owners skip.
+
+Repeat that cycle three months running and you know the core of the job. No certificate required: the Bureau of Labor Statistics says certification is not usually required even for professional bookkeeping clerks.
+
+Honest admission from an accounting firm: if you have one bank account, no employees and a reconciliation that takes under an hour a month, you do not need us. Below that line, we are mostly an expensive way to avoid a YouTube video.
+
+The full six-step plan, with the IRS sources and the arithmetic on when doing it yourself stops paying:
+
+https://njaccountstax.com/blog/how-to-learn-bookkeeping
+
+As for the notebook: keep it. Just make the second line "reconcile first."
+
+#Bookkeeping #SmallBusiness #SmallBusinessOwner #Accounting #Entrepreneurship`,
+  },
+  {
     slug: 'accounting-for-donations-to-nonprofit-organizations',
     title: 'Accounting for Donations to Nonprofit Organizations: 6 Rules',
     excerpt:
