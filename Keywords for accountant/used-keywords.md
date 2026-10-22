@@ -48,3 +48,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-10-14 | what happens if you don't file taxes for 3 years | /blog/what-happens-if-you-dont-file-taxes-for-3-years | E. Behind on taxes / haven't filed (audit-support intent) |
 | 2026-10-19 | accounting for donations to nonprofit organizations | /blog/accounting-for-donations-to-nonprofit-organizations | O. Nonprofit & fund accounting |
 | 2026-10-20 | how to learn bookkeeping | /blog/how-to-learn-bookkeeping | B. Bookkeeper vs Accountant (service education) |
+| 2026-10-22 | when is nys sales tax due | /blog/when-is-nys-sales-tax-due | H. Sales tax — general small business (light coverage) |

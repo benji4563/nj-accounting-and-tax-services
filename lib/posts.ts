@@ -46,6 +46,47 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'when-is-nys-sales-tax-due',
+    title: 'When Is NYS Sales Tax Due? Quarterly, Annual and Monthly',
+    excerpt:
+      "Quarterly New York sales tax returns are due June 20, September 20, December 20 and March 20, because the state's quarters end in May, August, November and February. The annual and monthly schedules, the weekend rule, zero returns and what a late 20th costs.",
+    date: '2026-10-22',
+    minutes: 9,
+    cover: '/blog/when-is-nys-sales-tax-due/hero-vintage-cash-register-on-shop-counter.webp',
+    coverAlt:
+      'A mint green vintage cash register on a wooden shop counter beside a white teacup and saucer',
+    linkedin: `Somewhere in New York right now there is a sticky note on a cash register that says "Q1 sales tax, due April 20."
+
+It looks responsible. It is wrong twice.
+
+New York does not run its sales tax year on the calendar. It runs it like a school year: the year starts in March, and nobody sends a reminder home in a backpack.
+
+The four quarters are March to May, June to August, September to November and December to February. Each return is due 20 days after its quarter ends:
+
+→ June 20
+→ September 20
+→ December 20
+→ March 20
+
+When the 20th lands on a weekend or holiday, it moves to the next business day. This quarter's return is due Monday, December 21, which is the week you are least likely to want to open a spreadsheet.
+
+Two more things that catch people:
+
+→ A season with zero sales still needs a return. File it late and the minimum penalty is $50, which is New York charging you for silence.
+
+→ Paying late generally costs 10% of the tax for the first month, plus 1% a month after that, up to 30%, with interest compounding daily on top.
+
+Honest admission from an accounting firm: if you sell from one location and your register already totals taxable sales by quarter, you do not need us for this. Put four dates in your phone. We would be embarrassed to bill you for it.
+
+The full breakdown, with the annual and monthly schedules and how to tell which one you are on:
+
+https://njaccountstax.com/blog/when-is-nys-sales-tax-due
+
+#SmallBusiness #SalesTax #NewYork #Bookkeeping #SmallBusinessTips
+
+Throw out the old sticky note. Write four new dates on a fresh one. The register will not remind you, no matter how long it has been on the counter.`,
+  },
+  {
     slug: 'how-to-learn-bookkeeping',
     title: 'How to Learn Bookkeeping: A 6-Step Plan for Owners',
     excerpt:

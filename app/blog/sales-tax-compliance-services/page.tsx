@@ -468,7 +468,12 @@ export default function Post() {
                 , quarterly returns are due 20 days after each quarter ends. The
                 quarters run March to May, June to August, September to November
                 and December to February &mdash; so returns are due June 20,
-                September 20, December 20 and March 20.
+                September 20, December 20 and March 20. The annual and monthly
+                schedules, and the weekend rule, are in our guide to{' '}
+                <Link href="/blog/when-is-nys-sales-tax-due" className={linkClass}>
+                  when NYS sales tax is due
+                </Link>
+                .
               </li>
               <li>
                 <strong className="text-aubergine">
