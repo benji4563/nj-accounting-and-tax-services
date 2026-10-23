@@ -423,7 +423,12 @@ export default function Post() {
                 says a contractor must charge sales tax on that work, labor
                 included. A capital improvement &mdash; work that adds value or
                 substantially extends the life of the property &mdash; is not
-                taxed, and the customer documents it on Form ST-124.
+                taxed, and the customer documents it on Form ST-124. We sort
+                the common jobs, from roofs to carpet, in{' '}
+                <Link href="/blog/do-contractors-charge-sales-tax-on-labor-in-ny" className={linkClass}>
+                  do contractors charge sales tax on labor in NY
+                </Link>
+                .
               </li>
             </ul>
             <p className="mt-8 text-body text-graphite">

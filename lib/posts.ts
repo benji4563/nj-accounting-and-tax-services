@@ -46,6 +46,46 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'do-contractors-charge-sales-tax-on-labor-in-ny',
+    title: 'Do Contractors Charge Sales Tax on Labor in NY? Yes, Unless',
+    excerpt:
+      'New York taxes contractor labor on repairs, maintenance and installs, and not on capital improvements backed by Form ST-124. The three tests, common jobs sorted, the 90-day rule, and why you pay tax on materials either way.',
+    date: '2026-10-23',
+    minutes: 10,
+    cover: '/blog/do-contractors-charge-sales-tax-on-labor-in-ny/hero-contractor-tools-on-wooden-table.webp',
+    coverAlt:
+      'Hand tools laid out on a worn wooden table: a hand saw, trowel, hammer, wrenches, nails, safety glasses, a clamp and an orange hard hat',
+    linkedin: `Every contractor in New York has a glovebox with the same three things in it.
+
+A tire gauge that has never touched a tire. Two takeout menus. And a small stack of Form ST-124s that may or may not be signed.
+
+That stack is quietly deciding how much sales tax you owe.
+
+Here is the rule, and it is not about labor at all. New York looks at what the property looks like when you drive away.
+
+Think haircut versus tattoo. A haircut maintains what was already there, and it gets taxed. A tattoo is a permanent change, and it does not.
+
+In contractor terms:
+
+→ Repairs, maintenance and installs are taxed on the whole bill. Labor, materials, markups. Writing LABOR in bigger letters on the invoice does not change it.
+
+→ Capital improvements are not taxed when the customer signs Form ST-124. Get it within 90 days and the burden of proof shifts to the customer.
+
+→ Same carpet, different answer. As the first floor in a new building, it is an improvement. In a house finished more than six months ago, it is taxable. The carpet has no idea what day it is.
+
+→ You pay tax on your own materials either way. The lumberyard does not ask where the two-by-fours are going.
+
+Honest note from an accounting firm whose idea of a capital improvement is a second monitor: if you mostly build new decks and full remodels and you collect a signed ST-124 at the start of every job, you do not need us for this. You need a folder.
+
+The full sorting key, roofs to driveways to paint:
+
+https://njaccountstax.com/blog/do-contractors-charge-sales-tax-on-labor-in-ny
+
+#Contractors #SalesTax #NewYork #SmallBusiness #Bookkeeping
+
+Move the certificates out of the glovebox. The tire gauge can stay. It has earned its retirement.`,
+  },
+  {
     slug: 'when-is-nys-sales-tax-due',
     title: 'When Is NYS Sales Tax Due? Quarterly, Annual and Monthly',
     excerpt:
