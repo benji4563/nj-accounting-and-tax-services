@@ -326,7 +326,15 @@ export default function Post() {
               That gap is the whole idea. Accrual puts the $9,000 in March,
               where the work actually happened, so a March profit-and-loss
               statement reflects March&rsquo;s real performance instead of
-              whichever invoices happened to get paid that month.
+              whichever invoices happened to get paid that month. For the
+              full side-by-side, including tax timing and switching, see{' '}
+              <Link
+                href="/blog/difference-between-cash-and-accrual-accounting"
+                className={linkClass}
+              >
+                the difference between cash and accrual accounting
+              </Link>
+              .
             </p>
           </div>
         </Section>

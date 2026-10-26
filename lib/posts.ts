@@ -46,6 +46,39 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'difference-between-cash-and-accrual-accounting',
+    title: 'What Is the Difference Between Cash and Accrual Accounting?',
+    excerpt:
+      'Cash accounting counts money when it moves; accrual counts it when it is earned. One invoice worked both ways, how each method moves your tax bill, who must use accrual, and how to switch.',
+    date: '2026-10-26',
+    minutes: 10,
+    cover: '/blog/difference-between-cash-and-accrual-accounting/hero-desk-tax-folder-and-coins.webp',
+    coverAlt:
+      'A wooden desk with a folder labeled Taxes, a banknote, stacks of coins, reading glasses and a cream rotary telephone',
+    linkedin: `Every business owner gets the January moment eventually.
+
+The bank app says December was your worst month of the year. The accounting software says it was your best. You look from one to the other like a parent whose two kids are each blaming the other for the broken lamp.
+
+Here is the annoying part: they are both telling the truth.
+
+That is the difference between cash and accrual accounting, and it usually comes down to one invoice. Say you bill $4,800 on December 18 and the client pays on January 9, after what we can only assume was a very relaxing holiday.
+
+Cash basis is checking your bank balance. Accrual is checking your bank balance and also opening your mail.
+
+→ Cash counts income when the money arrives, so that invoice is January.
+→ Accrual counts it when you earned it, so it is December, and this year's taxes, even though the money is still sitting in someone else's account.
+→ Sole proprietors, S corps and most partnerships can choose either method. C corps and partnerships with a C corp partner stay eligible for cash only while average gross receipts are $32 million or less, the 2026 figure under IRS Rev. Proc. 2025-32.
+→ Switching generally needs IRS approval on Form 3115. Plan it for the top of a tax year, not halfway across an intersection.
+
+We are accountants, so yes, our honest answer to "which one is better" is "it depends." We did at least write down exactly what it depends on.
+
+https://njaccountstax.com/blog/difference-between-cash-and-accrual-accounting
+
+#SmallBusiness #Bookkeeping #AccountingTips #SmallBusinessTaxes
+
+Neither report is lying, by the way. One of them is just still on holiday with your client.`,
+  },
+  {
     slug: 'do-contractors-charge-sales-tax-on-labor-in-ny',
     title: 'Do Contractors Charge Sales Tax on Labor in NY? Yes, Unless',
     excerpt:
