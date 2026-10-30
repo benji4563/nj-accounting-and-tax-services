@@ -341,7 +341,12 @@ export default function Post() {
                 plain-English list of bookkeeping terms
               </Link>{' '}
               covers receivables, payables and the rest without making anyone
-              sit an exam.
+              sit an exam. And if you&rsquo;re weighing accrual specifically,
+              here are the{' '}
+              <Link href="/blog/benefits-of-accrual-accounting" className={linkClass}>
+                benefits of accrual accounting
+              </Link>{' '}
+              and what they cost.
             </p>
           </div>
         </Section>

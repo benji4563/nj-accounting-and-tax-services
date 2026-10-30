@@ -46,6 +46,42 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'benefits-of-accrual-accounting',
+    title: 'Benefits of Accrual Accounting: What You Actually Get',
+    excerpt:
+      'True monthly profit, receivables you can see, better decisions and lender-ready books. One cleaning company, one March, two very different answers, plus the tax catch and when to stay on cash.',
+    date: '2026-10-30',
+    minutes: 9,
+    cover: '/blog/benefits-of-accrual-accounting/hero-open-weekly-planner-on-white-desk.webp',
+    coverAlt:
+      'Overhead view of an open weekly planner with empty day boxes beside a laptop, a cup of black coffee and white earbuds on a white desk',
+    linkedin: `Tomás runs a cleaning company with six crews and a whiteboard that has been wrong since 2019.
+
+In March his crews did $20,000 of work. He paid out $12,000. The bank said he was down $3,000. He spent the weekend writing a speech about tightening belts.
+
+Nobody asked for the speech. His books were fine. His clients pay net-45, so the cash that arrived in March was mostly February's money.
+
+That is accrual accounting in one sentence: it counts the month you worked, not the month someone finally pays.
+
+Think of judging a restaurant by the tip jar at 2 p.m. Technically data. Just not the dinner rush.
+
+What accrual buys you:
+
+- True profit for each month. Tomás's March was an $8,000 month, not a $3,000 hole.
+- A dated list of who owes you and who you owe.
+- Statements a lender or a buyer will actually accept.
+- Deductions that follow the work, and unpaid invoices that generally can be written off if they go bad, because you already reported the income.
+
+The catch: you can owe tax on invoices you are still politely emailing about, and the bookkeeping never takes a month off. If your customers pay before you pack the van, cash basis is probably fine. We will tell you so, even though bookkeeping is how we pay our rent.
+
+The full post, including when to skip accrual:
+https://njaccountstax.com/blog/benefits-of-accrual-accounting
+
+#SmallBusiness #Accounting #Bookkeeping #CashFlow #AccrualAccounting
+
+Tomás's books are now fixed. The whiteboard is still wrong. We accept no responsibility for the whiteboard.`,
+  },
+  {
     slug: 'difference-between-cash-and-accrual-accounting',
     title: 'What Is the Difference Between Cash and Accrual Accounting?',
     excerpt:

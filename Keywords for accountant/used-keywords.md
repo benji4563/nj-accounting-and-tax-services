@@ -51,3 +51,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-10-22 | when is nys sales tax due | /blog/when-is-nys-sales-tax-due | H. Sales tax — general small business (light coverage) |
 | 2026-10-23 | do contractors charge sales tax on labor in ny | /blog/do-contractors-charge-sales-tax-on-labor-in-ny | H. Sales tax — general small business (light coverage) |
 | 2026-10-26 | what is the difference between cash accounting and accrual accounting | /blog/difference-between-cash-and-accrual-accounting | N. Accounting methods — cash vs accrual |
+| 2026-10-30 | benefits of accrual accounting | /blog/benefits-of-accrual-accounting | N. Accounting methods — cash vs accrual |
