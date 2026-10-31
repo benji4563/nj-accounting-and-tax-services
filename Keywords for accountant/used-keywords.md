@@ -53,3 +53,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-10-26 | what is the difference between cash accounting and accrual accounting | /blog/difference-between-cash-and-accrual-accounting | N. Accounting methods — cash vs accrual |
 | 2026-10-30 | benefits of accrual accounting | /blog/benefits-of-accrual-accounting | N. Accounting methods — cash vs accrual |
 | 2026-10-31 | do you have to claim venmo on taxes | /blog/do-you-have-to-claim-venmo-on-taxes | F. Solopreneur / gig / 1099 tax questions |
+| 2026-10-31 | is alleviate tax legit | /blog/is-alleviate-tax-legit | E. Behind on taxes / haven't filed (audit-support intent) |

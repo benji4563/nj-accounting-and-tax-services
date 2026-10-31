@@ -46,6 +46,44 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'is-alleviate-tax-legit',
+    title: 'Is Alleviate Tax Legit? The Public Record, Sourced',
+    excerpt:
+      'Yes, it is a real, BBB-accredited firm in Irvine, CA. Whether it fits your tax debt is a separate question. The public record, what the IRS charges for the same paperwork, and what to check in the contract.',
+    date: '2026-10-31',
+    minutes: 9,
+    cover: '/blog/is-alleviate-tax-legit/hero-taxes-envelope-calculator-coins.webp',
+    coverAlt:
+      'Flat lay of a notepad, a black calculator, a pen and a pale pink envelope folder marked Taxes beside a brass dish of loose coins on a white surface',
+    linkedin: `There is a particular kind of radio ad where a very calm voice explains that the IRS can be made to see reason. You nod. You are in a truck. You are holding a gas-station sandwich. By the time the ad ends you have typed the company's name into your phone, followed by the word "legit."
+
+Good instinct. Here is the answer on Alleviate Tax.
+
+Yes, it is a real company. Irvine, California. BBB accredited since July 2019, rated A when we checked on October 31, with 235 complaints filed over three years.
+
+Both of those facts are true at once, and that is the point. "Legit" is the lowest bar there is. A contractor with a valid license can still be the wrong hire for a job that needed a shovel and a Saturday.
+
+What is worth checking at any tax relief firm:
+
+→ Ask for the name and credential of the person who will represent you. Only enrolled agents, CPAs and attorneys can speak for you to the IRS.
+
+→ Read the complaints for the pattern, not the count.
+
+→ Get the total fee and the refund terms in writing. The FTC says to walk away from anyone who wants the whole fee upfront.
+
+→ Know the free price list. An online payment plan costs $29 with direct debit if you owe $50,000 or less. Paying thousands to submit a $29 form is hiring a guide to find your own kitchen.
+
+In fairness, we are an accounting firm reviewing a company in the next aisle, and we have never worked with them. We say so in the piece, along with the fact that we do not negotiate with the IRS ourselves. A slightly odd critic, but a candid one.
+
+Everything is sourced to the IRS, the FTC and the BBB profile:
+
+https://njaccountstax.com/blog/is-alleviate-tax-legit
+
+Legit gets you a seat at the table. The folder marked Taxes on your passenger seat still has to come inside and be opened.
+
+#SmallBusiness #TaxDebt #IRS #TaxRelief #Bookkeeping`,
+  },
+  {
     slug: 'do-you-have-to-claim-venmo-on-taxes',
     title: 'Do You Have to Claim Venmo on Taxes? Gifts vs. Income',
     excerpt:
