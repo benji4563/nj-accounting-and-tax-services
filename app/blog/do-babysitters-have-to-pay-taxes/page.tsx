@@ -596,8 +596,13 @@ export default function Post() {
                   Keep a running log.
                 </strong>{' '}
                 Date, family, hours, amount, how you were paid. A note on your
-                phone is fine. Your payment app history covers the transfers;
-                the cash is the part you will forget by March.
+                phone is fine. Your payment app history covers the transfers
+                &mdash; our guide to{' '}
+                <Link href="/blog/do-you-have-to-claim-venmo-on-taxes" className={linkClass}>
+                  whether you have to claim Venmo on taxes
+                </Link>{' '}
+                sorts which of them count &mdash; and the cash is the part you
+                will forget by March.
               </li>
               <li>
                 <strong className="text-aubergine">

@@ -46,6 +46,41 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'do-you-have-to-claim-venmo-on-taxes',
+    title: 'Do You Have to Claim Venmo on Taxes? Gifts vs. Income',
+    excerpt:
+      'Payments for goods and services are income, with or without a 1099-K. Split dinners, rent shares and gifts are not. The $20,000 and 200-payment rule, personal sales at a loss, wrong forms, and where it all goes on your return.',
+    date: '2026-10-31',
+    minutes: 9,
+    cover: '/blog/do-you-have-to-claim-venmo-on-taxes/hero-phone-calculator-card-reader-desk.webp',
+    coverAlt:
+      'Overhead view of a wooden desk with a laptop, a smartphone, a calculator, a card payment terminal and a curled roll of receipt paper on a green notebook',
+    linkedin: `Somewhere in your Venmo history is a $40 payment from someone called Kevin, memo "thanks for everything," and you have no idea who Kevin is.
+
+Tax season is when Kevin becomes a problem.
+
+Here is the rule that settles most Venmo panic: the app is not the income. The reason for the payment is.
+
+Think of Venmo as a garden hose. The tax code does not care about the hose. It cares what came out of it.
+
+So, sorting a year of payments:
+
+- Friends paying you back for dinner, a roommate's half of the rent, a birthday gift: not income.
+- Customers paying for candles, dog walks or design work: income, reported on Schedule C, after fees and supplies come off.
+- Selling your old couch for less than you paid: no tax. Selling something for more than you paid: the gain is taxable.
+- The 1099-K threshold is back to $20,000 and more than 200 payments. That decides whether you get a form, not whether you owe. Self-employment tax still starts at $400 of net earnings.
+
+If your side income is a few hundred dollars a year, decent tax software handles it in an evening and you do not need us. We say this a lot, for a firm whose idea of a good Friday is reconciling a Venmo export. We have made peace with it.
+
+One habit for next year: write real memos. "Rent, October" holds up. A single pizza emoji does not.
+
+Kevin, if you are reading this, please add a memo.
+
+https://njaccountstax.com/blog/do-you-have-to-claim-venmo-on-taxes
+
+#SmallBusiness #Taxes #SideHustle #SelfEmployed #Venmo`,
+  },
+  {
     slug: 'benefits-of-accrual-accounting',
     title: 'Benefits of Accrual Accounting: What You Actually Get',
     excerpt:
