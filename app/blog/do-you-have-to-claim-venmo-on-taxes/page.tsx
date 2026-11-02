@@ -393,7 +393,12 @@ export default function Post() {
                 filing taxes without a W-2
               </Link>
               : forms are how the IRS checks your homework, not how income
-              comes into existence. If you&rsquo;re self-employed, the number
+              comes into existence. The same goes for the business on the
+              paying end, which has its own form to send &mdash; see{' '}
+              <Link href="/blog/who-gets-a-1099" className={linkClass}>
+                who gets a 1099
+              </Link>
+              . If you&rsquo;re self-employed, the number
               to know is smaller than anything on a 1099-K. Per{' '}
               <SourceLink href="https://www.irs.gov/taxtopics/tc554">
                 IRS Topic 554 on self-employment tax

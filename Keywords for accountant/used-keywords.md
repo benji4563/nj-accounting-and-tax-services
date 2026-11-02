@@ -54,3 +54,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-10-30 | benefits of accrual accounting | /blog/benefits-of-accrual-accounting | N. Accounting methods — cash vs accrual |
 | 2026-10-31 | do you have to claim venmo on taxes | /blog/do-you-have-to-claim-venmo-on-taxes | F. Solopreneur / gig / 1099 tax questions |
 | 2026-10-31 | is alleviate tax legit | /blog/is-alleviate-tax-legit | E. Behind on taxes / haven't filed (audit-support intent) |
+| 2026-11-02 | who gets a 1099 | /blog/who-gets-a-1099 | U. 1099s & year-end obligations |

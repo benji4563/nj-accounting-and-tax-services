@@ -46,6 +46,37 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'who-gets-a-1099',
+    title: 'Who Gets a 1099? The 1099-NEC Rules, Plainly Explained',
+    excerpt:
+      'A business sends a 1099-NEC to each person it paid $2,000 or more for services. Who stays off the list, why you collect a W-9 first, the January 31 deadline and what late forms cost, all sourced to the IRS.',
+    date: '2026-11-02',
+    minutes: 9,
+    cover: '/blog/who-gets-a-1099/hero-pink-calculator-pen-lined-notebook.webp',
+    coverAlt:
+      'Overhead view of a pink calculator and a pink pen on a pale pink sheet beside an open lined notebook on a yellow background',
+    linkedin: `Every December a small-business owner opens a folder called "misc" and meets the contents for the first time. It is a drawer of loose keys. Nobody knows what any of them open, and every one of them feels important.
+
+Here is the key that matters. It is called a 1099-NEC.
+
+Think of it as a thank-you card the IRS wants a copy of. You send one to each person you paid for business services, and the IRS gets a duplicate.
+
+The short version, straight from the IRS instructions:
+- It goes to anyone you paid $2,000 or more in the year for services. The old $600 number is retired for this form.
+- Corporations, card payments, personal payments and employee wages generally stay off the list.
+- Ask for a W-9 before the first payment. With no taxpayer ID, backup withholding is a flat 24 percent.
+- The deadline is January 31. Late forms run $60 to $340 each for returns due in 2026.
+
+We find a tidy W-9 folder faintly thrilling. We are working on it, and the team is supportive.
+
+The full walk-through, with sources:
+https://njaccountstax.com/blog/who-gets-a-1099
+
+May your misc folder soon be labelled with an actual noun.
+
+#SmallBusiness #Form1099 #TaxTips #Bookkeeping`,
+  },
+  {
     slug: 'is-alleviate-tax-legit',
     title: 'Is Alleviate Tax Legit? The Public Record, Sourced',
     excerpt:
