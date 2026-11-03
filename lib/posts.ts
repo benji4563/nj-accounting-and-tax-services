@@ -46,6 +46,37 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: '1099-nec-vs-1099-misc',
+    title: '1099-NEC vs 1099-MISC: Which Form, Plainly Explained',
+    excerpt:
+      'The 1099-NEC is for paying non-employees for services; the 1099-MISC is for rent, royalties, prizes and the rest. The 2026 thresholds, the deadlines side by side, and the payments that split, all sourced to the IRS.',
+    date: '2026-11-03',
+    minutes: 9,
+    cover: '/blog/1099-nec-vs-1099-misc/hero-four-rusty-mailboxes-wooden-wall.webp',
+    coverAlt:
+      'Four old metal mailboxes, two pale green and two rusted orange, mounted in a row on a weathered wooden wall',
+    linkedin: `Somewhere right now a small-business owner is paying rent for a parking spot in cash, in an envelope, over a fence. Nobody involved thinks of this as a tax event. It is a tax event.
+
+Here is the thing nobody mentions until November: there are two kinds of 1099, and the envelope over the fence does not go on the same one as your contractors.
+
+Picture two mail slots on one wall. One says "people who did a job." The other says "everything else that cost money," which is the junk drawer of tax forms and proud of it.
+
+The short version, from the IRS instructions:
+- 1099-NEC is for paying non-employees for services. Freelancers, contractors, the guest instructor, your lawyer's fees.
+- 1099-MISC is for rent, royalties, prizes, medical payments and settlement money passed through a lawyer.
+- For payments made in 2026, both generally start at $2,000. Royalties still start at $10. Ten dollars.
+- The NEC is due January 31 with no automatic extension. The MISC copy for the IRS gets until February 28 on paper or March 31 electronically, which is exactly how people end up late on the NEC.
+
+We will confess to finding box 10 of the 1099-MISC genuinely interesting. We are aware of how that sounds at parties.
+
+The full side-by-side, with sources:
+https://njaccountstax.com/blog/1099-nec-vs-1099-misc
+
+May every envelope you hand over a fence come with a W-9.
+
+#SmallBusiness #Form1099 #TaxTips #Bookkeeping`,
+  },
+  {
     slug: 'who-gets-a-1099',
     title: 'Who Gets a 1099? The 1099-NEC Rules, Plainly Explained',
     excerpt:

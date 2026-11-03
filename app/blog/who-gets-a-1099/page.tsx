@@ -383,7 +383,12 @@ export default function Post() {
             <p className="mt-4 text-body text-graphite">
               One exception worth knowing: the IRS page keeps $600 for gross
               proceeds paid to attorneys, which are reported on a different
-              form. If a lawyer is on your list, double-check that line.
+              form. If a lawyer is on your list, double-check that line. Our
+              side-by-side on{' '}
+              <Link href="/blog/1099-nec-vs-1099-misc" className={linkClass}>
+                1099-NEC vs 1099-MISC
+              </Link>{' '}
+              shows which payments go on which form.
             </p>
           </div>
         </Section>
