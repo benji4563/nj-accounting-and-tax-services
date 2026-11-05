@@ -56,3 +56,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-10-31 | is alleviate tax legit | /blog/is-alleviate-tax-legit | E. Behind on taxes / haven't filed (audit-support intent) |
 | 2026-11-02 | who gets a 1099 | /blog/who-gets-a-1099 | U. 1099s & year-end obligations |
 | 2026-11-03 | 1099 nec vs 1099 misc | /blog/1099-nec-vs-1099-misc | U. 1099s & year-end obligations |
+| 2026-11-05 | what is form 941 | /blog/what-is-form-941 | S. Payroll |

@@ -477,7 +477,12 @@ export default function Post() {
               arrives at nine, uses your equipment and takes direction on every
               task, then gets a 1099 because that is what you did last year,
               looks like an employee wearing a contractor costume. The costume
-              does not hold up.
+              does not hold up. Employees bring a quarterly payroll return
+              with them, which we explain in{' '}
+              <Link href="/blog/what-is-form-941" className={linkClass}>
+                what Form 941 is and when it is due
+              </Link>
+              .
             </p>
             <p className="mt-4 text-body text-graphite">
               Household help is a different situation again, as we explain in{' '}

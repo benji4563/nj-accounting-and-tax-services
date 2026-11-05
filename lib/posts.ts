@@ -46,6 +46,39 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'what-is-form-941',
+    title: 'What Is Form 941? The Quarterly Payroll Return, Explained',
+    excerpt:
+      'Form 941 is the quarterly IRS return where employers report wages, withheld income tax, and both halves of Social Security and Medicare. The four due dates, the deposit rules, how it differs from the 940, 944 and W-2, and what a late one costs, all sourced to the IRS.',
+    date: '2026-11-05',
+    minutes: 10,
+    cover: '/blog/what-is-form-941/hero-taxes-envelope-rotary-phone-coins.webp',
+    coverAlt:
+      'A wooden desk with an envelope marked taxes, a folded banknote, stacks of coins, reading glasses and an old rotary phone',
+    linkedin: `You hire your first employee. It goes well. You set up payroll software. That also goes well. Then an email arrives: "Your Q3 Form 941 has been filed." You have no idea what you just filed, and you are reading it next to the jar of quarters you keep for the parking meter.
+
+Here is the short version nobody gives you at the hiring stage.
+
+Think of yourself as a coat-check attendant. Every paycheck, you take part of your employee's coat, hold it, and add one of your own. Form 941 is the ticket stub you hand the IRS each quarter, listing every coat you are holding. Nobody thinks the attendant owns the coats. The IRS feels the same way, more strongly.
+
+What actually goes on it, per the IRS instructions:
+- Wages paid, federal income tax withheld, and both halves of Social Security and Medicare tax.
+- For 2026, Social Security is 6.2% from the employee and 6.2% from you, up to $184,500 in wages. Medicare is 1.45% each, with no cap.
+- It is due April 30, July 31, October 31 and January 31.
+- The 941 is the receipt, not the payment. The tax usually moves earlier, through federal tax deposits.
+
+And the catch: unpaid withheld tax can be charged to the people responsible, personally, at 100%. It is the one tax bill that can follow you home.
+
+We will admit we find Schedule B relaxing. We have made peace with this.
+
+The full guide, with sources:
+https://njaccountstax.com/blog/what-is-form-941
+
+May your quarters always go in the meter, and your 941 always go in on time.
+
+#SmallBusiness #Payroll #Form941 #TaxTips #Bookkeeping`,
+  },
+  {
     slug: '1099-nec-vs-1099-misc',
     title: '1099-NEC vs 1099-MISC: Which Form, Plainly Explained',
     excerpt:
