@@ -46,6 +46,38 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: '1099-filing-deadline',
+    title: '1099 Filing Deadline: Every 2027 Date, Plainly Explained',
+    excerpt:
+      'The 1099-NEC is due January 31 to the contractor and the IRS, which rolls to February 1, 2027 for 2026 payments. The 1099-MISC dates, weekend and holiday shifts, the 10-return e-file rule, extensions and the 2027 late penalties, all sourced to the IRS.',
+    date: '2026-11-06',
+    minutes: 9,
+    cover: '/blog/1099-filing-deadline/hero-red-pin-desk-calendar.webp',
+    coverAlt:
+      'A red push pin stuck into a spiral desk calendar on a wooden desk, beside a binder clip, a pen and a calculator',
+    linkedin: `Every small-business owner has a sticky note on the fridge that says "1099s - Jan." It does not say which day in January. Past you felt that was a problem for future you. Future you is about to arrive.
+
+Here is the day, and the catch.
+
+Think of a 1099 as two invitations to the same party. One goes to the person you paid, one goes to the IRS. For most 1099s, the guests get different start times. For the 1099-NEC, everyone is told seven o'clock, and seven means seven.
+
+The short version, from the IRS instructions:
+- The 1099-NEC is due January 31 to both the contractor and the IRS. In 2027 the 31st is a Sunday, so it moves to Monday, February 1.
+- The NEC has no automatic extension. Most other 1099s can get 30 days with Form 8809.
+- The 1099-MISC copy for the IRS can wait until March 1 on paper or March 31 if you e-file, which is exactly how people end up late on the NEC.
+- File 10 or more information returns in total and you must e-file. The IRS has a free portal called IRIS.
+- Late penalties for returns due in 2027 run $60 to $340 per form, and the contractor copy counts separately.
+
+We will confess to keeping a list of which tax deadlines land on a Sunday each year. Nobody asked us to. We are not stopping.
+
+Every date, with sources:
+https://njaccountstax.com/blog/1099-filing-deadline
+
+May your sticky note finally have a number on it.
+
+#SmallBusiness #Form1099 #TaxTips #Bookkeeping`,
+  },
+  {
     slug: 'what-is-form-941',
     title: 'What Is Form 941? The Quarterly Payroll Return, Explained',
     excerpt:

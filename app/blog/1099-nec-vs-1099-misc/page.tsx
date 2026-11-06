@@ -464,7 +464,12 @@ export default function Post() {
                 When a deadline falls on a weekend or legal holiday, it moves
                 to the next business day. For example, the 2025 instructions
                 list February 2, 2026 for the NEC, because January 31 was a
-                Saturday.
+                Saturday. Next season&rsquo;s shifted dates are worked out in
+                our{' '}
+                <Link href="/blog/1099-filing-deadline" className={linkClass}>
+                  1099 filing deadline calendar for 2027
+                </Link>
+                .
               </li>
             </ol>
             <p className="mt-4 text-body text-graphite">
