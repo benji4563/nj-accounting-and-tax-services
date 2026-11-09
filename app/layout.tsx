@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Fraunces, Inter, Caveat } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
 import { AskAboutMe } from '@/components/layout/AskAboutMe';
@@ -118,6 +119,13 @@ export default function RootLayout({
         </main>
         <AskAboutMe />
         <Footer />
+        {/*
+          Visitor analytics. Until 2026-11-09 the site loaded no analytics at all,
+          so there was no first-party traffic count. The script is served from
+          /_vercel/insights on this domain (allowed by the CSP's script-src 'self')
+          and sets no cookies.
+        */}
+        <Analytics />
       </body>
     </html>
   );
