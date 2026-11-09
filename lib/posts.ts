@@ -46,6 +46,39 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'is-labor-taxable',
+    title: 'Is Labor Taxable? Sales Tax on Labor, State by State',
+    excerpt:
+      'Is labor taxable? Usually not on its own, but repair labor, labor with parts and listed services often are. The two questions that decide it, and how New York, Florida, Texas, California, Louisiana, Hawaii and South Dakota differ.',
+    date: '2026-11-10',
+    minutes: 10,
+    cover: '/blog/is-labor-taxable/hero-multimeter-repair-tools-workbench.webp',
+    coverAlt:
+      'A digital multimeter with red and black test leads on a workbench, with pliers, a screwdriver and other repair tools behind it',
+    linkedin: `A repairman fixes the same dryer twice this year. Same part, same two hours, same rattle that turned out to be a sock.
+
+One job is in New York. One is in Florida.
+
+The tax on his labor is different in each.
+
+That is the whole problem with sales tax on labor. There is no national rule. Every state writes its own, and they disagree.
+
+But almost every state sorts jobs with the same two questions:
+
+→ Did you work on a movable thing, like an appliance or a car, or on a building?
+→ Did the work repair it, make something new, or permanently improve it?
+
+Repair labor on movable items is taxed in a lot of states. Permanent improvements to buildings usually are not. And in Florida, one washer handed over during a repair can turn the whole bill taxable.
+
+Plumbers always suspected washers were up to something.
+
+The full guide walks through New York, Florida, Texas, California, Louisiana, Hawaii and South Dakota, plus a five-minute check to run before your next invoice.
+
+And if you work in one state and your jobs are clearly off its taxable list, you may never collect sales tax at all. Bookmark the state page and get on with your day.
+
+#SmallBusiness #SalesTax #Contractors #Bookkeeping #TaxTips`,
+  },
+  {
     slug: 'small-business-tax-deductions',
     title: 'Small Business Tax Deductions That Hold Up in 2026',
     excerpt:

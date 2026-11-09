@@ -566,6 +566,10 @@ export default function Post() {
               <Link href="/blog/is-labor-taxed-in-florida" className={linkClass}>
                 how Florida taxes labor
               </Link>
+              , how{' '}
+              <Link href="/blog/is-labor-taxable" className={linkClass}>
+                labor is taxed in other states
+              </Link>
               , and the bigger picture in our guide to{' '}
               <Link href="/blog/sales-tax-compliance-services" className={linkClass}>
                 sales tax compliance for small businesses

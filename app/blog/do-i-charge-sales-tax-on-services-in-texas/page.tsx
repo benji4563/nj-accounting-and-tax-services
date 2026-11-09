@@ -512,7 +512,11 @@ export default function Post() {
                 whether labor is taxed in Florida
               </Link>{' '}
               shows a state that sorts the same work by a completely different
-              test.
+              test, and our overview of{' '}
+              <Link href="/blog/is-labor-taxable" className={linkClass}>
+                whether labor is taxable in other states
+              </Link>{' '}
+              covers the two questions most states ask.
             </p>
           </div>
         </Section>

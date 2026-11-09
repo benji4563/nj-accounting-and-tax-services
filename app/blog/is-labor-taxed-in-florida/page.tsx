@@ -545,7 +545,12 @@ export default function Post() {
                 sales tax compliance services
               </Link>{' '}
               compares how Texas and New York treat the same labor &mdash; they
-              disagree with Florida and with each other.
+              disagree with Florida and with each other. For the rule of thumb
+              that works across states, see{' '}
+              <Link href="/blog/is-labor-taxable" className={linkClass}>
+                is labor taxable, state by state
+              </Link>
+              .
             </p>
           </div>
         </Section>
