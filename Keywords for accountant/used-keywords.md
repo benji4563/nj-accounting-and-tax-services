@@ -58,3 +58,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-11-03 | 1099 nec vs 1099 misc | /blog/1099-nec-vs-1099-misc | U. 1099s & year-end obligations |
 | 2026-11-05 | what is form 941 | /blog/what-is-form-941 | S. Payroll |
 | 2026-11-06 | 1099 filing deadline | /blog/1099-filing-deadline | U. 1099s & year-end obligations |
+| 2026-11-09 | small business tax deductions | /blog/small-business-tax-deductions | R. Deductions & write-offs |

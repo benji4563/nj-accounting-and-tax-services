@@ -509,7 +509,11 @@ export default function Post() {
                 </strong>{' '}
                 Freelancers, gig workers and side hustlers are sole proprietors
                 to the IRS. Report gross receipts, then subtract the expenses:
-                materials, app fees, refunds, shipping.
+                materials, app fees, refunds, shipping. Our guide to{' '}
+                <Link href="/blog/small-business-tax-deductions" className={linkClass}>
+                  small business tax deductions
+                </Link>{' '}
+                covers what else belongs on that list.
               </li>
               <li>
                 <strong className="text-aubergine">

@@ -46,6 +46,38 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'small-business-tax-deductions',
+    title: 'Small Business Tax Deductions That Hold Up in 2026',
+    excerpt:
+      'What small businesses can deduct in 2026 and what each deduction needs on paper: the ordinary-and-necessary test, the two 2026 mileage rates, 50% meals, the home office tests, the $2,500 rule, and the receipt myth, all sourced to the IRS.',
+    date: '2026-11-09',
+    minutes: 10,
+    cover: '/blog/small-business-tax-deductions/hero-calculator-receipts-pile.webp',
+    coverAlt:
+      'Hands using a pink calculator on top of a spread of paper receipts and printed invoices',
+    linkedin: `Somewhere in your car there is a mileage notebook. It is very organized until March. After March, according to the notebook, the car drove itself.
+
+That notebook is worth more than most people think.
+
+A tax deduction works like a coat check. You hand over the coat, you get a ticket, and at the end of the night the ticket is the only thing that gets your coat back. The expense is the coat. The record is the ticket. "I definitely had a coat" has never once worked at a coat check, and it does not work with the IRS either.
+
+What actually counts in 2026, straight from the IRS:
+- Business mileage is 72.5 cents a mile for January through June and 76 cents for July through December. Yes, two rates in one year, so the dates in your log matter.
+- Business meals are 50% deductible. Entertainment is generally not deductible at all.
+- The home office has to be used regularly and exclusively for business. The guest room at Thanksgiving does not qualify.
+- Items up to $2,500 per invoice can often be expensed right away under the de minimis safe harbor.
+- There is no "$300 without receipts" rule. Under $75 you may not need a receipt for meals and travel, but you still need a record.
+
+Full disclosure: accounting fees are also a deductible business expense. We are, technically, a write-off. We try not to let it go to our heads.
+
+The full guide, with sources:
+https://njaccountstax.com/blog/small-business-tax-deductions
+
+May your notebook make it past March this year.
+
+#SmallBusiness #TaxDeductions #SelfEmployed #Bookkeeping`,
+  },
+  {
     slug: '1099-filing-deadline',
     title: '1099 Filing Deadline: Every 2027 Date, Plainly Explained',
     excerpt:
