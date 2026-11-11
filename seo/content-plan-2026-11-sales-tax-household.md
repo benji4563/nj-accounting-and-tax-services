@@ -2,6 +2,8 @@
 
 **Written:** 9 Nov 2026 · **For:** the next 6 posts on njaccountstax.com · **Pipeline:** `nj-seo` skill, one post per row, same template.
 
+**Status (11 Nov 2026):** #1 is **live** at `/blog/is-labor-taxable` (published 10 Nov, commit `4348e22`; linked from the NY, Florida and Texas labor posts; primary added to `used-keywords.md`). #2–#6 not started; write the next one only when Ben asks.
+
 ## Why these topics
 
 Google Search Console (screenshots from Ben, 9 Nov 2026) shows where NJ's clicks come from right now:
@@ -28,7 +30,7 @@ Google Search Console (screenshots from Ben, 9 Nov 2026) shows where NJ's clicks
 
 | # | Working title | Primary keyword | Supporting keywords (→ H2s / FAQ) | Volume | Links to (existing) |
 |---|---|---|---|---|---|
-| 1 | **Is Labor Taxable? Sales Tax on Labor, State by State** (hub) | is labor taxable · 390 KP, CI 0 | sales tax on labor 140 KP · can you tax labor 140 Export · can you charge tax on labor 110 Export · do you charge tax on labor 110 Export · sales tax on services by state 90 KP · do contractors charge sales tax on labor 90 KP | ~1,000/mo combined, one intent | NY contractor labor, Florida labor, Texas services, sales-tax compliance services, NYS sales-tax due date |
+| 1 | **Is Labor Taxable? Sales Tax on Labor, State by State** (hub) ✅ live 10 Nov | is labor taxable · 390 KP, CI 0 | sales tax on labor 140 KP · can you tax labor 140 Export · can you charge tax on labor 110 Export · do you charge tax on labor 110 Export · sales tax on services by state 90 KP · do contractors charge sales tax on labor 90 KP | ~1,000/mo combined, one intent | NY contractor labor, Florida labor, Texas services, sales-tax compliance services, NYS sales-tax due date |
 | 2 | **Nanny Tax: What You Owe When You Hire Household Help** | nanny tax · 880 KP, CI 39 | household employee taxes 590 · estimate nanny taxes 480 (worked example H2) · irs household employee 170 · household employer 140 · nanny tax rules 110 · nanny and taxes 110 · household employee tax form 70 · nanny tax deduction 90 | ~2,500/mo combined | Babysitter post (the worker's side; this is the employer's side), Form 941 (to explain household employers use Schedule H instead) |
 | 3 | **When Is Florida Sales Tax Due?** | when is florida sales tax due · 170 Export | filing frequency, due dates, late penalties | 170/mo | NYS due-date post (+288%), Florida labor post, hub (#1) |
 | 4 | **Nanny W-2 or 1099? Is Your Nanny an Employee?** | 1099 for nanny · 170 KP | 1099 form for nanny 170 · nanny w2 170 · nanny independent contractor 30 · household employee w2 20 · generate w2 for nanny 20 | ~560/mo combined | Nanny tax (#2), who gets a 1099, 1099-NEC vs 1099-MISC, babysitter post |
