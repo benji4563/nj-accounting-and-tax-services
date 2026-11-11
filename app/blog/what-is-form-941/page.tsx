@@ -448,7 +448,15 @@ export default function Post() {
             <p className="mt-4 text-body text-graphite">
               A brand-new employer like Dana has no lookback history, so she
               starts as a monthly depositor. Most bakeries with two employees
-              stay there for a long time.
+              stay there for a long time. If you are still at the stage before
+              the first paycheck, our step-by-step guide to{' '}
+              <Link
+                href="/blog/how-to-do-payroll-for-a-small-business"
+                className={linkClass}
+              >
+                how to do payroll for a small business
+              </Link>{' '}
+              starts there.
             </p>
           </div>
         </Section>

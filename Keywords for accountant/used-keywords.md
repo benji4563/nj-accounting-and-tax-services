@@ -60,3 +60,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-11-06 | 1099 filing deadline | /blog/1099-filing-deadline | U. 1099s & year-end obligations |
 | 2026-11-09 | small business tax deductions | /blog/small-business-tax-deductions | R. Deductions & write-offs |
 | 2026-11-10 | is labor taxable | /blog/is-labor-taxable | H. Sales tax — general small business (light coverage) |
+| 2026-11-11 | how to do payroll for a small business | /blog/how-to-do-payroll-for-a-small-business | S. Payroll |

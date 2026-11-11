@@ -46,6 +46,41 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'how-to-do-payroll-for-a-small-business',
+    title: 'How to Do Payroll for a Small Business, Step by Step',
+    excerpt:
+      'How to do payroll for a small business: the five-item setup list, one paycheck worked through with 2026 Social Security, Medicare and FUTA rates, the deposits and forms that follow, how to pay yourself, and when software is enough. Sourced to the IRS, USCIS and DOL.',
+    date: '2026-11-11',
+    minutes: 11,
+    cover: '/blog/how-to-do-payroll-for-a-small-business/hero-time-clock-punch-cards-brick-wall.webp',
+    coverAlt:
+      'A retro wall-mounted time clock beside a rack of paper punch cards and a notice board on a dimly lit brick wall',
+    linkedin: `Your first employee starts Monday. You have already bought a little frame for the first paycheck, the way shops frame their first dollar. Then you sit down to write it and realise you have no idea what number goes on it.
+
+Here is the part nobody mentions at the hiring stage: payroll is the only purchase where the receipt and the price tag disagree in both directions at once.
+
+Take one illustrative week, 30 hours at $20. Gross pay is $600. Out of that you withhold 6.2% for Social Security and 1.45% for Medicare, plus federal income tax from the employee's W-4, plus state tax. So the check is smaller than $600.
+
+Then you add your own matching Social Security and Medicare, plus federal unemployment tax. Using the 2026 IRS rates, that week costs you about $649.50 before state unemployment and workers' comp. So the cost is bigger than $600.
+
+The rest, in short:
+- Before the first payday: EIN, state registration, a W-4 and an I-9 for each hire.
+- Every payday: calculate, withhold, pay.
+- On schedule: deposit the taxes, file Form 941 every quarter, Form 940 and W-2s every year.
+- Withheld tax is never your money. Unpaid, it can follow you home, personally.
+
+Honest bit: with one to five employees on steady hours, decent payroll software handles most of this and you may not need us at all.
+
+We will admit to checking pay stubs the way other people check the weather. It has not made us more interesting at dinner.
+
+The full step-by-step guide, with IRS sources:
+https://njaccountstax.com/blog/how-to-do-payroll-for-a-small-business
+
+May your frame hold a paycheck you actually understand.
+
+#SmallBusiness #Payroll #SmallBusinessOwner #TaxTips #Bookkeeping`,
+  },
+  {
     slug: 'is-labor-taxable',
     title: 'Is Labor Taxable? Sales Tax on Labor, State by State',
     excerpt:
