@@ -46,6 +46,41 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'how-to-calculate-food-cost-percentage',
+    title: 'How to Calculate Food Cost Percentage, With Examples',
+    excerpt:
+      'How to calculate food cost percentage: the inventory formula, one month worked through, costing a plate and pricing the menu at a 30% target, what a good number is, and how the same formula becomes cost of goods sold on your tax return. Sourced to the IRS.',
+    date: '2026-11-12',
+    minutes: 10,
+    cover: '/blog/how-to-calculate-food-cost-percentage/hero-restaurant-kitchen-prep-table-evening.webp',
+    coverAlt:
+      'A dim restaurant kitchen in the evening with a wooden prep table holding trays of ingredients, a grill and steel shelving behind',
+    linkedin: `Every restaurant owner has had this week. The dining room was packed, the kitchen never stopped, the dishwasher asked for a raise. Then the bank balance came in and looked like it had spent the whole week somewhere else.
+
+Somewhere in the walk-in there is usually an avocado that knows why.
+
+Food cost percentage is the bathroom scale of a restaurant. Nobody enjoys stepping on it, and it does not lie just because you had a good feeling about the week.
+
+Here is the whole calculation:
+- Food used = beginning inventory + purchases - ending inventory.
+- Food cost % = food used / food sales x 100.
+- Illustrative month: $6,200 + $9,800 - $5,400 = $10,600 of food used. On $34,000 of food sales, that is 31.2%.
+- To price a plate at a 30% target, divide the ingredient cost by 0.30. A $3.85 plate becomes about $12.95.
+
+The bit most guides skip: that same formula is almost exactly how the IRS has you figure cost of goods sold on Schedule C. Count properly every month and half your tax prep is already done.
+
+Honest bit: one location, a weekly count and a tidy spreadsheet, and you probably do not need an accountant for this at all.
+
+We will confess to finding a clean inventory reconciliation more exciting than dessert. Our friends have stopped inviting us to dessert.
+
+The full guide, with a worked month and IRS sources:
+https://njaccountstax.com/blog/how-to-calculate-food-cost-percentage
+
+#RestaurantOwners #FoodCost #SmallBusiness #RestaurantManagement #Bookkeeping
+
+Count the avocados. They have been counting you.`,
+  },
+  {
     slug: 'how-to-do-payroll-for-a-small-business',
     title: 'How to Do Payroll for a Small Business, Step by Step',
     excerpt:

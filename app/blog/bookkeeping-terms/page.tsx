@@ -560,7 +560,12 @@ export default function Post() {
                 <strong className="text-aubergine">19. Cost of goods sold.</strong>{' '}
                 The direct cost of the things you sold: parts, materials,
                 stock. Often shortened to COGS. Rent and software are not in
-                it.
+                it. For a restaurant it is mostly food, which is why it pays
+                to know{' '}
+                <Link href="/blog/how-to-calculate-food-cost-percentage" className={linkClass}>
+                  how to calculate food cost percentage
+                </Link>{' '}
+                and check it every week.
               </li>
               <li>
                 <strong className="text-aubergine">20. Gross profit and net profit.</strong>{' '}
