@@ -456,7 +456,13 @@ export default function Post() {
               gifts and car expenses, you generally don&rsquo;t need a receipt
               for an expense under $75, other than lodging. You still need a
               record of the amount, the date, the place and the business
-              purpose. No receipt is not the same as no record.
+              purpose. No receipt is not the same as no record. Our full guide
+              to the{' '}
+              <Link href="/blog/business-meal-deduction" className={linkClass}>
+                business meal deduction
+              </Link>{' '}
+              covers the 100% exceptions and what changed for staff meals in
+              2026.
             </p>
             <ul className="mt-8 space-y-4 text-body text-graphite">
               <li>

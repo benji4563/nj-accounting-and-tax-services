@@ -46,6 +46,43 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'business-meal-deduction',
+    title: 'Business Meal Deduction Rules for 2026, Plainly Explained',
+    excerpt:
+      'The business meal deduction for 2026: the 50% rule and its three tests, which meals are 100% deductible, what is now zero including staff meals at the office, travel and entertainment, and the records the IRS expects. Sourced to the IRS and the Treasury regulations.',
+    date: '2026-11-16',
+    minutes: 10,
+    cover: '/blog/business-meal-deduction/hero-two-coffees-cafe-table.webp',
+    coverAlt:
+      'Two coffees side by side on a round white cafe table in bright sunlight, with red chairs behind',
+    linkedin: `Every business owner has a receipt like this. An $11 flat white, bought for a prospective client, sometime last fall. You remember the coffee was excellent. You do not remember who drank it.
+
+That receipt is currently worth exactly nothing.
+
+The business meal deduction works like a two-for-one deal in reverse. You buy lunch for two, and the IRS lets you deduct lunch for one.
+
+Here is what actually holds up in 2026:
+- Most business meals are 50% deductible. Tax and tip included.
+- Three tests: not lavish, you or an employee is there, and the other person is a real or likely business contact.
+- Holiday parties and picnics for your staff are still 100%.
+- Entertainment is zero. Take a client to a game and the tickets get nothing. The hot dogs bought separately get 50%.
+- New for 2026: meals you provide employees at your workplace for your own convenience went from 50% to zero.
+- No receipt needed under $75, but you still need the amount, date, place, business purpose and who you ate with.
+
+The fix is an eight-second habit. Write the name and the purpose on the receipt before you leave the table.
+
+Honest bit: a handful of client lunches a year and you do not need an accountant for this. A note on the receipt and a Meals category in your software will do it.
+
+We will admit we get unreasonably excited about a well-labeled receipt. It is the closest thing we have to a hobby.
+
+So write a name on the next flat white. It was excellent coffee. It deserves to be remembered for tax reasons too.
+
+The full guide, with IRS sources:
+https://njaccountstax.com/blog/business-meal-deduction
+
+#SmallBusiness #TaxDeductions #BusinessMeals #SmallBusinessTaxes #Bookkeeping`,
+  },
+  {
     slug: 'how-to-calculate-food-cost-percentage',
     title: 'How to Calculate Food Cost Percentage, With Examples',
     excerpt:
