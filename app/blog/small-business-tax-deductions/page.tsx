@@ -602,7 +602,13 @@ export default function Post() {
                 simplified option
               </SourceLink>{' '}
               is $5 per square foot for up to 300 square feet, so a maximum of
-              $1,500. Fewer records, smaller number.
+              $1,500. Fewer records, smaller number. For the full walkthrough,
+              with both methods worked through on real numbers, see our guide
+              to the{' '}
+              <Link href="/blog/home-office-deduction-requirements" className={linkClass}>
+                home office deduction requirements
+              </Link>
+              .
             </p>
             <p className="mt-4 text-body text-graphite">
               Here is the part where we argue against ourselves. If you are a

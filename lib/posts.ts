@@ -46,6 +46,42 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: 'home-office-deduction-requirements',
+    title: 'Home Office Deduction Requirements, Plainly Explained',
+    excerpt:
+      'The home office deduction requirements: the regular and exclusive use tests, when your home is your principal place of business, why W-2 employees cannot claim it, the inventory, daycare and separate-structure exceptions, the $5 simplified method against actual expenses with real numbers, and the income limit and records. Sourced to IRS Publication 587.',
+    date: '2026-11-18',
+    minutes: 10,
+    cover: '/blog/home-office-deduction-requirements/hero-wooden-desk-by-window.webp',
+    coverAlt:
+      'A home office with a rustic wooden desk, a laptop and a black chair beside a bright window with sheer curtains',
+    linkedin: `Every home office has one. The ironing board that went up "just for this week" and has now been there long enough to qualify for squatter's rights.
+
+It is also the most expensive piece of furniture you own, tax-wise.
+
+The home office deduction works like a members-only room. The IRS does not care how nice it is. It cares that nobody else is allowed in.
+
+What actually qualifies:
+- Regular and exclusive use. A defined corner counts, no wall needed. A room the family also uses does not.
+- It has to be your principal place of business, where you meet clients, or a separate structure like a backyard studio.
+- Doing your billing and admin at home counts if there is no other fixed place where you do it. A plumber who works in customers' kitchens all day can still qualify.
+- W-2 employees cannot claim it. Self-employed people can, renters included.
+- Simplified method: $5 per square foot, up to 300 square feet, so $1,500 max. The regular method uses your real rent, utilities and insurance, and can be worth a lot more.
+
+An illustrative 150 square foot office in a $1,800 a month apartment, counting utilities and insurance: $750 the simple way, about $2,484 the regular way.
+
+Honest bit: if you rent, use one room and are happy with the simple number, you do not need an accountant for this. Measure, multiply by five, done.
+
+We will admit we own a laser tape measure and have been known to bring it up at dinner parties. We are not invited to many dinner parties.
+
+So fold the ironing board. It has had a good run. Its tax career is over.
+
+The full guide, with IRS sources:
+https://njaccountstax.com/blog/home-office-deduction-requirements
+
+#SmallBusiness #HomeOffice #TaxDeductions #SelfEmployed #SmallBusinessTaxes`,
+  },
+  {
     slug: 'business-meal-deduction',
     title: 'Business Meal Deduction Rules for 2026, Plainly Explained',
     excerpt:

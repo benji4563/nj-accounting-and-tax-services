@@ -63,3 +63,4 @@ Rows are appended by the content pipeline the moment a post ships. Format:
 | 2026-11-11 | how to do payroll for a small business | /blog/how-to-do-payroll-for-a-small-business | S. Payroll |
 | 2026-11-12 | how to calculate food cost percentage | /blog/how-to-calculate-food-cost-percentage | Y. Restaurants & hospitality |
 | 2026-11-16 | business meal deduction | /blog/business-meal-deduction | R. Deductions & write-offs |
+| 2026-11-18 | home office deduction requirements | /blog/home-office-deduction-requirements | R. Deductions & write-offs |
